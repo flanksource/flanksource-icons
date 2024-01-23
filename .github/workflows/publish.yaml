@@ -31,8 +31,14 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run svg && npm run build
+        run: |
+          git submodule update
+          npm install
+          npm run svg
       - name: Publish
-        run: npm version ${{ needs.semantic-release.outputs.release-version }} --no-git-tag-version  && npm publish --access public
+        run: |
+          cd react-icons/packages/_react-icons_all
+          npm version ${{ needs.semantic-release.outputs.release-version }} --no-git-tag-version
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -4,6 +4,7 @@ export default {
   plugins: [
     'cleanupAttrs',
     'inlineStyles',
+    'removeXlink',
     'removeDoctype',
     'removeXMLProcInst',
     'removeComments',
@@ -44,7 +45,7 @@ export default {
     },
     'removeUselessStrokeAndFill',
     'removeUnusedNS',
-    // 'cleanupIds',
+    'cleanupIds',
     'cleanupNumericValues',
     'cleanupListOfValues',
     'moveGroupAttrsToElems',
@@ -80,7 +81,7 @@ export default {
     {
       name: 'removeAttrs',
       params: {
-        attrs: ['svg:(?!(role|viewBox|xmlns))', 'path:(?!d)', 'title:*'],
+        attrs: ['svg:(?!(role|viewBox|xmlns))', 'path:(?!d)', 'title:*', 'svg:xmlns.xlink'],
       },
     },
     'removeElementsByAttr',
@@ -95,6 +96,6 @@ export default {
     'removeOffCanvasPaths',
     'removeStyleElement',
     'removeScriptElement',
-    'reusePaths',
+    // 'reusePaths',
   ],
 };

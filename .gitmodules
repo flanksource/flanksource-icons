@@ -1,0 +1,3 @@
+[submodule "react-icons"]
+	path = react-icons
+	url = https://github.com/react-icons/react-icons.git
