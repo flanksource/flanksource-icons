@@ -33,6 +33,6 @@ jobs:
       - name: Build
         run: npm run svg && npm run build
       - name: Publish
-        run: npm version ${{ needs.semantic-release.outputs.release-version }} --no-git-tag-version  && npm publish
+        run: npm version ${{ needs.semantic-release.outputs.release-version }} --no-git-tag-version  && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
