@@ -10,8 +10,7 @@
   "homepage": "https://github.com/flanksource/flanksource-icons#readme",
   "version": "1.0.0",
   "scripts": {
-    "patch": "sed -ir 's|.Icon. \\+||' node_modules/create-react-icons/lib/generate-icons.js",
-    "svg": "rm -rf src/ && create-react-icons -s 'svg/*.svg' -d src",
+    "svg": "bash make.sh",
     "build": "babel src --out-dir dist --copy-files",
     "prepublishOnly": "npm run patch && npm run svg build",
     "svgo": "rm -rf svg/output; svgo -i svg/*.svg -o svg/output --exclude d365.svg  --config svgo.config.mjs",
