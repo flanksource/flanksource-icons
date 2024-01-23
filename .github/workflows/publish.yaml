@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18"
-          registry-url: "https://npm.pkg.github.com"
+          registry-url: "https://registry.npmjs.org"
           scope: "@flanksource"
       - name: Build
         run: |
@@ -37,6 +37,8 @@ jobs:
         run: |
           cd react-icons/packages/_react-icons_all
           npm version ${{ needs.semantic-release.outputs.release-version }} --no-git-tag-version
+          cat package.json
+          cat .npmrc
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
