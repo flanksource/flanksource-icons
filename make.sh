@@ -4,7 +4,7 @@
 # rm -rf src/index.ts src/icons
 # mkdir src
 
-base=$(PWD)
+base=$(pwd)
 reactIconsAll=$base/react-icons/packages/_react-icons_all/
 reactIcons=$base/$reactIcons
 cp manifest.ts $reactIcons/src/icons/index.ts
