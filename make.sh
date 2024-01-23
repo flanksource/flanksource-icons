@@ -40,3 +40,4 @@ cat <<< $(jq '.repository.url = "https://github.com/flanksource/icons"' package.
 cat <<< $(jq 'del(.bugs, .author, .contributors, .description)' package.json ) > package.json
 
 cp $base/.releaserc $reactIconsAll
+cp $base/.npmrc  $reactIconsAll
