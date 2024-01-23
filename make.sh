@@ -3,10 +3,10 @@
 # cp generate-icons.js node_modules/create-react-icons/lib/generate-icons.js
 # rm -rf src/index.ts src/icons
 # mkdir src
-
+git submodule update
 base=$(pwd)
-reactIconsAll=$base/react-icons/packages/_react-icons_all/
-reactIcons=$base/$reactIcons
+reactIconsAll=$base/react-icons/packages/_react-icons_all
+reactIcons=$base/react-icons/packages/react-icons
 cp manifest.ts $reactIcons/src/icons/index.ts
 
 cd $reactIconsAll
@@ -14,7 +14,7 @@ git checkout package.json
 
 cd $reactIcons
 yarn install
-yarn  build
+yarn run  build
 
 
 mjs=$reactIconsAll/mi/index.mjs
