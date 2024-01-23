@@ -1,0 +1,7 @@
+{
+  "presets": [
+    "@babel/preset-env", // Transpile modern JavaScript to be compatible with older browsers
+    "@babel/preset-react", // Transpile JSX
+    // "@babel/preset-typescript" // Support TypeScript
+  ]
+}

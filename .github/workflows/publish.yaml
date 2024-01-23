@@ -1,0 +1,37 @@
+name: Build and Publish
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  semantic-release:
+    runs-on: ubuntu-latest
+    outputs:
+      release-version: ${{ steps.semantic.outputs.new_release_version }}
+      new-release-published: ${{ steps.semantic.outputs.new_release_published }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cycjimmy/semantic-release-action@v3
+        id: semantic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@flanksource"
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npm publish
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

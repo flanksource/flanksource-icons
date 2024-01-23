@@ -1,0 +1,34 @@
+{
+  "name": "@flanksource/icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flanksource/flanksource-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flanksource/flanksource-icons/issues"
+  },
+  "homepage": "https://github.com/flanksource/flanksource-icons#readme",
+  "version": "1.0.0",
+  "scripts": {
+    "patch": "sed -ir 's|.Icon. \\+||' node_modules/create-react-icons/lib/generate-icons.js",
+    "svg": "rm -rf src/ && create-react-icons -s 'svg/*.svg' -d src",
+    "build": "babel src --out-dir dist --copy-files",
+    "prepublishOnly": "npm run patch && npm run svg build",
+    "svgo": "rm -rf svg/output; svgo -i svg/*.svg -o svg/output --exclude d365.svg  --config svgo.config.mjs",
+    "svg-resize": "cd svg && bash resize.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-react": "^7.23.3",
+    "babel": "^6.23.0",
+    "create-react-icons": "^1.1.1",
+    "typescript": "^5.3.3"
+  }
+}
