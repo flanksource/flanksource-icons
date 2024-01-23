@@ -8,7 +8,7 @@
     "url": "https://github.com/flanksource/flanksource-icons/issues"
   },
   "homepage": "https://github.com/flanksource/flanksource-icons#readme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "svg": "bash make.sh",
     "build": "babel src --out-dir dist --copy-files",
