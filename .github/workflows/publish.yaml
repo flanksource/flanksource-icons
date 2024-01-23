@@ -28,11 +28,9 @@ jobs:
           node-version: "18"
           registry-url: "https://npm.pkg.github.com"
           scope: "@flanksource"
-      - name: Install dependencies
-        run: npm install
       - name: Build
         run: |
-          git submodule update
+          git submodule update --init --recursive
           npm install
           npm run svg
       - name: Publish

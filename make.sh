@@ -3,7 +3,7 @@
 # cp generate-icons.js node_modules/create-react-icons/lib/generate-icons.js
 # rm -rf src/index.ts src/icons
 # mkdir src
-git submodule update
+
 base=$(pwd)
 reactIconsAll=$base/react-icons/packages/_react-icons_all
 reactIcons=$base/react-icons/packages/react-icons
