@@ -18,6 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-and-publish:
+    needs: semantic-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
