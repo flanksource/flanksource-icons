@@ -1,4 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-<path fill="none" stroke-width="24.384001" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(64.313728%, 64.313728%, 64.313728%)" stroke-opacity="1" stroke-miterlimit="4" d="M 128 79.25 L 128 128 L 164.5625 164.5625 M 237.71875 128 C 237.71875 188.59375 188.59375 237.71875 128 237.71875 C 67.40625 237.71875 18.28125 188.59375 18.28125 128 C 18.28125 67.40625 67.40625 18.28125 128 18.28125 C 188.59375 18.28125 237.71875 67.40625 237.71875 128 M 237.71875 128 " transform="matrix(0.125, 0, 0, 0.125, 0, 0)"/>
-</svg>
+<svg role="img" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 9.906V16l4.57 4.57M29.715 16c0 7.574-6.14 13.715-13.715 13.715-7.574 0-13.715-6.14-13.715-13.715C2.285 8.426 8.425 2.285 16 2.285c7.574 0 13.715 6.14 13.715 13.715m0 0" fill="none" stroke="rgb(64.313728%, 64.313728%, 64.313728%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.048"/></svg>
