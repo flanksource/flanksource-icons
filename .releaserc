@@ -9,6 +9,9 @@ plugins:
       parserOpts:
         noteKeywords:
           - MAJOR RELEASE
+  - - "@semantic-release/npm"
+    - npmPublish: false
+
   - "@semantic-release/release-notes-generator"
   - - "@semantic-release/github"
       # From: https://github.com/semantic-release/github/pull/487#issuecomment-1486298997
