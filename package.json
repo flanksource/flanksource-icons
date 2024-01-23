@@ -12,7 +12,7 @@
   "scripts": {
     "svg": "bash make.sh",
     "build": "babel src --out-dir dist --copy-files",
-    "prepublishOnly": "npm run patch && npm run svg build",
+    "prepublishOnly": "npm run svg build",
     "svgo": "rm -rf svg/output; svgo -i svg/*.svg -o svg/output --exclude d365.svg  --config svgo.config.mjs",
     "svg-resize": "cd svg && bash resize.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
