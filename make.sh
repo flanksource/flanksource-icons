@@ -8,6 +8,7 @@ base=$(pwd)
 reactIconsAll=$base/react-icons/packages/_react-icons_all
 reactIcons=$base/react-icons/packages/react-icons
 cp manifest.ts $reactIcons/src/icons/index.ts
+cp iconBase.tsx  $reactIcons/src/iconBase.tsx .
 
 cd $reactIconsAll
 git checkout package.json
@@ -26,13 +27,14 @@ echo "module.exports.IconMap = {" >> $js
 
 for img in $(ls  *.svg); do
   name=${img%.*}
-  class=$(node -e  "import camelcase from  'camelcase'; console.log(camelcase('$name', {pascalCase: true}))"  --input-type module)
+  class=$(node -e  "import camelcase from  'camelcase'; console.log(camelcase('$name', {pascalCase: true}).replace('K8s', 'K8S'))"  --input-type module)
   echo '  "'$name'"': $class , >> $mjs
    echo '  "'$name'"': module.exports.$class , >> $js
 done
 
 echo "}" >> $mjs
 echo "}" >> $js
+echo "export declare const IconMap: Record<string,IconType>;" >> $reactIconsAll/mi/index.d.ts
 
 cd $reactIconsAll
 cat <<< $(jq '.name = "@flanksource/icons"' package.json ) > package.json

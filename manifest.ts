@@ -12,6 +12,7 @@ export const icons: IconDefinition[] = [
       {
         files: path.resolve(__dirname, "../../../../../svg/*.svg"),
         formatter: (name) => `${name}`.replace(/_/g, "").replace(/&/g, "And"),
+        multiColor: true,
       },
     ],
     source: {
