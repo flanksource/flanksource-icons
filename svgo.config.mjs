@@ -81,7 +81,16 @@ export default {
     {
       name: 'removeAttrs',
       params: {
-        attrs: ['svg:(?!(role|viewBox|xmlns))', 'path:(?!d)', 'title:*', 'svg:xmlns.xlink'],
+        attrs: [
+          'svg:(?!(role|viewBox|xmlns))',
+          'path:(?!d)',
+          'title:*',
+          'svg:xmlns.xlink',
+          'path:fill:black',
+          'path:fill:rgba(0,0,0,0)',
+          'path:fill:rgb\\(0%, 0%, 0%\\)',
+          'path:fill:#000000',
+        ],
       },
     },
     'removeElementsByAttr',
