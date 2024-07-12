@@ -1,1 +1,62 @@
-<svg role="img" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="azure-group_svg__a"><path d="M0 0h32v32H0z"/></clipPath><clipPath id="azure-group_svg__b"><path d="M0 0h32v32H0z"/></clipPath><clipPath id="azure-group_svg__e"><path d="M0 0h32v32H0z"/></clipPath><clipPath id="azure-group_svg__f"><path d="M0 0h32v32H0z"/></clipPath><g clip-path="url(#azure-group_svg__a)" id="azure-group_svg__d"><path d="M24.09 16.16c-.86.008-1.7-.238-2.418-.71l2.398 6.257 2.367-6.203a4.5 4.5 0 0 1-2.347.656" fill="rgb(100%, 100%, 100%)"/></g><g clip-path="url(#azure-group_svg__b)" id="azure-group_svg__l" mask="url(#azure-group_svg__c)"><use href="#azure-group_svg__d"/></g><g clip-path="url(#azure-group_svg__e)" id="azure-group_svg__h"><path d="M12.035 16.25a6.64 6.64 0 0 1-3.555-1.066l3.555 9.332 3.555-9.262c-1.07.652-2.3 1-3.555.996" fill="rgb(100%, 100%, 100%)"/></g><g clip-path="url(#azure-group_svg__f)" id="azure-group_svg__n" mask="url(#azure-group_svg__g)"><use href="#azure-group_svg__h"/></g><linearGradient gradientTransform="rotate(.086)scale(1.77778)" gradientUnits="userSpaceOnUse" id="azure-group_svg__m" x1="6.7" x2="6.7" y1="7.26" y2="18.36"><stop offset=".22" stop-color="rgb(19.607843%, 83.137256%, 96.078432%)"/><stop offset="1" stop-color="rgb(9.803922%, 54.11765%, 70.19608%)"/></linearGradient><linearGradient gradientTransform="rotate(.086)scale(1.77778)" gradientUnits="userSpaceOnUse" id="azure-group_svg__o" x1="6.42" x2="7.23" y1="1.32" y2="11.39"><stop offset=".22" stop-color="rgb(19.607843%, 83.137256%, 96.078432%)"/><stop offset="1" stop-color="rgb(9.803922%, 54.11765%, 70.19608%)"/></linearGradient><image height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAkElEQVRYhe3UvQ3CQAxA4S+EEsQQLMEyzMcWLMECLECHEAUQirgAkgrJocBPsk4+Wb53uh+KoiiK4t9pEvt+9u4i3pgnCWywxSJErthjN5XAEmusQuCCw1hhlkCDGdrI28gHjE5Oyc8Fso6gwyNCjIMXkClwxlF/GelfwWmsMOsfmOk399r/jlvSekVRFN/zBEWBEeweJ/OqAAAAAElFTkSuQmCC" id="azure-group_svg__j" width="32" x="0" y="0"/><image height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAj0lEQVRYhe3UMQrCQBBG4S9RLFJYeAMv4LFsPawHsNPOTsuNTQQxK1mzWDkPhi3+YXkMzBAEQRAE/05TkO/QZXp73HFEmiuwnMhb7LHF4i1LOOHwSwFYY/NB4Gp6itUCzUvlsira2g9CIARqKdmCNFTuEM3e/28ELlgZT6vHeXhnU7LHnfERepJwqxEIguABuUMT2H3kQFEAAAAASUVORK5CYII=" id="azure-group_svg__k" width="32" x="0" y="0"/><mask id="azure-group_svg__c"><g filter="url(#azure-group_svg__i)"><use href="#azure-group_svg__j"/></g></mask><mask id="azure-group_svg__g"><g filter="url(#azure-group_svg__i)"><use href="#azure-group_svg__k"/></g></mask><filter height="100%" id="azure-group_svg__i" width="100%" x="0%" y="0%"><feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/></filter></defs><path d="M30.613 24.746c.375.004.739-.14 1.004-.406.27-.262.418-.621.418-.996a.5.5 0 0 0-.035-.235c-.55-4.441-3.094-8.07-7.93-8.07s-7.449 3.129-7.945 8.07a1.44 1.44 0 0 0 1.281 1.567h13.207Zm0 0" fill="rgb(0%, 47.058824%, 83.137256%)"/><use href="#azure-group_svg__l"/><path d="M24.09 7.234a4.463 4.463 0 1 0-.004 8.926 4.463 4.463 0 0 0 .004-8.926" fill="rgb(0%, 47.058824%, 83.137256%)"/><path d="M21.672 29.086c1.168 0 2.113-.95 2.113-2.117a1 1 0 0 0 0-.25c-.836-6.649-4.62-12.051-11.84-12.051-7.215 0-11.164 4.586-11.945 12a2.13 2.13 0 0 0 1.902 2.328h19.735Zm0 0" fill="url(#azure-group_svg__m)"/><use href="#azure-group_svg__n"/><path d="M11.98 2.914a6.663 6.663 0 0 0-6.664 6.668 6.666 6.666 0 1 0 6.664-6.668" fill="url(#azure-group_svg__o)"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<defs>
+<filter id="filter-remove-color" x="0%" y="0%" width="100%" height="100%">
+<feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+</filter>
+<image id="source-17" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVRYhe3TMQoCMRAF0KdrIyiCVxAP6M1svM/ewE62UpsRRNLGNP9BIAPD5JMQIiIiYrBVp7lnXLCrMxZccftt3HQKsMUJhwrwwLHV2CsArDHVfqq62TTU8AA9n+BZ67N//TPAghn7r/reauz1DVuzmzcQETHcG83WDSpacKbsAAAAAElFTkSuQmCC"/>
+<mask id="mask-0">
+<g filter="url(#filter-remove-color)">
+<use xlink:href="#source-17"/>
+</g>
+</mask>
+<clipPath id="clip-0">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-16" clip-path="url(#clip-0)">
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 24.089844 16.160156 C 23.230469 16.167969 22.390625 15.921875 21.671875 15.449219 L 24.070312 21.707031 L 26.4375 15.503906 C 25.730469 15.933594 24.917969 16.160156 24.089844 16.160156 "/>
+</g>
+<clipPath id="clip-1">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-19" clip-path="url(#clip-1)">
+<g mask="url(#mask-0)">
+<use xlink:href="#source-16"/>
+</g>
+</g>
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="6.7" y1="7.26" x2="6.7" y2="18.360001" gradientTransform="matrix(1.777778, 0.00266842, -0.00266842, 1.777778, 0, 0)">
+<stop offset="0.22" stop-color="rgb(19.607843%, 83.137255%, 96.078431%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(9.803922%, 54.117647%, 70.196078%)" stop-opacity="1"/>
+</linearGradient>
+<image id="source-36" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAg0lEQVRYhe2UsQ5AMBRFTxGjwWjzfb7H99nYfIChDAzSlJRicU/ylvamPXnJeyCEEEL8HROQqYDck52BCejfFmiBGkidcwt0QLPJ3CILyBRAeSAw3v34ioDZle8uiiT2AQlIIJaQKbBb+RaR/UJgYN2EbrdmIrcghM1xcpJ7pAtC/JsFatkR/9nJR1kAAAAASUVORK5CYII="/>
+<mask id="mask-1">
+<g filter="url(#filter-remove-color)">
+<use xlink:href="#source-36"/>
+</g>
+</mask>
+<clipPath id="clip-2">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-35" clip-path="url(#clip-2)">
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 12.035156 16.25 C 10.773438 16.238281 9.539062 15.871094 8.480469 15.183594 L 12.035156 24.515625 L 15.589844 15.253906 C 14.519531 15.90625 13.289062 16.253906 12.035156 16.25 "/>
+</g>
+<clipPath id="clip-3">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-38" clip-path="url(#clip-3)">
+<g mask="url(#mask-1)">
+<use xlink:href="#source-35"/>
+</g>
+</g>
+<linearGradient id="linear-pattern-1" gradientUnits="userSpaceOnUse" x1="6.42" y1="1.32" x2="7.23" y2="11.39" gradientTransform="matrix(1.777778, 0.00266842, -0.00266842, 1.777778, 0, 0)">
+<stop offset="0.22" stop-color="rgb(19.607843%, 83.137255%, 96.078431%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(9.803922%, 54.117647%, 70.196078%)" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<path fill-rule="nonzero" fill="rgb(0%, 47.058824%, 83.137255%)" fill-opacity="1" d="M 30.613281 24.746094 C 30.988281 24.75 31.351562 24.605469 31.617188 24.339844 C 31.886719 24.078125 32.035156 23.71875 32.035156 23.34375 C 32.042969 23.265625 32.03125 23.183594 32 23.109375 C 31.449219 18.667969 28.90625 15.039062 24.070312 15.039062 C 19.234375 15.039062 16.621094 18.167969 16.125 23.109375 C 16.050781 23.894531 16.621094 24.59375 17.40625 24.675781 L 30.613281 24.675781 Z M 30.613281 24.746094 "/>
+<use xlink:href="#source-19"/>
+<path fill-rule="nonzero" fill="rgb(0%, 47.058824%, 83.137255%)" fill-opacity="1" d="M 24.089844 7.234375 C 21.625 7.234375 19.625 9.230469 19.625 11.695312 C 19.625 14.160156 21.621094 16.160156 24.085938 16.160156 C 26.550781 16.160156 28.550781 14.164062 28.550781 11.699219 C 28.550781 9.234375 26.554688 7.234375 24.089844 7.234375 "/>
+<path fill-rule="nonzero" fill="url(#linear-pattern-0)" d="M 21.671875 29.085938 C 22.839844 29.085938 23.785156 28.136719 23.785156 26.96875 C 23.796875 26.886719 23.796875 26.800781 23.785156 26.71875 C 22.949219 20.070312 19.164062 14.667969 11.945312 14.667969 C 4.730469 14.667969 0.78125 19.253906 0 26.667969 C -0.113281 27.835938 0.734375 28.875 1.902344 28.996094 L 21.636719 28.996094 Z M 21.671875 29.085938 "/>
+<use xlink:href="#source-38"/>
+<path fill-rule="nonzero" fill="url(#linear-pattern-1)" d="M 11.980469 2.914062 C 10.210938 2.914062 8.515625 3.617188 7.265625 4.867188 C 6.015625 6.117188 5.3125 7.8125 5.316406 9.582031 C 5.316406 13.261719 8.300781 16.246094 11.984375 16.246094 C 15.664062 16.246094 18.648438 13.257812 18.648438 9.578125 C 18.648438 5.894531 15.660156 2.914062 11.980469 2.914062 "/>
+</svg>
