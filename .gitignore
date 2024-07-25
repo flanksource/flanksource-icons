@@ -130,3 +130,4 @@ dist
 .pnp.*
 src
 .DS_Store
+svg/output/
