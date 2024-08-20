@@ -1,3 +1,4 @@
+var prefixId = 0
 export default {
   multipass: true,
   eol: 'lf',
@@ -11,7 +12,6 @@ export default {
     'removeMetadata',
     'removeDesc',
     'removeUselessDefs',
-    'prefixIds',
     'removeEditorsNSData',
     'removeEmptyAttrs',
     'removeHiddenElems',
@@ -77,18 +77,19 @@ export default {
       },
     },
     'sortDefsChildren',
-    'removeDimensions',
+    // 'removeDimensions',
     {
       name: 'removeAttrs',
       params: {
         attrs: [
-          'svg:(?!(role|viewBox|xmlns))',
+          'svg:(?!(role|xmlns))',
           'path:(?!d)',
           'title:*',
           'svg:xmlns.xlink',
           'path:fill:black',
           'path:fill:rgba(0,0,0,0)',
           'path:fill:rgb\\(0%, 0%, 0%\\)',
+          'path:fill:"rgb\\(0%, 0%, 0%\\)"',
           'path:fill:#000000',
         ],
       },
@@ -105,6 +106,24 @@ export default {
     'removeOffCanvasPaths',
     'removeStyleElement',
     'removeScriptElement',
+    {
+      name: "addAttributesToSVGElement",
+      params: {
+        attributes: [{
+          width: "32",
+          height: "32",
+        }]
+      },
+    },
+    {
+      name: 'prefixIds',
+      params: {
+        prefix: function (a, b) {
+          console.log(a, b)
+          return prefixId++
+        }
+      }
+    },
     // 'reusePaths',
   ],
 };
