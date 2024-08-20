@@ -10,9 +10,10 @@
   "homepage": "https://github.com/flanksource/flanksource-icons#readme",
   "version": "1.0.1",
   "scripts": {
+    "build": "git submodule update --init --recursive && npm install &&  npm run svg",
     "svg": "bash make.sh",
     "prepublishOnly": "npm run svg",
-    "svgo": "rm -rf svg/output; svgo -i svg/*.svg -o svg/output --exclude d365.svg  --config svgo.config.mjs",
+    "svgo": "bash svgo.sh",
     "svg-resize": "cd svg && bash resize.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
