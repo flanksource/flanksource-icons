@@ -15,8 +15,6 @@ done
 
 echo svgo -i $files -o . --config ../svgo.config.mjs
 
-svgo -i $(cat .rgignore | grep svg) -o . --config ../svgo.config.mjs
-
 
 for img in $files; do
   name=$(basename $img)
