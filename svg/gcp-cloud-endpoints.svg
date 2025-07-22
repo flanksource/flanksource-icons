@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><defs><style>.cls-1{fill:#4285f4;}.cls-2{fill:#aecbfa;}</style></defs><title>Icon_24px_Endpoints_Color</title><g data-name="Product Icons"><g data-name="colored-32/endpoints"><g ><polygon class="cls-1" points="15 10 9 10 8 12 9 14 15 14 16 12 15 10"/><polygon id="Shape-2" data-name="Shape" class="cls-2" points="16 12 15 10 9.51 10 9 10 8 12 16 12"/></g></g><polygon class="cls-1" points="18 6 15 6 18.97 12 20.47 9.75 18 6"/><polygon class="cls-2" points="21.95 12 20.47 9.75 18.97 12 18.97 12 15 18 18 18 21.95 12"/><polygon class="cls-1" points="5.95 18 8.95 18 4.98 12 3.48 14.25 5.95 18"/><polygon class="cls-2" points="2 12 3.48 14.25 4.98 12 4.98 12 8.95 6 5.95 6 2 12"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 20 13.332031 L 12 13.332031 L 10.667969 16 L 12 18.667969 L 20 18.667969 L 21.332031 16 Z M 20 13.332031 "/>
+<path fill-rule="nonzero" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 21.332031 16 L 20 13.332031 L 12 13.332031 L 10.667969 16 Z M 21.332031 16 "/>
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 24 8 L 20 8 L 25.292969 16 L 27.292969 13 Z M 24 8 "/>
+<path fill-rule="nonzero" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 29.265625 16 L 27.292969 13 L 25.292969 16 L 20 24 L 24 24 Z M 29.265625 16 "/>
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 7.933594 24 L 11.933594 24 L 6.640625 16 L 4.640625 19 Z M 7.933594 24 "/>
+<path fill-rule="nonzero" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 2.667969 16 L 4.640625 19 L 6.640625 16 L 11.933594 8 L 7.933594 8 Z M 2.667969 16 "/>
+</svg>
