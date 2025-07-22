@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><defs><style>.cls-1{fill:#aecbfa;}.cls-2{fill:#669df6;}.cls-3{fill:#4285f4;}</style></defs><title>Icon_24px_CloudCode_Color</title><g data-name="Product Icons"><g ><g data-name="Layer 1-2"><polygon class="cls-1" points="5.45 8.53 8.55 5.42 11.65 8.53 8.55 11.65 5.45 8.53"/><polygon class="cls-2" points="2 12 5.1 8.88 8.2 12 5.1 15.12 2 12"/><polygon class="cls-3" points="5.45 15.47 8.55 12.35 11.65 15.47 8.55 18.59 5.45 15.47"/><polygon class="cls-1" points="12.35 8.53 15.45 5.42 18.55 8.53 15.45 11.65 12.35 8.53"/><polygon class="cls-2" points="15.8 12 18.9 8.88 22 12 18.9 15.12 15.8 12"/><polygon class="cls-3" points="12.35 15.47 15.45 12.35 18.55 15.47 15.45 18.59 12.35 15.47"/></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="nonzero" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 7.265625 11.375 L 11.398438 7.226562 L 15.535156 11.375 L 11.398438 15.535156 Z M 7.265625 11.375 "/>
+<path fill-rule="nonzero" fill="rgb(40%, 61.568627%, 96.470588%)" fill-opacity="1" d="M 2.667969 16 L 6.800781 11.839844 L 10.933594 16 L 6.800781 20.160156 Z M 2.667969 16 "/>
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 7.265625 20.625 L 11.398438 16.464844 L 15.535156 20.625 L 11.398438 24.785156 Z M 7.265625 20.625 "/>
+<path fill-rule="nonzero" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 16.464844 11.375 L 20.601562 7.226562 L 24.734375 11.375 L 20.601562 15.535156 Z M 16.464844 11.375 "/>
+<path fill-rule="nonzero" fill="rgb(40%, 61.568627%, 96.470588%)" fill-opacity="1" d="M 21.066406 16 L 25.199219 11.839844 L 29.332031 16 L 25.199219 20.160156 Z M 21.066406 16 "/>
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 16.464844 20.625 L 20.601562 16.464844 L 24.734375 20.625 L 20.601562 24.785156 Z M 16.464844 20.625 "/>
+</svg>

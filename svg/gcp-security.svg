@@ -1,12 +1,7 @@
-<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	 x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" overflow="visible" xml:space="preserve">
-<g >
-	<g transform="translate(4.000000, 1.000000)">
-		<path fill="#85A4E6" d="M8,0l-9,4v6c0,5.6,3.8,10.7,9,12c5.2-1.3,9-6.4,9-12V4L8,0z M8,11h7c-0.5,4.1-3.3,7.8-7,8.9V11l-7,0V5.3
-			l7-3.1V11z"/>
-		<path fill="#5C85DE" d="M8,0v22c5.2-1.3,9-6.4,9-12V4L8,0z M15,11c-0.5,4.1-3.3,7.8-7,8.9V11L15,11z"/>
-		<path fill-rule="evenodd" fill="#3367D6" d="M17,11h-2c0,0,0,0.3-0.1,0.6L17,11z"/>
-		<polygon fill-rule="evenodd" fill="#3367D6" points="-1,11 1,11 1,10.4 		"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="nonzero" fill="rgb(52.156863%, 64.313725%, 90.196078%)" fill-opacity="1" d="M 16 1.332031 L 4 6.667969 L 4 14.667969 C 4 22.132812 9.066406 28.933594 16 30.667969 C 22.933594 28.933594 28 22.132812 28 14.667969 L 28 6.667969 Z M 16 16 L 25.332031 16 C 24.667969 21.464844 20.933594 26.398438 16 27.867188 L 16 16 L 6.667969 16 L 6.667969 8.398438 L 16 4.265625 Z M 16 16 "/>
+<path fill-rule="nonzero" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 16 1.332031 L 16 30.667969 C 22.933594 28.933594 28 22.132812 28 14.667969 L 28 6.667969 Z M 25.332031 16 C 24.667969 21.464844 20.933594 26.398438 16 27.867188 L 16 16 Z M 25.332031 16 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 28 16 L 25.332031 16 C 25.332031 16 25.332031 16.398438 25.199219 16.800781 Z M 28 16 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 4 16 L 6.667969 16 L 6.667969 15.199219 Z M 4 16 "/>
 </svg>

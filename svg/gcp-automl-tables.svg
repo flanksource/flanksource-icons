@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><defs><style>.cls-1{fill:#4285f4;}.cls-2{fill:#669df6;}.cls-3{fill:#aecbfa;}</style></defs><title>Icon_24px_AutoMLTables_Color</title><g data-name="Product Icons"><line class="cls-1" x1="19.74" y1="10.23" x2="20.05" y2="9.68"/><path class="cls-1" d="M6.82,19.46l.95,1.65h9.49L22,12.89,20.1,9.6l-4.74,8.21H7.77Z"/><path class="cls-1" d="M17.18,4.54l-.95-1.65H6.74L2,11.11,3.9,14.4,8.64,6.19h7.59Z"/><polygon class="cls-2" points="13.61 13.32 15.04 14.23 15.04 9.99 11.65 7.98 11.65 9.94 13.61 11.1 13.61 13.32"/><path class="cls-3" d="M12.68,16V11.78l-3.39-2v4.08Z"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 26.320312 13.640625 L 26.734375 12.90625 "/>
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 9.09375 25.945312 L 10.359375 28.148438 L 23.011719 28.148438 L 29.332031 17.1875 L 26.800781 12.800781 L 20.480469 23.746094 L 10.359375 23.746094 Z M 9.09375 25.945312 "/>
+<path fill-rule="nonzero" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 22.90625 6.054688 L 21.640625 3.851562 L 8.988281 3.851562 L 2.667969 14.8125 L 5.199219 19.199219 L 11.519531 8.253906 L 21.640625 8.253906 Z M 22.90625 6.054688 "/>
+<path fill-rule="nonzero" fill="rgb(40%, 61.568627%, 96.470588%)" fill-opacity="1" d="M 18.148438 17.761719 L 20.054688 18.972656 L 20.054688 13.320312 L 15.535156 10.640625 L 15.535156 13.253906 L 18.148438 14.800781 Z M 18.148438 17.761719 "/>
+<path fill-rule="nonzero" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 16.90625 21.332031 L 16.90625 15.707031 L 12.386719 13.039062 L 12.386719 18.480469 Z M 16.90625 21.332031 "/>
+</svg>

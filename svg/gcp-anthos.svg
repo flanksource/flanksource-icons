@@ -1,17 +1,7 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FEBC00;}
-	.st1{fill:#EE3C2B;}
-	.st2{fill:#2BAA4F;}
-	.st3{fill:#3982F8;}
-</style>
-<polygon class="st0" points="6,15.8 12,5.3 18,15.8 23,20.8 23.2,21 23.2,21 12,1.6 0.8,21 0.8,21 1,20.8 "/>
-<g>
-	<g>
-		<polygon class="st1" points="12,9.7 1,20.8 5.6,18.7 12,12.3 18.4,18.7 23,20.8 		"/>
-	</g>
-</g>
-<polygon class="st2" points="6,20.6 1.8,22.4 22.2,22.4 18,20.6 "/>
-<polygon class="st3" points="23,20.8 12,15.8 1,20.8 0,22.4 1.8,22.4 12,17.8 22.2,22.4 24,22.4 "/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="nonzero" fill="rgb(99.607843%, 73.72549%, 0%)" fill-opacity="1" d="M 8 21.066406 L 16 7.066406 L 24 21.066406 L 30.933594 28 L 16 2.132812 L 1.066406 28 Z M 8 21.066406 "/>
+<path fill-rule="nonzero" fill="rgb(93.333333%, 23.529412%, 16.862745%)" fill-opacity="1" d="M 16 12.933594 L 1.332031 27.734375 L 7.464844 24.933594 L 16 16.398438 L 24.535156 24.933594 L 30.667969 27.734375 Z M 16 12.933594 "/>
+<path fill-rule="nonzero" fill="rgb(16.862745%, 66.666667%, 30.980392%)" fill-opacity="1" d="M 8 27.464844 L 2.398438 29.867188 L 29.601562 29.867188 L 24 27.464844 Z M 8 27.464844 "/>
+<path fill-rule="nonzero" fill="rgb(22.352941%, 50.980392%, 97.254902%)" fill-opacity="1" d="M 30.667969 27.734375 L 16 21.066406 L 1.332031 27.734375 L 0 29.867188 L 2.398438 29.867188 L 16 23.734375 L 29.601562 29.867188 L 32 29.867188 Z M 30.667969 27.734375 "/>
 </svg>

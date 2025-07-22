@@ -1,26 +1,34 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-<g transform="translate(0.000000, 1.000000)">
-	<g >
-		<rect y="0" fill="none" width="24" height="24"/>
-		<g transform="translate(2.000000, 7.000000)">
-			<g >
-			</g>
-			<defs>
-				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-2" y="-7" width="24" height="24">
-					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-				</filter>
-			</defs>
-				<mask maskUnits="userSpaceOnUse" x="-2" y="-7" width="24" height="24" id="mask-2_00000060711828738252312490000013807154105866559643_">
-				<g filter="url(#Adobe_OpacityMaskFilter)">
-						<path id="path-1_00000107547131941502402830000003049394669516948412_" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="
-						M16.4,3.5c2.3,0.2,4.1,2,4.1,4.3c0,2.4-2,4.3-4.4,4.3H4.8c-2.9,0-5.2-2.3-5.2-5.2c0-2.7,2-4.9,4.7-5.1C5.3-0.3,7.5-1.8,10-1.8
-						C13.2-1.8,15.8,0.5,16.4,3.5z M16.1,10.3c1.5,0,2.6-1.2,2.6-2.6s-1.2-2.6-2.6-2.6h-1.3V4.7C14.8,2.1,12.7,0,10,0
-						C7.8,0,5.9,1.4,5.4,3.4H4.8C2.8,3.4,1.2,5,1.2,6.9s1.6,3.4,3.5,3.4H16.1z"/>
-				</g>
-			</mask>
-				<polygon id="Fill-5" mask="url(#mask-2_00000060711828738252312490000013807154105866559643_)" fill-rule="evenodd" clip-rule="evenodd" fill="#5C85DE" points="
-				-2,17 22,17 22,-7 -2,-7 			"/>
-		</g>
-	</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<defs>
+<filter id="filter-remove-color" x="0%" y="0%" width="100%" height="100%">
+<feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+</filter>
+<image id="source-17" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABqElEQVRYhe3VvWsVQRQF8F8SP5JGEQWxUBCCaGEQOzsbQRFjo5W1RboIgiBILKzyBwSCjY0WEhAkiQgWIqhBC7UQYmFltIgINioB9VnMfTB52Yfue7uVe2AZduece87O7N6hQYMG/zsGetAM4wyOYy9a+IAnWMC3qsIV4SJWw7To+oxLGKzaeDPudJgtY1566/cdc4sYqTLAzaz4HA4VcA7jfsab19sWb8CprOjlf+Bfz/gTvZruxhSWpI+qhVsl9HdD8xFby5qfw1fr9/QX9pWosT80LZwuY342E67gqvS7jZUpEngZdV7hGg7+TbAdX0L0CNt6MM1x28ZVnMGWboLJIH6KMP3iJK5gWlqFdpB7uvSJB0GYqsC8E4O4kYW4UER6G5PjNQRoh3geHo/zh22sxThcU4DfUoeEI0UBlmM8UVMAUkuHoaLJ89LyrOFoDeab8CY8looIQ3gdhFXpyK0KI5hV0KI7D4sDeIadcf9Oaijf+zDfhWPYE/dPpeb2s5tgFC+sbyJVXQvYkZt1Oy4HpFNwXFqVfrriD+kDn8PDPuo0aFAP/gAvjoMylbdpsQAAAABJRU5ErkJggg=="/>
+<mask id="mask-0">
+<g filter="url(#filter-remove-color)">
+<use xlink:href="#source-17"/>
 </g>
+</mask>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 0 1 L 32 1 L 32 32 L 0 32 Z M 0 1 "/>
+</clipPath>
+<clipPath id="clip-1">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-16" clip-path="url(#clip-1)">
+<g clip-path="url(#clip-0)">
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 0 33.332031 L 32 33.332031 L 32 1.332031 L 0 1.332031 Z M 0 33.332031 "/>
+</g>
+</g>
+<clipPath id="clip-2">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-19" clip-path="url(#clip-2)">
+<g mask="url(#mask-0)">
+<use xlink:href="#source-16"/>
+</g>
+</g>
+</defs>
+<use xlink:href="#source-19"/>
 </svg>

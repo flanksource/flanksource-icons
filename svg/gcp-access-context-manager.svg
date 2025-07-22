@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><defs><style>.cls-1{fill:#aecbfa;}.cls-1,.cls-2,.cls-3{fill-rule:evenodd;}.cls-2{fill:#4285f4;}.cls-3{fill:#669df6;}</style></defs><title>Icon_24px_ACM_Color</title><g data-name="Product Icons"><polygon class="cls-1" points="12 19.27 4.72 12 12 4.72 15.64 8.36 17 7 12 2 2 12 12 22 17 17 15.64 15.64 12 19.27"/><polygon class="cls-2" points="18.36 8.36 22 12 18.36 15.64 18.36 8.36"/><polygon class="cls-3" points="12 8.36 15.64 12 12 15.64 12 8.36"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="evenodd" fill="rgb(68.235294%, 79.607843%, 98.039216%)" fill-opacity="1" d="M 16 25.691406 L 6.292969 16 L 16 6.292969 L 20.851562 11.148438 L 22.667969 9.332031 L 16 2.667969 L 2.667969 16 L 16 29.332031 L 22.667969 22.667969 L 20.851562 20.851562 Z M 16 25.691406 "/>
+<path fill-rule="evenodd" fill="rgb(25.882353%, 52.156863%, 95.686275%)" fill-opacity="1" d="M 24.480469 11.148438 L 29.332031 16 L 24.480469 20.851562 Z M 24.480469 11.148438 "/>
+<path fill-rule="evenodd" fill="rgb(40%, 61.568627%, 96.470588%)" fill-opacity="1" d="M 16 11.148438 L 20.851562 16 L 16 20.851562 Z M 16 11.148438 "/>
+</svg>

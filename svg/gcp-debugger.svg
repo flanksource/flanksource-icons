@@ -1,21 +1,16 @@
-<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	 x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" overflow="visible" xml:space="preserve">
-<g >
-	<rect y="0" fill="none" width="24" height="24"/>
-	<g transform="translate(2.000000, 2.000000)">
-		<polygon id="Fill-1" fill-rule="evenodd" fill="#3367D6" points="3.4,10.7 7.4,10.7 7.4,9.3 3.4,9.3 		"/>
-		<polygon id="Fill-2" fill-rule="evenodd" fill="#3367D6" points="2.6,18.4 9.2,11.8 8.3,10.9 1.7,17.5 		"/>
-		<polygon id="Fill-3" fill-rule="evenodd" fill="#3367D6" points="2,2.9 8.6,9.5 9.5,8.6 2.9,2 		"/>
-		<polygon id="Fill-4" fill-rule="evenodd" fill="#3367D6" points="12.6,10.7 16.6,10.7 16.6,9.3 12.6,9.3 		"/>
-		<polygon id="Fill-5" fill-rule="evenodd" fill="#3367D6" points="10.8,11.8 17.1,18 18,17.1 11.8,10.8 		"/>
-		<polygon id="Fill-6" fill-rule="evenodd" fill="#3367D6" points="12.5,8.5 18.3,2.6 17.4,1.7 11.5,7.5 		"/>
-		<polygon id="Fill-7" fill-rule="evenodd" fill="#5C85DE" points="-0.5,20.5 4,20.5 4,16 -0.5,16 		"/>
-		<polygon id="Fill-8" fill-rule="evenodd" fill="#5C85DE" points="16,20.5 20.5,20.5 20.5,16 16,16 		"/>
-		<polygon id="Fill-9" fill-rule="evenodd" fill="#5C85DE" points="-0.5,4 4,4 4,-0.5 -0.5,-0.5 		"/>
-		<polygon id="Fill-10" fill-rule="evenodd" fill="#5C85DE" points="16,4 20.5,4 20.5,-0.5 16,-0.5 		"/>
-		<polygon id="Fill-11" fill-rule="evenodd" fill="#85A4E6" points="6.2,13.8 13.8,13.8 13.8,6.2 6.2,6.2 		"/>
-		<polygon id="Fill-12" fill-rule="evenodd" fill="#5C85DE" points="-0.5,12.2 4,12.2 4,7.8 -0.5,7.8 		"/>
-		<polygon id="Fill-13" fill-rule="evenodd" fill="#5C85DE" points="16,12.2 20.5,12.2 20.5,7.8 16,7.8 		"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 7.199219 16.933594 L 12.535156 16.933594 L 12.535156 15.066406 L 7.199219 15.066406 Z M 7.199219 16.933594 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 6.132812 27.199219 L 14.933594 18.398438 L 13.734375 17.199219 L 4.933594 26 Z M 6.132812 27.199219 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 5.332031 6.535156 L 14.132812 15.332031 L 15.332031 14.132812 L 6.535156 5.332031 Z M 5.332031 6.535156 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 19.464844 16.933594 L 24.800781 16.933594 L 24.800781 15.066406 L 19.464844 15.066406 Z M 19.464844 16.933594 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 17.066406 18.398438 L 25.464844 26.667969 L 26.667969 25.464844 L 18.398438 17.066406 Z M 17.066406 18.398438 "/>
+<path fill-rule="evenodd" fill="rgb(20%, 40.392157%, 83.921569%)" fill-opacity="1" d="M 19.332031 14 L 27.066406 6.132812 L 25.867188 4.933594 L 18 12.667969 Z M 19.332031 14 "/>
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 2 30 L 8 30 L 8 24 L 2 24 Z M 2 30 "/>
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 24 30 L 30 30 L 30 24 L 24 24 Z M 24 30 "/>
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 2 8 L 8 8 L 8 2 L 2 2 Z M 2 8 "/>
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 24 8 L 30 8 L 30 2 L 24 2 Z M 24 8 "/>
+<path fill-rule="evenodd" fill="rgb(52.156863%, 64.313725%, 90.196078%)" fill-opacity="1" d="M 10.933594 21.066406 L 21.066406 21.066406 L 21.066406 10.933594 L 10.933594 10.933594 Z M 10.933594 21.066406 "/>
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 2 18.933594 L 8 18.933594 L 8 13.066406 L 2 13.066406 Z M 2 18.933594 "/>
+<path fill-rule="evenodd" fill="rgb(36.078431%, 52.156863%, 87.058824%)" fill-opacity="1" d="M 24 18.933594 L 30 18.933594 L 30 13.066406 L 24 13.066406 Z M 24 18.933594 "/>
 </svg>
