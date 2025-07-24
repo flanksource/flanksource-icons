@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.702999" height="32" viewBox="0 0 30.702999 32">
 <defs>
-<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="250.410004" y1="-315.390015" x2="346.76001" y2="-315.390015" gradientTransform="matrix(0.199751, -0.11482, 0.11482, 0.199751, -9.530623, 124.285422)">
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="250.410004" y1="-315.390015" x2="346.76001" y2="-315.390015" gradientTransform="matrix(0.199751, -0.11482, 0.11482, 0.199751, -9.530623, 124.285423)">
 <stop offset="0" stop-color="rgb(16.078431%, 50.196078%, 95.294118%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(14.901961%, 32.156863%, 85.098039%)" stop-opacity="1"/>
 </linearGradient>
-<linearGradient id="linear-pattern-1" gradientUnits="userSpaceOnUse" x1="268.190002" y1="-355.209991" x2="332.809998" y2="-355.209991" gradientTransform="matrix(0.197861, -0.113734, 0.113734, 0.197861, 23.183145, 156.403042)">
+<linearGradient id="linear-pattern-1" gradientUnits="userSpaceOnUse" x1="268.190002" y1="-355.209991" x2="332.809998" y2="-355.209991" gradientTransform="matrix(0.197861, -0.113734, 0.113734, 0.197861, 23.183146, 156.403046)">
 <stop offset="0" stop-color="rgb(16.078431%, 50.196078%, 95.294118%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(14.901961%, 32.156863%, 85.098039%)" stop-opacity="1"/>
 </linearGradient>
-<linearGradient id="linear-pattern-2" gradientUnits="userSpaceOnUse" x1="286.929993" y1="-392.730011" x2="320.279999" y2="-392.730011" gradientTransform="matrix(0.197861, -0.113734, 0.113734, 0.197861, 23.183145, 156.403042)">
+<linearGradient id="linear-pattern-2" gradientUnits="userSpaceOnUse" x1="286.929993" y1="-392.730011" x2="320.279999" y2="-392.730011" gradientTransform="matrix(0.197861, -0.113734, 0.113734, 0.197861, 23.183146, 156.403046)">
 <stop offset="0" stop-color="rgb(16.078431%, 50.196078%, 95.294118%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(14.901961%, 32.156863%, 85.098039%)" stop-opacity="1"/>
 </linearGradient>
-<linearGradient id="linear-pattern-3" gradientUnits="userSpaceOnUse" x1="8366.580078" y1="2144.550049" x2="8266.30957" y2="2144.550049" gradientTransform="matrix(-0.199751, 0.11482, -0.11482, -0.199751, 1926.358985, -520.889032)">
+<linearGradient id="linear-pattern-3" gradientUnits="userSpaceOnUse" x1="8366.580078" y1="2144.550049" x2="8266.30957" y2="2144.550049" gradientTransform="matrix(-0.199751, 0.11482, -0.11482, -0.199751, 1926.359009, -520.889038)">
 <stop offset="0" stop-color="rgb(16.078431%, 50.196078%, 95.294118%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(14.901961%, 32.156863%, 85.098039%)" stop-opacity="1"/>
 </linearGradient>
-<linearGradient id="linear-pattern-4" gradientUnits="userSpaceOnUse" x1="8352.459961" y1="2103.860107" x2="8283.620117" y2="2103.860107" gradientTransform="matrix(-0.199751, 0.11482, -0.11482, -0.199751, 1926.358985, -520.889032)">
+<linearGradient id="linear-pattern-4" gradientUnits="userSpaceOnUse" x1="8352.459961" y1="2103.860107" x2="8283.620117" y2="2103.860107" gradientTransform="matrix(-0.199751, 0.11482, -0.11482, -0.199751, 1926.359009, -520.889038)">
 <stop offset="0" stop-color="rgb(16.078431%, 50.196078%, 95.294118%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(14.901961%, 32.156863%, 85.098039%)" stop-opacity="1"/>
 </linearGradient>
-<linearGradient id="linear-pattern-5" gradientUnits="userSpaceOnUse" x1="8338.519531" y1="2064.090088" x2="8300.280273" y2="2064.090088" gradientTransform="matrix(-0.199751, 0.11482, -0.11482, -0.199751, 1926.358985, -520.889032)">
+<linearGradient id="linear-pattern-5" gradientUnits="userSpaceOnUse" x1="8338.519531" y1="2064.090088" x2="8300.280273" y2="2064.090088" gradientTransform="matrix(-0.199751, 0.11482, -0.11482, -0.199751, 1926.359009, -520.889038)">
 <stop offset="0" stop-color="rgb(16.078431%, 50.196078%, 95.294118%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(14.901961%, 32.156863%, 85.098039%)" stop-opacity="1"/>
 </linearGradient>
