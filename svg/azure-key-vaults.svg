@@ -20,7 +20,7 @@
 <stop offset="0.88" stop-color="rgb(99.607843%, 67.45098%, 9.803922%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(99.607843%, 63.137255%, 10.588235%)" stop-opacity="1"/>
 </radialGradient>
-<image id="source-19" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAMUlEQVRYhe3OwQkAIBADwVPsv2UtwoAczvwTtgoAgMZW4mRebMfrgAgBAloH7FgFXzu6kQEVBQaj3QAAAABJRU5ErkJggg=="/>
+<image id="source-19" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAKUlEQVRYhe3OwQkAAAgDsaL77+wS/QjJAMclAAA8to3INCIGDBh4PQAHZ5sAFPPaN7IAAAAASUVORK5CYII="/>
 <mask id="mask-0">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-19"/>
@@ -40,7 +40,7 @@
 <use xlink:href="#source-18"/>
 </g>
 </g>
-<image id="source-36" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAN0lEQVRYhe3OsQ2AMAADwUvBCOy/HzsgMgKhSMVf/ZJNkvzd+NifOF6aGxeeHQdW+6XxJEmSBCajXQQDb7qlMgAAAABJRU5ErkJggg=="/>
+<image id="source-36" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAM0lEQVRYhe3OsQ2AMADAsCD1Af7/sSdQTkB0YMGeM6QA/u542Z/VeGiualZr6wgAAL52A1pKAwIdHPdFAAAAAElFTkSuQmCC"/>
 <mask id="mask-1">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-36"/>
@@ -60,7 +60,7 @@
 <use xlink:href="#source-35"/>
 </g>
 </g>
-<image id="source-53" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAN0lEQVRYhe3OwQmAMAAEwbUG67M5S/QtxA4ECeTjzHsPrgD4u+1jf1T7y25UV3VW98QvAADWeQAloQQCIJarRwAAAABJRU5ErkJggg=="/>
+<image id="source-53" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAANklEQVRYhe3OwQmAMAAEwbUG67M4W/QvsQNBAvk4896DKwD+bvvYH9X+shvVVZ3VPfELAIB1HiWdBALIdQ0+AAAAAElFTkSuQmCC"/>
 <mask id="mask-2">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-53"/>

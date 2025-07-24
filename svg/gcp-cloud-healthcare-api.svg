@@ -4,7 +4,7 @@
 <filter id="filter-remove-color" x="0%" y="0%" width="100%" height="100%">
 <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
 </filter>
-<image id="source-17" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAATElEQVRYhe3RwQnAIAxG4ae0UwjuP1fXaKEemgU03vo+CPyXhJCApL8rid4D6JEv4MmvM6cBb1RbHVK3rbMo84ICnJFvvktIkiRJ0wZrsAY5rMYjAQAAAABJRU5ErkJggg=="/>
+<image id="source-17" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAP0lEQVRYhe3OywkAIBAD0VHsQrD/uqxD0IsN+LmI8yCQyy4BSb8LB7cJKLNXoJ3PWZOBPpN3n8RrcyRJkqRXDcmoBDi0cUSFAAAAAElFTkSuQmCC"/>
 <mask id="mask-0">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-17"/>

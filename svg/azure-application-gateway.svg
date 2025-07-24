@@ -16,7 +16,7 @@
 <stop offset="0.72" stop-color="rgb(97.254902%, 97.254902%, 97.254902%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(98.823529%, 98.823529%, 98.823529%)" stop-opacity="1"/>
 </linearGradient>
-<image id="source-20" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAfklEQVRYhe3SQQrCMBAF0KdVr+AJ3Or9T+HSE7gXiptCjZu4kbY40OKi8yAMZDLwSUJKa7cJnj/hODHX4VrrT3bBABec0Yz0W9yWDNDgUOv3LRTsB/YnbYMBPqJPN3uA2fw9QPQPFLzqGuqVpQM8cB+ZK3iij4ZIKaWUUlq3NzGTERK39yLrAAAAAElFTkSuQmCC"/>
+<image id="source-20" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAfUlEQVRYhe3SMQoCMRAF0KerHsHeG+j9T2HlCewFsVKMzdpIdjGwi4X/QQhkMuGThIh/t2jcv8N2pO+OIx7fHrhqDHDAHt1A/YrTnAE6bPr58xYK1pX1UcvGAG+tTzd5gMn8PEDrHyh49qNWK3MHuOA80FdwUw8XEREREYNehDwRGSbxjjoAAAAASUVORK5CYII="/>
 <mask id="mask-0">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-20"/>
@@ -43,7 +43,7 @@
 <stop offset="0.72" stop-color="rgb(97.254902%, 97.254902%, 97.254902%)" stop-opacity="1"/>
 <stop offset="1" stop-color="rgb(98.823529%, 98.823529%, 98.823529%)" stop-opacity="1"/>
 </linearGradient>
-<image id="source-39" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAcElEQVRYhe3RQQqAIBCF4V+JNkH7TtYJO11Qu5bZxiCjRU6Ui94HgzDo8FQQKcwZzzVAH9ejAMzAcHdQZQzggA5oSS+xAnXOoCcBfKzzK/qcQVmb31A8gPULQqyV9Av2/icBRmC56E/GmSIiIiLyUxvGow4T79r06gAAAABJRU5ErkJggg=="/>
+<image id="source-39" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAcElEQVRYhe3RMQoCMRQE0JdlEUGw36t5P08naGdpLLQxWLgRTOE8SPMhwySfiMFK570tDtg184oLjp8GzZ0FChbsvT7ihs2aoN4CMD1P+4vT2pChhhf4ZgXVY+elmdVfFKg44fpmfu7MjIiIiIg/dQfmbw0Tn6jjEwAAAABJRU5ErkJggg=="/>
 <mask id="mask-1">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-39"/>

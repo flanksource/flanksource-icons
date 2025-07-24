@@ -4,38 +4,65 @@
 <filter id="filter-remove-color" x="0%" y="0%" width="100%" height="100%">
 <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
 </filter>
+<image id="source-18" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAASElEQVRYhe3VuwrAIBAF0fEB+f+vtUts7N0FUzkH7C4y3YIk6XYluHuAttkM4MsG9OCurnfcL58aYIABBhiQEb0FL/HDJSllAu60AyO4iHqOAAAAAElFTkSuQmCC"/>
 <mask id="mask-0">
 <g filter="url(#filter-remove-color)">
-<rect x="-3.2" y="-3.2" width="38.4" height="38.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.05"/>
+<use xlink:href="#source-18"/>
 </g>
 </mask>
 <clipPath id="clip-0">
 <rect x="0" y="0" width="32" height="32"/>
 </clipPath>
-<g id="source-9" clip-path="url(#clip-0)">
+<g id="source-17" clip-path="url(#clip-0)">
 <path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 17.332031 22.210938 L 17.332031 13.332031 L 10 13.332031 L 10 21.769531 C 10 22.792969 10.230469 23.777344 10.628906 24.667969 L 14.878906 24.667969 C 16.234375 24.667969 17.332031 23.566406 17.332031 22.210938 Z M 17.332031 22.210938 "/>
 </g>
-<mask id="mask-1">
-<g filter="url(#filter-remove-color)">
-<rect x="-3.2" y="-3.2" width="38.4" height="38.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.07"/>
-</g>
-</mask>
 <clipPath id="clip-1">
 <rect x="0" y="0" width="32" height="32"/>
 </clipPath>
-<g id="source-13" clip-path="url(#clip-1)">
-<path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 10 13.332031 L 10 21.769531 C 10 22.542969 10.132812 23.292969 10.371094 24 L 14.808594 24 C 15.957031 24 16.886719 23.070312 16.886719 21.917969 L 16.886719 13.332031 Z M 10 13.332031 "/>
+<g id="source-20" clip-path="url(#clip-1)">
+<g mask="url(#mask-0)">
+<use xlink:href="#source-17"/>
 </g>
-<mask id="mask-2">
+</g>
+<image id="source-34" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAATUlEQVRYhe3VsQ6AIAwA0RNZ/P+vxcTIyoRNZePeSgu3AZKk3R3BuQuok/MbaJmA2aWj82P2yTwOULKLqxhggAEGGBD9jCJz758QaV8dF+AEIQa2OskAAAAASUVORK5CYII="/>
+<mask id="mask-1">
 <g filter="url(#filter-remove-color)">
-<rect x="-3.2" y="-3.2" width="38.4" height="38.4" fill="rgb(0%, 0%, 0%)" fill-opacity="0.09"/>
+<use xlink:href="#source-34"/>
 </g>
 </mask>
 <clipPath id="clip-2">
 <rect x="0" y="0" width="32" height="32"/>
 </clipPath>
-<g id="source-17" clip-path="url(#clip-2)">
+<g id="source-33" clip-path="url(#clip-2)">
+<path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 10 13.332031 L 10 21.769531 C 10 22.542969 10.132812 23.292969 10.371094 24 L 14.808594 24 C 15.957031 24 16.886719 23.070312 16.886719 21.917969 L 16.886719 13.332031 Z M 10 13.332031 "/>
+</g>
+<clipPath id="clip-3">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-36" clip-path="url(#clip-3)">
+<g mask="url(#mask-1)">
+<use xlink:href="#source-33"/>
+</g>
+</g>
+<image id="source-50" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAU0lEQVRYhe3VOwqAQAwA0fETkL3/SbWy0huEEIQtnNcmgal2QZL0d0txbwCRzE/g6QTsxb0AjmR+dQPWztGXDDDAAAOmB1T/ggC2ZH7TfIolTfcCbEkGGk1SBOYAAAAASUVORK5CYII="/>
+<mask id="mask-2">
+<g filter="url(#filter-remove-color)">
+<use xlink:href="#source-50"/>
+</g>
+</mask>
+<clipPath id="clip-4">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-49" clip-path="url(#clip-4)">
 <path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 16.445312 13.332031 L 10 13.332031 L 10 21.769531 C 10 22.304688 10.066406 22.828125 10.183594 23.332031 L 14.738281 23.332031 C 15.679688 23.332031 16.445312 22.570312 16.445312 21.625 Z M 16.445312 13.332031 "/>
+</g>
+<clipPath id="clip-5">
+<rect x="0" y="0" width="32" height="32"/>
+</clipPath>
+<g id="source-52" clip-path="url(#clip-5)">
+<g mask="url(#mask-2)">
+<use xlink:href="#source-49"/>
+</g>
 </g>
 <linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="4.648" y1="14.648" x2="23.403" y2="33.403" gradientTransform="matrix(0.666667, 0, 0, 0.666667, 0, 0)">
 <stop offset="0" stop-color="rgb(34.901961%, 38.039216%, 76.470588%)" stop-opacity="1"/>
@@ -45,15 +72,9 @@
 <path fill-rule="nonzero" fill="rgb(31.372549%, 34.901961%, 78.823529%)" fill-opacity="1" d="M 29.332031 14.667969 L 29.332031 20 C 29.332031 22.210938 27.542969 24 25.332031 24 C 23.125 24 21.332031 22.210938 21.332031 20 L 21.332031 13.332031 L 28 13.332031 C 28.738281 13.332031 29.332031 13.929688 29.332031 14.667969 Z M 25.332031 10.667969 C 26.804688 10.667969 28 9.472656 28 8 C 28 6.527344 26.804688 5.332031 25.332031 5.332031 C 23.859375 5.332031 22.667969 6.527344 22.667969 8 C 22.667969 9.472656 23.859375 10.667969 25.332031 10.667969 Z M 25.332031 10.667969 "/>
 <path fill-rule="nonzero" fill="rgb(48.235294%, 51.372549%, 92.156863%)" fill-opacity="1" d="M 23.332031 14.667969 L 23.332031 22 C 23.332031 25.828125 20.105469 28.902344 16.222656 28.652344 C 12.679688 28.421875 10 25.320312 10 21.769531 L 10 13.332031 L 22 13.332031 C 22.738281 13.332031 23.332031 13.929688 23.332031 14.667969 Z M 16.667969 11.332031 C 18.875 11.332031 20.667969 9.542969 20.667969 7.332031 C 20.667969 5.125 18.875 3.332031 16.667969 3.332031 C 14.457031 3.332031 12.667969 5.125 12.667969 7.332031 C 12.667969 9.542969 14.457031 11.332031 16.667969 11.332031 Z M 16.667969 11.332031 "/>
 <path fill-rule="nonzero" fill="rgb(48.235294%, 51.372549%, 92.156863%)" fill-opacity="1" d="M 20.667969 7.332031 C 20.667969 9.542969 18.875 11.332031 16.667969 11.332031 C 14.457031 11.332031 12.667969 9.542969 12.667969 7.332031 C 12.667969 5.125 14.457031 3.332031 16.667969 3.332031 C 18.875 3.332031 20.667969 5.125 20.667969 7.332031 Z M 20.667969 7.332031 "/>
-<g mask="url(#mask-0)">
-<use xlink:href="#source-9"/>
-</g>
-<g mask="url(#mask-1)">
-<use xlink:href="#source-13"/>
-</g>
-<g mask="url(#mask-2)">
-<use xlink:href="#source-17"/>
-</g>
+<use xlink:href="#source-20"/>
+<use xlink:href="#source-36"/>
+<use xlink:href="#source-52"/>
 <path fill-rule="nonzero" fill="url(#linear-pattern-0)" d="M 14.667969 22.667969 L 4 22.667969 C 3.261719 22.667969 2.667969 22.070312 2.667969 21.332031 L 2.667969 10.667969 C 2.667969 9.929688 3.261719 9.332031 4 9.332031 L 14.667969 9.332031 C 15.402344 9.332031 16 9.929688 16 10.667969 L 16 21.332031 C 16 22.070312 15.402344 22.667969 14.667969 22.667969 Z M 14.667969 22.667969 "/>
 <path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 12.046875 12.664062 L 6.621094 12.664062 L 6.621094 13.8125 L 8.652344 13.8125 L 8.652344 19.332031 L 10.015625 19.332031 L 10.015625 13.8125 L 12.046875 13.8125 Z M 12.046875 12.664062 "/>
 </svg>

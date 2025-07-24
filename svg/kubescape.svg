@@ -7,7 +7,7 @@
 <clipPath id="clip-0">
 <path clip-rule="nonzero" d="M 0 0 L 32.25 0 L 32.25 32 L 0 32 Z M 0 0 "/>
 </clipPath>
-<image id="source-20" x="0" y="0" width="33" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAABmJLR0QA/wD/AP+gvaeTAAAAaElEQVRYhe3SMQqAMAyF4V/tBUTcPaUXFt0c3UQdzCAupSF0eh+EJlAeGQIiIiLi0wRkDECy/gT20oCU/5I1A5P1i81X7SV6YLT+8ARELHFb8XmrL7EBHe99rZ6AiMNsf3PRPYiIiHg8+RQL51WMz4sAAAAASUVORK5CYII="/>
+<image id="source-20" x="0" y="0" width="33" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAABmJLR0QA/wD/AP+gvaeTAAAAaElEQVRYhe3SMQqAQAxE0b9oLxb2XtJDeE7R3sJyWQsDgl1CwGZelWqYhICIiIjElISMAehsrsD5R4kVmG3egAVonoA+ocQITDZfkYCMEo13c9cFMkscPD9RgD0SkPET34zQNURERDxugQsL93Ia3PYAAAAASUVORK5CYII="/>
 <mask id="mask-0">
 <g filter="url(#filter-remove-color)">
 <use xlink:href="#source-20"/>

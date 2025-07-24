@@ -24,28 +24,28 @@
 <use xlink:href="#source-16"/>
 </g>
 </g>
-<image id="source-45" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAe0lEQVRYhe2Wuw2AMAwFj88iVIiVmJCNgE0oEqAIBQpSApIRBe9KJ7HPaWwQ4u8UibPqpZr+rsAAtIYiHhiB/hysEw8aoMvceYIDljiYSl4Surf6ge3IeSnyKRKQgAQkIAEJpKahJ4xQKxzRMpITmIAV24VkNsolhLBjB5R1DxlGmhSjAAAAAElFTkSuQmCC"/>
+<image id="source-34" x="0" y="0" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAfUlEQVRYhe2WMQ6AIAxFn+hFnIxX8oTeSL2JA6gDDsYYxKRM/jcWKA86tCDE36kSa67QnVuuwAh0QG10cQAmYLgGm8SBFuhf9nzBA+s9mEruiK+3+oGdh7KWqnM2EpCABCQgAQmkumEgtlAr/JkzW2AmTi+WA8lilEsIYccBlB0PGRJU1r4AAAAASUVORK5CYII="/>
 <mask id="mask-1">
 <g filter="url(#filter-remove-color)">
-<use xlink:href="#source-45"/>
+<use xlink:href="#source-34"/>
 </g>
 </mask>
 <clipPath id="clip-2">
 <rect x="0" y="0" width="32" height="32"/>
 </clipPath>
-<g id="source-44" clip-path="url(#clip-2)">
+<g id="source-33" clip-path="url(#clip-2)">
 <path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 9.625 23.699219 C 7.535156 23.699219 7.535156 23.699219 7.535156 21.609375 L 7.535156 10.125 C 7.535156 8.035156 7.535156 8.035156 9.625 8.035156 L 10.042969 8.035156 C 12.132812 8.035156 12.132812 8.035156 12.132812 10.125 L 12.132812 21.609375 C 12.132812 23.699219 12.132812 23.699219 10.042969 23.699219 Z M 15.128906 23.699219 C 14.417969 23.703125 14.066406 23.347656 14.066406 22.636719 L 14.066406 9.097656 C 14.066406 8.382812 14.417969 8.035156 15.128906 8.035156 L 19.820312 8.035156 C 23.84375 8.035156 26.402344 12.066406 26.402344 15.910156 C 26.402344 19.753906 23.820312 23.699219 19.820312 23.699219 Z M 15.128906 23.699219 "/>
 </g>
 <clipPath id="clip-3">
 <rect x="0" y="0" width="32" height="32"/>
 </clipPath>
-<g id="source-47" clip-path="url(#clip-3)">
+<g id="source-36" clip-path="url(#clip-3)">
 <g mask="url(#mask-1)">
-<use xlink:href="#source-44"/>
+<use xlink:href="#source-33"/>
 </g>
 </g>
 </defs>
 <path fill-rule="nonzero" fill="rgb(40.392157%, 74.901961%, 47.45098%)" fill-opacity="1" d="M 32 16 C 32 24.835938 24.835938 32 16 32 C 7.164062 32 0 24.835938 0 16 C 0 7.164062 7.164062 0 16 0 C 24.835938 0 32 7.164062 32 16 "/>
 <use xlink:href="#source-19"/>
-<use xlink:href="#source-47"/>
+<use xlink:href="#source-36"/>
 </svg>
