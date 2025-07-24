@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-<path fill="none" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25.882353%, 52.156863%, 95.686275%)" stroke-opacity="1" stroke-miterlimit="4" d="M 20.000977 3.999023 L 3.999023 12.999023 L 3.999023 6.717773 " transform="matrix(1.333333, 0, 0, 1.333333, 0, 0)"/>
-<path fill="none" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25.882353%, 52.156863%, 95.686275%)" stroke-opacity="1" stroke-miterlimit="4" d="M 3.999023 21 L 20.000977 12 L 20.000977 18.28125 " transform="matrix(1.333333, 0, 0, 1.333333, 0, 0)"/>
+<path fill="none" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25.882353%, 52.156863%, 95.686275%)" stroke-opacity="1" stroke-miterlimit="4" d="M 20.000981 3.999024 L 3.999024 12.999027 L 3.999024 6.717775 " transform="matrix(1.333333, 0, 0, 1.333333, 0, 0)"/>
+<path fill="none" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25.882353%, 52.156863%, 95.686275%)" stroke-opacity="1" stroke-miterlimit="4" d="M 3.999024 21.000005 L 20.000981 12.000003 L 20.000981 18.281254 " transform="matrix(1.333333, 0, 0, 1.333333, 0, 0)"/>
 </svg>
