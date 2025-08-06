@@ -38,7 +38,8 @@ echo "export declare const IconMap: Record<string,IconType>;" >> $reactIconsAll/
 
 cd $reactIconsAll
 cat <<< $(jq '.name = "@flanksource/icons"' package.json ) > package.json
-cat <<< $(jq '.repository.url = "https://github.com/flanksource/icons"' package.json ) > package.json
+cat <<< $(jq '.repository.url = "https://github.com/flanksource/flanksource-icons"' package.json ) > package.json
+cat <<< $(jq '.homepage = "https://github.com/flanksource/flanksource-icons"' package.json ) > package.json
 cat <<< $(jq 'del(.bugs, .author, .contributors, .description)' package.json ) > package.json
 
 cp $base/.releaserc $reactIconsAll
