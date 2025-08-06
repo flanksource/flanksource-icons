@@ -1,7 +1,7 @@
 {
-  "buildCommand": "make demo",
+  "buildCommand": "sh build-demo.sh",
   "outputDirectory": "react-icons/packages/demo/build",
-  "installCommand": "npm install",
+  "installCommand": "echo 'Skipping root install'",
   "framework": null,
   "rewrites": [
     {
