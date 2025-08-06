@@ -1,0 +1,12 @@
+{
+  "buildCommand": "make demo",
+  "outputDirectory": "react-icons/packages/demo/build",
+  "installCommand": "npm install",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Ignore source files and development directories
+svg/
+patches/
+node_modules/
+*.svg
+*.sh
+*.mjs
+*.tsx
+*.ts
+Makefile
+LICENSE
+README.md
+.git/
+.github/
+.aider*
+gke-auth-plugin
+*.tar.gz
+
+# Only keep the built demo files
+!react-icons/packages/demo/build/

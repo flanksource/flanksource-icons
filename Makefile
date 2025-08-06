@@ -9,3 +9,7 @@
 	mv  svg/output/$(shell basename $@)  svg/$(shell basename $@)
 
 force:
+
+demo:
+	sh make.sh
+	cd react-icons/packages/demo && npm install && npm run build
