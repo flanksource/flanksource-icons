@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flanksource Icons Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .icon-item:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .icon-item img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 8px;
+        }
+        .icon-name {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            word-break: break-word;
+        }
+        .search {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search input {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flanksource Icons</h1>
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Search icons..." />
+        <p id="iconCount" style="color: #666; margin-top: 10px;">Loading...</p>
+    </div>
+    <div class="icons-grid" id="iconsGrid">
+        <!-- Icons will be loaded here -->
+    </div>
+
+    <script src="icons-list.js"></script>
+    <script>
+        // Icons are loaded from icons-list.js
+
+        const baseUrl = 'https://raw.githubusercontent.com/flanksource/flanksource-icons/main/svg/';
+        const iconsGrid = document.getElementById('iconsGrid');
+        const searchInput = document.getElementById('searchInput');
+
+        function loadIcons(filter = '') {
+            iconsGrid.innerHTML = '';
+            const filteredIcons = icons.filter(icon =>
+                icon.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            // Update count
+            document.getElementById('iconCount').textContent =
+                `Showing ${filteredIcons.length} of ${icons.length} icons`;
+
+            filteredIcons.forEach(icon => {
+                const iconItem = document.createElement('div');
+                iconItem.className = 'icon-item';
+
+                const img = document.createElement('img');
+                img.src = `./svg/${icon}.svg`;
+                img.alt = icon;
+                img.onerror = function() {
+                    this.style.display = 'none';
+                };
+
+                const name = document.createElement('div');
+                name.className = 'icon-name';
+                name.textContent = icon;
+
+                iconItem.appendChild(img);
+                iconItem.appendChild(name);
+                iconsGrid.appendChild(iconItem);
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            loadIcons(e.target.value);
+        });
+
+        // Initial load
+        loadIcons();
+    </script>
+</body>
+</html>

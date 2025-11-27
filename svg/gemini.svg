@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<defs>
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="0" y1="1" x2="0.6873" y2="0.30395" gradientTransform="matrix(32, 0, 0, 32, 0, 0)">
+<stop offset="0" stop-color="rgb(10.980392%, 49.019608%, 100%)" stop-opacity="1"/>
+<stop offset="0.52021" stop-color="rgb(10.980392%, 41.176471%, 100%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(94.117647%, 86.27451%, 83.921569%)" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<path fill-rule="nonzero" fill="url(#linear-pattern-0)" d="M 16 32 C 14.75 23.738281 8.261719 17.25 0 16 C 8.261719 14.75 14.75 8.261719 16 0 C 17.253906 8.261719 23.738281 14.746094 32 16 C 23.738281 17.253906 17.253906 23.738281 16 32 "/>
+</svg>
