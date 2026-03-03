@@ -8,7 +8,7 @@
     "url": "https://github.com/flanksource/flanksource-icons/issues"
   },
   "homepage": "https://github.com/flanksource/flanksource-icons#readme",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "scripts": {
     "build": "git submodule update --init --recursive && npm install &&  npm run svg",
     "svg": "bash make.sh",
