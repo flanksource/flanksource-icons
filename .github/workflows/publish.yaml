@@ -35,7 +35,7 @@ jobs:
       - name: Bump version
         id: bump
         run: |
-          npm version patch --no-git-tag-version
+          npm version patch
           NEW_VERSION=$(node -p "require('./package.json').version")
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
           echo "new_tag=v$NEW_VERSION" >> $GITHUB_OUTPUT
@@ -75,7 +75,7 @@ jobs:
       - name: Set package version
         run: |
           cd react-icons/packages/_react-icons_all
-          npm version ${{ needs.version-bump.outputs.new_version }} --no-git-tag-version
+          npm version ${{ needs.version-bump.outputs.new_version }}
 
       - name: Publish to npm
         run: |
