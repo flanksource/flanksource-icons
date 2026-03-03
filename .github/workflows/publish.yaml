@@ -1,4 +1,4 @@
-name: Build and Publish
+name: Release and Publish
 
 on:
   push:
@@ -7,41 +7,91 @@ on:
 permissions:
   id-token: write
   contents: write
-  packages: write
 
 jobs:
-  semantic-release:
+  version-bump:
+    name: Bump Version
     runs-on: ubuntu-latest
     outputs:
-      release-version: ${{ steps.semantic.outputs.new_release_version }}
-      new-release-published: ${{ steps.semantic.outputs.new_release_published }}
+      new_version: ${{ steps.bump.outputs.new_version }}
+      new_tag: ${{ steps.bump.outputs.new_tag }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: cycjimmy/semantic-release-action@v3
-        id: semantic
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version
+        id: bump
+        run: |
+          npm version patch --no-git-tag-version
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "new_tag=v$NEW_VERSION" >> $GITHUB_OUTPUT
+
+          git add package.json
+          git commit -m "chore: bump version to $NEW_VERSION"
+          git tag "v$NEW_VERSION"
+          git push origin main
+          git push origin "v$NEW_VERSION"
 
   build-and-publish:
-    needs: semantic-release
+    name: Build and Publish
+    needs: version-bump
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          node-version: "20"
+          ref: ${{ needs.version-bump.outputs.new_tag }}
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
           registry-url: "https://registry.npmjs.org"
-          scope: "@flanksource"
-      - name: Build
-        run: |
-          git submodule update --init --recursive
-          npm install
-          npm run svg
-      - name: Publish
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build icons
+        run: npm run svg
+
+      - name: Set package version
         run: |
           cd react-icons/packages/_react-icons_all
-          npm version ${{ needs.semantic-release.outputs.release-version }} --no-git-tag-version
-          cat package.json
-          cat .npmrc
-          npm publish --access public
+          npm version ${{ needs.version-bump.outputs.new_version }} --no-git-tag-version
+
+      - name: Publish to npm
+        run: |
+          cd react-icons/packages/_react-icons_all
+          npm publish --access public --provenance
+
+  create-release:
+    name: Create GitHub Release
+    needs: version-bump
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create ${{ needs.version-bump.outputs.new_tag }} \
+            --repo ${{ github.repository }} \
+            --title "Release ${{ needs.version-bump.outputs.new_tag }}" \
+            --generate-notes
