@@ -41,3 +41,61 @@ cat <<< $(jq '.name = "@flanksource/icons"' package.json ) > package.json
 cat <<< $(jq '.repository.url = "https://github.com/flanksource/flanksource-icons"' package.json ) > package.json
 cat <<< $(jq '.homepage = "https://github.com/flanksource/flanksource-icons"' package.json ) > package.json
 cat <<< $(jq 'del(.bugs, .author, .contributors, .description)' package.json ) > package.json
+
+# Build Icon component
+cd $base
+iconDir=$reactIconsAll/icon
+mkdir -p $iconDir
+
+# Copy source files needed for esbuild to resolve imports
+cp aliases.ts prefixes.ts iconResolver.ts Icon.tsx $reactIconsAll/
+cp iconBase.tsx $reactIconsAll/iconBase.tsx
+
+# ESM bundle — externalize @flanksource/icons/mi (icons loaded at runtime)
+npx esbuild $reactIconsAll/Icon.tsx \
+  --bundle --format=esm --jsx=automatic \
+  --external:react --external:react/jsx-runtime \
+  --external:@flanksource/icons/mi \
+  --outfile=$iconDir/index.mjs
+
+# CJS bundle
+npx esbuild $reactIconsAll/Icon.tsx \
+  --bundle --format=cjs --jsx=automatic \
+  --external:react --external:react/jsx-runtime \
+  --external:@flanksource/icons/mi \
+  --outfile=$iconDir/index.js
+
+# Generate type declarations
+cat > $iconDir/index.d.ts << 'DTS'
+import type { IconType } from "../lib/iconBase";
+import * as React from "react";
+
+export declare const aliases: Record<string, string>;
+export declare const prefixes: Record<string, string>;
+export declare const colorClassMap: Record<string, string>;
+
+export declare function processIconNameSearch(name: string): string;
+export declare function findByName(name: string | undefined, iconMap: Record<string, IconType>): IconType | undefined;
+export declare function areTwoIconNamesEqual(firstIconName?: string, secondIconName?: string): boolean;
+export declare function resolveColor(color?: string): { className?: string; style?: { color: string } } | undefined;
+
+export type IconProps = {
+  name?: string;
+  secondary?: string;
+  className?: string;
+  color?: string;
+  alt?: string;
+  prefix?: React.ReactNode;
+  size?: string | number;
+  iconWithColor?: string;
+};
+
+export declare function Icon(props: IconProps): JSX.Element | null;
+export type { IconType };
+DTS
+
+# Add ./icon export to package.json
+cat <<< $(jq '.exports["./icon"] = { "types": "./icon/index.d.ts", "require": "./icon/index.js", "import": "./icon/index.mjs", "default": "./icon/index.mjs" }' $reactIconsAll/package.json) > $reactIconsAll/package.json
+
+# Cleanup temporary build files
+rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx
