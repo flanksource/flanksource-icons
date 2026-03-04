@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p dist
           cp demo.html dist/index.html
-          cp icons-list.js dist/
+          cp icons-list.js aliases.js prefixes.js dist/
           cp -r svg dist/
 
       - name: Deploy to GitHub Pages

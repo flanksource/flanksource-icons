@@ -17,4 +17,7 @@ force:
 demo:
 	@echo "Generating icon list..."
 	@ls svg/*.svg | sed 's|svg/||g' | sed 's|\.svg||g' | python3 -c "import sys, json; print('const icons = ' + json.dumps([line.strip() for line in sys.stdin]) + ';')" > icons-list.js
+	@echo "Generating aliases.js and prefixes.js..."
+	@node -e "const fs=require('fs'); const m=fs.readFileSync('aliases.ts','utf8').match(/\{[\s\S]*\}/); console.log('const aliases = ' + m[0] + ';');" > aliases.js
+	@node -e "const fs=require('fs'); const m=fs.readFileSync('prefixes.ts','utf8').match(/\{[\s\S]*\}/); console.log('const prefixes = ' + m[0] + ';');" > prefixes.js
 	@echo "Icons list generated with $$(ls svg/*.svg | wc -l) icons"

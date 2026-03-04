@@ -133,3 +133,5 @@ src
 svg/output/
 .vercel
 icons-list.js
+aliases.js
+prefixes.js
