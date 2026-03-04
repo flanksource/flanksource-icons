@@ -42,8 +42,6 @@
             border-bottom-color: #2563eb;
             font-weight: 600;
         }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
 
         /* Card */
         .card {
@@ -97,13 +95,8 @@
         }
         .preview-area.resolved { border-color: #86efac; background: #f0fdf4; }
         .preview-area.not-found { border-color: #fca5a5; background: #fef2f2; }
-        .preview-icon {
-            display: inline-block;
-        }
-        .preview-label {
-            font-size: 12px;
-            color: #888;
-        }
+        .preview-icon { display: inline-block; }
+        .preview-label { font-size: 12px; color: #888; }
         .resolution-path {
             font-size: 12px;
             color: #666;
@@ -138,14 +131,8 @@
             padding: 16px;
             transition: box-shadow 0.2s;
         }
-        .example-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .example-card h3 {
-            font-size: 14px;
-            color: #374151;
-            margin: 0 0 8px 0;
-        }
+        .example-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .example-card h3 { font-size: 14px; color: #374151; margin: 0 0 8px 0; }
         .example-row {
             display: flex;
             align-items: center;
@@ -154,19 +141,12 @@
             border-bottom: 1px solid #f3f4f6;
         }
         .example-row:last-child { border-bottom: none; }
-        .example-row img {
-            flex-shrink: 0;
-        }
         .example-row .name-code {
             font-family: 'SF Mono', Monaco, monospace;
             font-size: 12px;
             color: #6b7280;
         }
-        .example-row .arrow {
-            color: #9ca3af;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
+        .example-row .arrow { color: #9ca3af; font-size: 14px; flex-shrink: 0; }
 
         /* Icon grid */
         .icons-grid {
@@ -191,11 +171,7 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
-        .icon-item img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 6px;
-        }
+        .icon-item svg { margin-bottom: 6px; }
         .icon-name {
             font-size: 11px;
             color: #666;
@@ -216,19 +192,11 @@
             border: 2px solid #ddd;
             border-radius: 6px;
         }
-        .search-bar input:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
+        .search-bar input:focus { outline: none; border-color: #2563eb; }
         #iconCount { color: #888; font-size: 14px; white-space: nowrap; }
 
         /* Color swatches */
-        .color-swatches {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-top: 4px;
-        }
+        .color-swatches { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
         .color-swatch {
             width: 24px; height: 24px;
             border-radius: 4px;
@@ -236,410 +204,11 @@
             border: 2px solid transparent;
             transition: border-color 0.2s;
         }
-        .color-swatch:hover, .color-swatch.active {
-            border-color: #333;
-        }
+        .color-swatch:hover, .color-swatch.active { border-color: #333; }
     </style>
 </head>
 <body>
-    <h1>Flanksource Icons</h1>
-    <p class="subtitle">~1,000 curated SVG icons for cloud infrastructure &mdash; <a href="https://github.com/flanksource/flanksource-icons">GitHub</a></p>
-
-    <div class="tabs">
-        <button class="tab active" data-tab="playground">Icon Playground</button>
-        <button class="tab" data-tab="examples">Examples</button>
-        <button class="tab" data-tab="browse">Browse All</button>
-    </div>
-
-    <!-- Playground Tab -->
-    <div class="tab-content active" id="tab-playground">
-        <div class="card">
-            <div class="playground-grid">
-                <div>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" id="pgName" placeholder='e.g. aws-ec2, Kubernetes::Namespace, kubernetes' value="aws-ec2" />
-                    </div>
-                    <div class="form-group">
-                        <label>Secondary (fallback)</label>
-                        <input type="text" id="pgSecondary" placeholder="e.g. k8s" />
-                    </div>
-                    <div class="form-group">
-                        <label>Color</label>
-                        <input type="text" id="pgColor" placeholder='e.g. error, success, #ff0000, blue' />
-                        <div class="color-swatches" id="colorSwatches"></div>
-                    </div>
-                    <div class="form-group">
-                        <label>CSS Class</label>
-                        <input type="text" id="pgClass" placeholder="e.g. h-6 max-w-6 (default)" />
-                    </div>
-
-                    <div class="code-snippet" id="codeSnippet"></div>
-                </div>
-
-                <div>
-                    <div class="preview-area" id="previewArea">
-                        <span class="preview-label">Preview</span>
-                    </div>
-                    <div class="resolution-path" id="resolutionPath"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Examples Tab -->
-    <div class="tab-content" id="tab-examples">
-        <div class="examples-grid" id="examplesGrid"></div>
-    </div>
-
-    <!-- Browse Tab -->
-    <div class="tab-content" id="tab-browse">
-        <div class="card">
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search icons..." />
-                <span id="iconCount">Loading...</span>
-            </div>
-            <div class="icons-grid" id="iconsGrid"></div>
-        </div>
-    </div>
-
-    <script src="icons-list.js"></script>
-    <script src="aliases.js"></script>
-    <script src="prefixes.js"></script>
-    <script>
-        // --- Tab switching ---
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                tab.classList.add('active');
-                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-            });
-        });
-
-        // --- Resolution logic (mirrors iconResolver.ts) ---
-        const iconSet = new Set(icons);
-
-        const colorClassMap = {
-            error: 'fill-red-500', success: 'fill-green-500', healthy: 'fill-green-500',
-            unhealthy: 'fill-red-500', warning: 'fill-orange-500', unknown: 'fill-gray-500',
-            orange: 'fill-orange-500', red: 'fill-red-500', green: 'fill-green-500',
-            blue: 'fill-blue-500', gray: 'fill-gray-500',
-        };
-
-        const colorValues = {
-            'fill-red-500': '#ef4444', 'fill-green-500': '#22c55e', 'fill-orange-500': '#f97316',
-            'fill-gray-500': '#6b7280', 'fill-blue-500': '#3b82f6',
-        };
-
-        function processIconNameSearch(name) {
-            return name.replaceAll('--', '-').replaceAll('::', '-').toLowerCase()
-                .replaceAll('k8-', 'k8s-').replaceAll('kubernetes-', 'k8s-');
-        }
-
-        function findIconName(name) {
-            if (!name) return undefined;
-            if (iconSet.has(name)) return name;
-            if (aliases[name] && iconSet.has(aliases[name])) return aliases[name];
-            for (const p in prefixes) {
-                if (name.startsWith(p) && iconSet.has(prefixes[p])) return prefixes[p];
-            }
-            for (const p in prefixes) {
-                if (name.endsWith(p) && iconSet.has(prefixes[p])) return prefixes[p];
-            }
-            return undefined;
-        }
-
-        function findByName(name) {
-            if (!name) return undefined;
-            const normalized = processIconNameSearch(name);
-            let icon = findIconName(normalized);
-            if (icon) return { icon, step: `direct: "${normalized}" → "${icon}"` };
-            icon = findIconName(normalized.replace('k8s-', ''));
-            if (icon) return { icon, step: `strip k8s-: "${normalized.replace('k8s-', '')}" → "${icon}"` };
-            for (const prefix of ['aws-', 'azure-', 'k8s-']) {
-                icon = findIconName(prefix + normalized);
-                if (icon) return { icon, step: `add prefix: "${prefix}${normalized}" → "${icon}"` };
-            }
-            return undefined;
-        }
-
-        function resolveIcon(name, secondary) {
-            const steps = [];
-            let resolvedName = name;
-            let resolvedSecondary = secondary;
-
-            if (name && (name.startsWith('http:') || name.startsWith('https://'))) {
-                return { type: 'url', url: name, steps: ['URL detected → <img> tag'] };
-            }
-
-            if (name && name.includes('::')) {
-                const [primary, nested] = name.split('::');
-                resolvedName = nested;
-                resolvedSecondary = secondary || primary;
-                steps.push(`nested: split "${name}" → name="${nested}", secondary="${resolvedSecondary}"`);
-            }
-
-            const result = findByName(resolvedName);
-            if (result) {
-                steps.push(result.step);
-                return { type: 'icon', icon: result.icon, steps };
-            }
-
-            if (resolvedSecondary) {
-                steps.push(`primary "${resolvedName}" not found, trying secondary`);
-                const secResult = findByName(resolvedSecondary);
-                if (secResult) {
-                    steps.push(secResult.step);
-                    return { type: 'icon', icon: secResult.icon, steps };
-                }
-            }
-
-            steps.push('not found');
-            return { type: 'not-found', steps };
-        }
-
-        function resolveColor(color) {
-            if (!color) return {};
-            if (colorClassMap[color]) return { className: colorClassMap[color], cssColor: colorValues[colorClassMap[color]] };
-            return { cssColor: color };
-        }
-
-        // --- Playground ---
-        const pgName = document.getElementById('pgName');
-        const pgSecondary = document.getElementById('pgSecondary');
-        const pgColor = document.getElementById('pgColor');
-        const pgClass = document.getElementById('pgClass');
-        const previewArea = document.getElementById('previewArea');
-        const resolutionPath = document.getElementById('resolutionPath');
-        const codeSnippet = document.getElementById('codeSnippet');
-
-        // Color swatches
-        const swatchColors = [
-            { name: 'error', bg: '#ef4444' },
-            { name: 'success', bg: '#22c55e' },
-            { name: 'warning', bg: '#f97316' },
-            { name: 'blue', bg: '#3b82f6' },
-            { name: 'gray', bg: '#6b7280' },
-        ];
-        const swatchContainer = document.getElementById('colorSwatches');
-        swatchColors.forEach(c => {
-            const el = document.createElement('div');
-            el.className = 'color-swatch';
-            el.style.background = c.bg;
-            el.title = c.name;
-            el.addEventListener('click', () => {
-                pgColor.value = c.name;
-                updatePlayground();
-            });
-            swatchContainer.appendChild(el);
-        });
-
-        function updatePlayground() {
-            const name = pgName.value.trim();
-            const secondary = pgSecondary.value.trim();
-            const color = pgColor.value.trim();
-            const cls = pgClass.value.trim() || 'h-6 max-w-6';
-
-            const result = resolveIcon(name, secondary);
-            const colorInfo = resolveColor(color);
-
-            // Update swatches active state
-            document.querySelectorAll('.color-swatch').forEach(s => {
-                s.classList.toggle('active', s.title === color);
-            });
-
-            // Code snippet
-            let code = '<Icon';
-            if (name) code += ` name="${name}"`;
-            if (secondary) code += ` secondary="${secondary}"`;
-            if (color) code += ` color="${color}"`;
-            if (cls !== 'h-6 max-w-6') code += ` className="${cls}"`;
-            code += ' />';
-            codeSnippet.textContent = code;
-
-            // Resolution path
-            resolutionPath.innerHTML = result.steps.map((s, i) =>
-                `<div>${i + 1}. ${s}</div>`
-            ).join('');
-
-            // Preview
-            previewArea.className = 'preview-area';
-            if (result.type === 'url') {
-                previewArea.classList.add('resolved');
-                previewArea.innerHTML = `
-                    <img src="${result.url}" style="max-width:64px;max-height:64px;" onerror="this.outerHTML='<span style=color:#ef4444>Failed to load URL</span>'" />
-                    <span class="preview-label">URL icon (img tag)</span>`;
-            } else if (result.type === 'icon') {
-                previewArea.classList.add('resolved');
-                const imgStyle = colorInfo.cssColor ? `style="filter: drop-shadow(0 0 0 ${colorInfo.cssColor})"` : '';
-                previewArea.innerHTML = `
-                    <img src="./svg/${result.icon}.svg"
-                         style="width:64px;height:64px;${colorInfo.cssColor ? `filter:brightness(0) saturate(100%);` : ''}"
-                         onerror="this.outerHTML='<span style=color:#ef4444>SVG not found</span>'" />
-                    <span class="preview-label">${result.icon}.svg</span>
-                    ${colorInfo.cssColor ? `<div style="width:16px;height:16px;border-radius:50%;background:${colorInfo.cssColor};border:1px solid #ddd;" title="${color}"></div>` : ''}
-                    ${cls !== 'h-6 max-w-6' ? `<span class="preview-label">class: ${cls}</span>` : ''}`;
-            } else {
-                previewArea.classList.add('not-found');
-                previewArea.innerHTML = `
-                    <span style="font-size:32px;">?</span>
-                    <span class="preview-label">Icon not found</span>`;
-            }
-        }
-
-        [pgName, pgSecondary, pgColor, pgClass].forEach(el =>
-            el.addEventListener('input', updatePlayground));
-        updatePlayground();
-
-        // --- Examples ---
-        const examples = [
-            {
-                title: 'Direct Names',
-                desc: 'Use the SVG filename (without extension)',
-                items: [
-                    { name: 'aws-ec2' },
-                    { name: 'k8s-pod' },
-                    { name: 'postgres' },
-                    { name: 'grafana' },
-                ]
-            },
-            {
-                title: 'Aliases',
-                desc: 'Common names map to icons',
-                items: [
-                    { name: 'kubernetes', resolved: 'k8s' },
-                    { name: 'aws-s3-bucket', resolved: 'aws-s3' },
-                    { name: 'k8s-certificate', resolved: 'cert-manager' },
-                    { name: 'healthy', resolved: 'heart' },
-                ]
-            },
-            {
-                title: 'Prefix Matching',
-                desc: 'Action verbs match to icons',
-                items: [
-                    { name: 'createuser', resolved: 'add-user' },
-                    { name: 'deleteinstance', resolved: 'trash' },
-                    { name: 'downloadarchive', resolved: 'download' },
-                    { name: 'upgradefirmware', resolved: 'upload' },
-                ]
-            },
-            {
-                title: 'Nested Icons (::)',
-                desc: 'Kubernetes::Namespace → resolves "Namespace", falls back to "Kubernetes"',
-                items: [
-                    { name: 'Kubernetes::Namespace' },
-                    { name: 'Kubernetes::Pod' },
-                    { name: 'AWS::EC2' },
-                    { name: 'Azure::VM' },
-                ]
-            },
-            {
-                title: 'Cloud Provider Normalization',
-                desc: 'Prefixes are tried automatically',
-                items: [
-                    { name: 'ec2', note: '→ tries aws-ec2' },
-                    { name: 'kubernetes-node', note: '→ normalizes to k8s-node' },
-                    { name: 'k8-pod', note: '→ normalizes to k8s-pod' },
-                ]
-            },
-            {
-                title: 'Semantic Colors',
-                desc: 'Named colors map to fill classes',
-                items: [
-                    { name: 'check', color: 'success' },
-                    { name: 'error', color: 'error' },
-                    { name: 'warning', color: 'warning' },
-                    { name: 'heart', color: 'blue' },
-                ]
-            },
-            {
-                title: 'CSS Colors',
-                desc: 'Arbitrary CSS color values',
-                items: [
-                    { name: 'aws-ec2', color: '#e11d48' },
-                    { name: 'k8s', color: 'rgb(37,99,235)' },
-                    { name: 'helm', color: 'purple' },
-                ]
-            },
-            {
-                title: 'Secondary Fallback',
-                desc: 'If primary is not found, try secondary',
-                items: [
-                    { name: 'nonexistent', secondary: 'aws-s3' },
-                    { name: 'unknown-thing', secondary: 'k8s' },
-                ]
-            },
-            {
-                title: 'URL Icons',
-                desc: 'HTTP(S) URLs render as <img> tags',
-                items: [
-                    { name: 'https://cdn.jsdelivr.net/gh/flanksource/flanksource-icons/svg/flanksource.svg' },
-                ]
-            },
-        ];
-
-        const examplesGrid = document.getElementById('examplesGrid');
-        examples.forEach(group => {
-            const card = document.createElement('div');
-            card.className = 'example-card';
-            let html = `<h3>${group.title}</h3><div style="font-size:12px;color:#888;margin-bottom:8px;">${group.desc}</div>`;
-            group.items.forEach(item => {
-                const result = resolveIcon(item.name, item.secondary || '');
-                const colorInfo = resolveColor(item.color);
-                const iconSrc = result.type === 'icon' ? `./svg/${result.icon}.svg` :
-                                result.type === 'url' ? result.url : '';
-                const display = item.name.length > 30 ? item.name.substring(0, 30) + '...' : item.name;
-                html += `<div class="example-row" style="cursor:pointer;" onclick="pgName.value='${item.name.replace(/'/g, "\\'")}';pgSecondary.value='${(item.secondary||'').replace(/'/g, "\\'")}';pgColor.value='${item.color||''}';document.querySelector('[data-tab=playground]').click();updatePlayground();">`;
-                if (iconSrc) {
-                    html += `<img src="${iconSrc}" width="28" height="28" style="${colorInfo.cssColor ? 'filter:brightness(0) saturate(100%);' : ''}" onerror="this.style.display='none'" />`;
-                } else {
-                    html += `<span style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:#ccc;">?</span>`;
-                }
-                html += `<span class="name-code">${display}</span>`;
-                if (result.type === 'icon') {
-                    html += `<span class="arrow">→</span><span class="name-code" style="color:#22c55e;">${result.icon}</span>`;
-                }
-                if (item.color) {
-                    html += `<div style="width:14px;height:14px;border-radius:3px;background:${colorInfo.cssColor || '#ccc'};flex-shrink:0;" title="${item.color}"></div>`;
-                }
-                html += `</div>`;
-            });
-            card.innerHTML = html;
-            examplesGrid.appendChild(card);
-        });
-
-        // --- Browse Tab (icon grid) ---
-        const iconsGrid = document.getElementById('iconsGrid');
-        const searchInput = document.getElementById('searchInput');
-
-        function loadIcons(filter = '') {
-            iconsGrid.innerHTML = '';
-            const filteredIcons = icons.filter(icon =>
-                icon.toLowerCase().includes(filter.toLowerCase())
-            );
-            document.getElementById('iconCount').textContent =
-                `${filteredIcons.length} / ${icons.length}`;
-
-            filteredIcons.forEach(icon => {
-                const item = document.createElement('div');
-                item.className = 'icon-item';
-                item.onclick = () => {
-                    pgName.value = icon;
-                    pgSecondary.value = '';
-                    pgColor.value = '';
-                    document.querySelector('[data-tab=playground]').click();
-                    updatePlayground();
-                };
-                item.innerHTML = `
-                    <img src="./svg/${icon}.svg" alt="${icon}" onerror="this.style.display='none'" />
-                    <div class="icon-name">${icon}</div>`;
-                iconsGrid.appendChild(item);
-            });
-        }
-
-        searchInput.addEventListener('input', (e) => loadIcons(e.target.value));
-        loadIcons();
-    </script>
+    <div id="root"></div>
+    <script type="module" src="demo-bundle.js"></script>
 </body>
 </html>

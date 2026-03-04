@@ -97,5 +97,13 @@ DTS
 # Add ./icon export to package.json
 cat <<< $(jq '.exports["./icon"] = { "types": "./icon/index.d.ts", "require": "./icon/index.js", "import": "./icon/index.mjs", "default": "./icon/index.mjs" }' $reactIconsAll/package.json) > $reactIconsAll/package.json
 
+# Bundle demo app (React + all icons inlined, self-contained for GH Pages)
+cp DemoApp.tsx $reactIconsAll/
+npx esbuild $reactIconsAll/DemoApp.tsx \
+  --bundle --format=esm --jsx=automatic \
+  --alias:@flanksource/icons/mi=$reactIconsAll/mi/index.mjs \
+  --outfile=$reactIconsAll/demo-bundle.js \
+  --minify
+
 # Cleanup temporary build files
-rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx
+rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx $reactIconsAll/DemoApp.tsx

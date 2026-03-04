@@ -12,15 +12,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
-      - name: Generate icons list
-        run: make demo
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build icons and demo bundle
+        run: npm run svg
 
       - name: Prepare publish directory
         run: |
           mkdir -p dist
           cp demo.html dist/index.html
-          cp icons-list.js aliases.js prefixes.js dist/
+          cp react-icons/packages/_react-icons_all/demo-bundle.js dist/
           cp -r svg dist/
 
       - name: Deploy to GitHub Pages
