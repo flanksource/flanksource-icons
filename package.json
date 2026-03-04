@@ -25,7 +25,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "camelcase": "^8.0.0",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "svgo": "^3.2.0",
