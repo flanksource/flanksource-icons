@@ -28,6 +28,10 @@ export type IconProps = {
   iconWithColor?: string;
 };
 
+export { FileTypeIcon } from "./FileTypeIcon";
+export type { FileTypeIconProps } from "./FileTypeIcon";
+export { extMap, specialFileMap, defaultFileIcon, resolveFileTypeIcon } from "./fileTypeMap";
+
 export function Icon({
   name = "",
   secondary = "",

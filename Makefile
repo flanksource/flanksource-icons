@@ -18,3 +18,11 @@ demo:
 	@echo "Building demo (React bundle)..."
 	npm run svg
 	@echo "Demo built — serve react-icons/packages/_react-icons_all/ with demo.html"
+
+serve: demo
+	rm -rf dist
+	mkdir -p dist
+	cp demo.html dist/index.html
+	cp react-icons/packages/_react-icons_all/demo-bundle.js dist/
+	cp -r svg dist/
+	npx serve dist

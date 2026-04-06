@@ -48,7 +48,7 @@ iconDir=$reactIconsAll/icon
 mkdir -p $iconDir
 
 # Copy source files needed for esbuild to resolve imports
-cp aliases.ts prefixes.ts iconResolver.ts Icon.tsx $reactIconsAll/
+cp aliases.ts prefixes.ts iconResolver.ts Icon.tsx fileTypeMap.ts FileTypeIcon.tsx $reactIconsAll/
 cp iconBase.tsx $reactIconsAll/iconBase.tsx
 
 # ESM bundle — externalize @flanksource/icons/mi (icons loaded at runtime)
@@ -92,6 +92,14 @@ export type IconProps = {
 
 export declare function Icon(props: IconProps): JSX.Element | null;
 export type { IconType };
+
+export declare const extMap: Record<string, string>;
+export declare const specialFileMap: Record<string, string>;
+export declare const defaultFileIcon: string;
+
+export type FileTypeIconProps = Omit<IconProps, "name"> & { name: string };
+export declare function resolveFileTypeIcon(filename: string): string;
+export declare function FileTypeIcon(props: FileTypeIconProps): JSX.Element | null;
 DTS
 
 # Add ./icon export to package.json
@@ -106,4 +114,4 @@ npx esbuild $reactIconsAll/DemoApp.tsx \
   --minify
 
 # Cleanup temporary build files
-rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx $reactIconsAll/DemoApp.tsx
+rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx $reactIconsAll/DemoApp.tsx $reactIconsAll/fileTypeMap.ts $reactIconsAll/FileTypeIcon.tsx
