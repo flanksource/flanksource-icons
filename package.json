@@ -15,7 +15,7 @@
     "prepublishOnly": "npm run svg",
     "svgo": "bash svgo.sh",
     "svg-resize": "cd svg && bash resize.sh",
-    "test": "npx tsx --test iconResolver.test.ts"
+    "test": "npx tsx --test iconResolver.test.ts fileTypeMap.test.ts"
   },
   "keywords": [],
   "author": "",
