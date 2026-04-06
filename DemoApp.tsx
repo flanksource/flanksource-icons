@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { createRoot } from "react-dom/client";
-import { Icon, aliases, prefixes, colorClassMap, processIconNameSearch, findByName } from "./Icon";
+import { Icon, FileTypeIcon, aliases, prefixes, colorClassMap, processIconNameSearch, findByName, resolveFileTypeIcon } from "./Icon";
 import { IconMap } from "@flanksource/icons/mi";
 import type { IconType } from "./iconBase";
 
@@ -122,6 +122,29 @@ const examples = [
   },
 ];
 
+const fileTypeExamples = [
+  {
+    title: "Programming Languages",
+    items: ["main.go", "app.py", "lib.rs", "App.java", "main.kt", "hello.scala", "main.swift", "main.c", "main.cpp", "Program.cs", "script.pl", "init.lua", "Main.hs", "main.dart", "app.ex", "server.erl"],
+  },
+  {
+    title: "Config & Data",
+    items: ["config.yaml", "data.json", "config.toml", "settings.ini", ".env", "main.tf", "site.xml", "query.sql", "data.csv", "schema.proto", "schema.graphql"],
+  },
+  {
+    title: "Web & Docs",
+    items: ["index.html", "style.css", "App.vue", "App.svelte", "index.tsx", "README.md", "report.pdf", "doc.docx", "data.xlsx", "notes.txt"],
+  },
+  {
+    title: "DevOps & Build",
+    items: ["Dockerfile", "docker-compose.yml", "Makefile", "Jenkinsfile", "Vagrantfile", "helmfile.yaml", "kustomization.yaml", "deploy.sh", "pom.xml", ".gitignore"],
+  },
+  {
+    title: "Special Files",
+    items: ["Cargo.toml", "go.mod", "Gemfile", "Chart.yaml", "values.yaml", "nginx.conf", "LICENSE", "package.json", "tsconfig.json"],
+  },
+];
+
 function Examples({ onSelect }: { onSelect: (name: string, secondary?: string, color?: string) => void }) {
   return (
     <div className="examples-grid">
@@ -157,6 +180,33 @@ function getCssColorForClass(cls: string): string {
     "fill-gray-500": "#6b7280", "fill-blue-500": "#3b82f6",
   };
   return map[cls] || "#888";
+}
+
+function FileTypeExamples() {
+  return (
+    <div className="examples-grid">
+      {fileTypeExamples.map((group) => (
+        <div key={group.title} className="example-card">
+          <h3>{group.title}</h3>
+          {group.items.map((filename) => (
+            <div key={filename} className="example-row">
+              <FileTypeIcon name={filename} className="h-7 max-w-7" style={{ width: 28, height: 28 }} />
+              <span className="name-code">{filename}</span>
+              <span style={{ fontSize: 11, color: "#9ca3af", marginLeft: "auto" }}>
+                {resolveFileTypeIcon(filename)}
+              </span>
+            </div>
+          ))}
+        </div>
+      ))}
+      <div className="example-card">
+        <h3>Usage</h3>
+        <div className="code-snippet" style={{ fontSize: 12 }}>
+          {'import { FileTypeIcon } from "@flanksource/icons/icon";\n\n<FileTypeIcon name="main.go" />\n<FileTypeIcon name="Dockerfile" />\n<FileTypeIcon name="config.yaml" />'}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Browse({ onSelect }: { onSelect: (name: string) => void }) {
@@ -201,9 +251,10 @@ function App() {
         ~{allIconNames.length} curated SVG icons for cloud infrastructure &mdash;{" "}
         <a href="https://github.com/flanksource/flanksource-icons">GitHub</a>
       </p>
-      <Tabs tabs={["Icon Playground", "Examples", "Browse All"]} active={tab} onSelect={setTab} />
+      <Tabs tabs={["Icon Playground", "Examples", "File Types", "Browse All"]} active={tab} onSelect={setTab} />
       {tab === "Icon Playground" && <PlaygroundControlled {...pgState} onChange={setPgState} />}
       {tab === "Examples" && <Examples onSelect={switchToPlayground} />}
+      {tab === "File Types" && <FileTypeExamples />}
       {tab === "Browse All" && <Browse onSelect={(name) => switchToPlayground(name)} />}
     </>
   );
