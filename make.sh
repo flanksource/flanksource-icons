@@ -8,7 +8,7 @@ base=$(pwd)
 reactIconsAll=$base/react-icons/packages/_react-icons_all
 reactIcons=$base/react-icons/packages/react-icons
 cp manifest.ts $reactIcons/src/icons/index.ts
-cp iconBase.tsx  $reactIcons/src/iconBase.tsx .
+cp iconBase.tsx $reactIcons/src/iconBase.tsx
 
 cd $reactIconsAll
 git checkout package.json
@@ -48,14 +48,17 @@ iconDir=$reactIconsAll/icon
 mkdir -p $iconDir
 
 # Copy source files needed for esbuild to resolve imports
-cp aliases.ts prefixes.ts iconResolver.ts Icon.tsx fileTypeMap.ts FileTypeIcon.tsx $reactIconsAll/
+cp aliases.ts prefixes.ts iconResolver.ts Icon.tsx fileTypeMap.ts FileTypeIcon.tsx ResourceIcon.tsx iconifyAllowlist.ts $reactIconsAll/
 cp iconBase.tsx $reactIconsAll/iconBase.tsx
+cp iconContext.tsx $reactIconsAll/iconContext.tsx
 
 # ESM bundle — externalize @flanksource/icons/mi (icons loaded at runtime)
+# and @iconify/react (peer-installed by consumers)
 npx esbuild $reactIconsAll/Icon.tsx \
   --bundle --format=esm --jsx=automatic \
   --external:react --external:react/jsx-runtime \
   --external:@flanksource/icons/mi \
+  --external:@iconify/react \
   --outfile=$iconDir/index.mjs
 
 # CJS bundle
@@ -63,6 +66,7 @@ npx esbuild $reactIconsAll/Icon.tsx \
   --bundle --format=cjs --jsx=automatic \
   --external:react --external:react/jsx-runtime \
   --external:@flanksource/icons/mi \
+  --external:@iconify/react \
   --outfile=$iconDir/index.js
 
 # Generate type declarations
@@ -100,18 +104,39 @@ export declare const defaultFileIcon: string;
 export type FileTypeIconProps = Omit<IconProps, "name"> & { name: string };
 export declare function resolveFileTypeIcon(filename: string): string;
 export declare function FileTypeIcon(props: FileTypeIconProps): JSX.Element | null;
+
+export type IconifyCollection = "logos" | "devicon";
+export type ResourceIconProps = {
+  primary?: string;
+  secondary?: string;
+  iconifyCollections?: ReadonlyArray<IconifyCollection>;
+  iconifyFallback?: boolean;
+  className?: string;
+  color?: string;
+  size?: string | number;
+  alt?: string;
+  iconMap?: Record<string, IconType>;
+};
+export declare function ResourceIcon(props: ResourceIconProps): JSX.Element | null;
 DTS
 
 # Add ./icon export to package.json
 cat <<< $(jq '.exports["./icon"] = { "types": "./icon/index.d.ts", "require": "./icon/index.js", "import": "./icon/index.mjs", "default": "./icon/index.mjs" }' $reactIconsAll/package.json) > $reactIconsAll/package.json
 
-# Bundle demo app (React + all icons inlined, self-contained for GH Pages)
+# Bundle demo app (React + all icons inlined, self-contained for GH Pages).
+# Force every import of `react` and `react/jsx-runtime` to the same physical
+# path so the bundle has a single React instance — otherwise nested deps
+# (e.g. @iconify/react) get a second copy and useState() crashes with
+# "Cannot read properties of null".
+react_root=$(node -e 'console.log(require.resolve("react/package.json"))' | xargs dirname)
 cp DemoApp.tsx $reactIconsAll/
 npx esbuild $reactIconsAll/DemoApp.tsx \
   --bundle --format=esm --jsx=automatic \
   --alias:@flanksource/icons/mi=$reactIconsAll/mi/index.mjs \
+  --alias:react=$react_root/index.js \
+  --alias:react/jsx-runtime=$react_root/jsx-runtime.js \
   --outfile=$reactIconsAll/demo-bundle.js \
   --minify
 
 # Cleanup temporary build files
-rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx $reactIconsAll/DemoApp.tsx $reactIconsAll/fileTypeMap.ts $reactIconsAll/FileTypeIcon.tsx
+rm -f $reactIconsAll/aliases.ts $reactIconsAll/prefixes.ts $reactIconsAll/iconResolver.ts $reactIconsAll/Icon.tsx $reactIconsAll/iconBase.tsx $reactIconsAll/iconContext.tsx $reactIconsAll/DemoApp.tsx $reactIconsAll/fileTypeMap.ts $reactIconsAll/FileTypeIcon.tsx $reactIconsAll/ResourceIcon.tsx $reactIconsAll/iconifyAllowlist.ts

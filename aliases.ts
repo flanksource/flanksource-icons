@@ -188,7 +188,7 @@ export const aliases: Record<string, string> = {
   "k8s-connection": "mission-control",
   "k8s-felixconfiguration": "calico",
   "k8s-gitrepository": "flux",
-  "k8s-globalnetworkpolicy": "calico",
+  "k8s-globalnetworkpolicy": "calico", // crd.projectcalico.org/v1
   "k8s-helm": "helm",
   "k8s-ingressclass": "k8s-ingress",
   "k8s-endpoints": "k8s-endpoint",
@@ -212,6 +212,7 @@ export const aliases: Record<string, string> = {
   "sql server": "sqlserver",
   www: "http",
   "zulip chat": "zulip",
+  // connection icons type aliases
   abort: "stop",
   accept: "checkmark",
   acknowledge: "check",
@@ -333,13 +334,13 @@ export const aliases: Record<string, string> = {
   delete: "trash",
   deleteaccesskey: "remove-key",
   deletealarms: "remove-clock",
-  deletearchive: "remove",
+  deletearchive: "remove", // would prefer "remove-snapshot"
   deletebucket: "remove-folder",
   deletebucketcors: "remove-shield",
   deletecachecluster: "remove-node",
   deleteclientcertificate: "remove-shield",
   deletecluster: "remove-node",
-  deleteclustersnapshot: "remove",
+  deleteclustersnapshot: "remove", // would prefer "remove-snapshot"
   deletecollection: "remove-group",
   deletecomment: "remove-comment",
   deletecomputeenvironment: "remove-node",
@@ -360,11 +361,11 @@ export const aliases: Record<string, string> = {
   deletefoldershare: "remove-link",
   deletegroup: "remove-group",
   deleteinstance: "remove-node",
-  deleteinstancesnapshot: "remove",
+  deleteinstancesnapshot: "remove", // would prefer "remove-snapshot"
   deleteinvitations: "remove-email",
   deletekeypair: "remove-key",
   deletemembers: "remove-group",
-  deletesnapshot: "remove",
+  deletesnapshot: "remove", // would prefer "remove-snapshot"
   deletesnapshotschedule: "remove",
   deletesshpublickey: "remove-key",
   deletetags: "remove-tag",

@@ -1,8 +1,190 @@
 import React, { useState, useMemo } from "react";
 import { createRoot } from "react-dom/client";
-import { Icon, FileTypeIcon, aliases, prefixes, colorClassMap, processIconNameSearch, findByName, resolveFileTypeIcon } from "./Icon";
+import { Icon, FileTypeIcon, ResourceIcon, aliases, prefixes, colorClassMap, processIconNameSearch, findByName, resolveFileTypeIcon } from "./Icon";
+import { iconifyLogos, iconifyDevicon } from "./iconifyAllowlist";
 import { IconMap } from "@flanksource/icons/mi";
 import type { IconType } from "./iconBase";
+import { isWideViewBox } from "./iconBase";
+
+function isWideName(name: string | undefined, secondary?: string): boolean {
+  const lookup = (n?: string) => (n ? findByName(n, IconMap) : undefined);
+  const icon = lookup(name) ?? lookup(secondary);
+  return !!icon && isWideViewBox(icon.viewBox);
+}
+
+type ResourceTier =
+  | { kind: "bundled"; via: "primary" | "secondary"; name: string }
+  | { kind: "url"; src: string }
+  | { kind: "iconify"; collection: "logos" | "devicon"; slug: string; via: "primary" | "secondary" }
+  | { kind: "miss" };
+
+function resolveResourceTier(primary: string, secondary: string): ResourceTier {
+  if (findByName(primary, IconMap)) return { kind: "bundled", via: "primary", name: primary };
+  if (findByName(secondary, IconMap)) return { kind: "bundled", via: "secondary", name: secondary };
+  if (primary.startsWith("http:") || primary.startsWith("https://")) return { kind: "url", src: primary };
+  for (const [via, candidate] of [["primary", primary], ["secondary", secondary]] as const) {
+    if (!candidate) continue;
+    const slug = processIconNameSearch(candidate);
+    if (iconifyLogos.has(slug)) return { kind: "iconify", collection: "logos", slug, via };
+    if (iconifyDevicon.has(slug)) return { kind: "iconify", collection: "devicon", slug, via };
+  }
+  return { kind: "miss" };
+}
+
+function resourceSteps(primary: string, secondary: string): string[] {
+  const steps: string[] = [];
+  if (!primary && !secondary) return ["no input"];
+  const tier = resolveResourceTier(primary, secondary);
+  steps.push(`tier 1 — bundled lookup on primary "${primary}"${tier.kind === "bundled" && tier.via === "primary" ? " — HIT" : " — miss"}`);
+  if (tier.kind === "bundled" && tier.via === "primary") return steps;
+  if (secondary) steps.push(`tier 1 — bundled lookup on secondary "${secondary}"${tier.kind === "bundled" && tier.via === "secondary" ? " — HIT" : " — miss"}`);
+  if (tier.kind === "bundled") return steps;
+  if (tier.kind === "url") { steps.push(`tier 2 — http(s) url -> <img>`); return steps; }
+  steps.push(`tier 3 — iconify allowlist`);
+  if (tier.kind === "iconify") { steps.push(`HIT in ${tier.collection}: "${tier.slug}" (via ${tier.via})`); return steps; }
+  steps.push("no allowlist match — render null");
+  return steps;
+}
+
+const resourceExamples = [
+  {
+    title: "Bundled hits",
+    desc: "Resolved by the curated SVG set (no network)",
+    items: [
+      { primary: "Kubernetes::Pod" },
+      { primary: "aws-ec2" },
+      { primary: "gcp-bigquery-table" },
+      { primary: "no-such-thing", secondary: "k8s" },
+    ],
+  },
+  {
+    title: "Iconify logos fallback",
+    desc: "Bundled miss, slug found in the logos allowlist",
+    items: [
+      { primary: "datadog" },
+      { primary: "snowflake" },
+      { primary: "stripe" },
+      { primary: "vercel" },
+    ],
+  },
+  {
+    title: "Devicon fallback",
+    desc: "Bundled miss, only devicon has the slug",
+    items: [
+      { primary: "aarch64" },
+      { primary: "ableton" },
+      { primary: "androidstudio" },
+    ],
+  },
+  {
+    title: "Misses",
+    desc: "Not in any allowlist — renders nothing",
+    items: [
+      { primary: "totally-fake-icon-zzz" },
+      { primary: "" },
+    ],
+  },
+];
+
+function ResourceExamples({ onSelect }: { onSelect: (primary: string, secondary?: string) => void }) {
+  return (
+    <div className="examples-grid">
+      {resourceExamples.map((group) => (
+        <div key={group.title} className="example-card">
+          <h3>{group.title}</h3>
+          <div style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>{group.desc}</div>
+          {group.items.map((item, i) => {
+            const tier = resolveResourceTier(item.primary, item.secondary || "");
+            const wide = isWideName(item.primary, item.secondary);
+            return (
+              <div key={i} className="example-row" style={{ cursor: "pointer" }}
+                onClick={() => onSelect(item.primary, item.secondary)}>
+                <ResourceIcon primary={item.primary} secondary={item.secondary}
+                  className={wide ? "h-7" : "h-7 max-w-7"} size={28} />
+                <span className="name-code">
+                  {item.primary || "(empty)"}
+                  {item.secondary ? ` / ${item.secondary}` : ""}
+                </span>
+                <span style={{ fontSize: 11, color: "#9ca3af", marginLeft: "auto" }}>
+                  {tier.kind === "bundled" && `bundled (${tier.via})`}
+                  {tier.kind === "iconify" && `${tier.collection}:${tier.slug}`}
+                  {tier.kind === "url" && "url"}
+                  {tier.kind === "miss" && "miss"}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ResourcePlayground({ primary, secondary, onChange }: {
+  primary: string; secondary: string;
+  onChange: (s: { primary: string; secondary: string }) => void;
+}) {
+  const tier = useMemo(() => resolveResourceTier(primary, secondary), [primary, secondary]);
+  const steps = useMemo(() => resourceSteps(primary, secondary), [primary, secondary]);
+
+  let code = "<ResourceIcon";
+  if (primary) code += ` primary="${primary}"`;
+  if (secondary) code += ` secondary="${secondary}"`;
+  code += " />";
+
+  const resolved = tier.kind !== "miss";
+
+  return (
+    <div className="card">
+      <div className="playground-grid">
+        <div>
+          <div className="form-group">
+            <label>Primary (e.g. config.type)</label>
+            <input type="text" value={primary}
+              onChange={(e) => onChange({ primary: e.target.value, secondary })}
+              placeholder='e.g. Kubernetes::Pod, datadog, aws-ec2' />
+          </div>
+          <div className="form-group">
+            <label>Secondary (e.g. config.config_class)</label>
+            <input type="text" value={secondary}
+              onChange={(e) => onChange({ primary, secondary: e.target.value })}
+              placeholder="e.g. KubernetesResource" />
+          </div>
+          <div className="code-snippet">{code}</div>
+          <div style={{ fontSize: 12, color: "#666", marginTop: 12, lineHeight: 1.6 }}>
+            <strong>Resolution order:</strong>
+            <ol style={{ paddingLeft: 18, marginTop: 4 }}>
+              <li>bundled SVG via <code>findByName(primary)</code></li>
+              <li>bundled SVG via <code>findByName(secondary)</code></li>
+              <li>http(s) URL → <code>&lt;img&gt;</code></li>
+              <li>iconify <code>logos</code> / <code>devicon</code> if slug is in allowlist</li>
+            </ol>
+          </div>
+        </div>
+        <div>
+          <div className={`preview-area ${resolved ? "resolved" : primary ? "not-found" : ""}`}>
+            {primary || secondary ? (() => {
+              const wide = isWideName(primary, secondary);
+              return (
+                <ResourceIcon primary={primary} secondary={secondary} size={64}
+                  className={wide ? "h-16" : "h-16 max-w-16"} />
+              );
+            })() : (
+              <span className="preview-label">Enter a primary or secondary value</span>
+            )}
+            {tier.kind === "bundled" && <span className="preview-label">bundled · {tier.name}</span>}
+            {tier.kind === "iconify" && <span className="preview-label">{tier.collection}:{tier.slug}</span>}
+            {tier.kind === "url" && <span className="preview-label">url</span>}
+            {tier.kind === "miss" && (primary || secondary) && <span className="preview-label">no match</span>}
+          </div>
+          <div className="resolution-path">
+            {steps.map((s, i) => <div key={i}>{i + 1}. {s}</div>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const allIconNames = Object.keys(IconMap).sort();
 
@@ -120,6 +302,17 @@ const examples = [
       { name: "https://cdn.jsdelivr.net/gh/flanksource/flanksource-icons/svg/flanksource.svg" },
     ],
   },
+  {
+    title: "Wide Logos", desc: "viewBox aspect >= 2:1 — render at natural width (height-driven)",
+    items: [
+      { name: "mission-control-logo" },
+      { name: "claude_logo" },
+      { name: "clickhouse_logo" },
+      { name: "kong" },
+      { name: "velero" },
+      { name: "keda-logo" },
+    ],
+  },
 ];
 
 const fileTypeExamples = [
@@ -152,22 +345,26 @@ function Examples({ onSelect }: { onSelect: (name: string, secondary?: string, c
         <div key={group.title} className="example-card">
           <h3>{group.title}</h3>
           <div style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>{group.desc}</div>
-          {group.items.map((item, i) => (
-            <div key={i} className="example-row" style={{ cursor: "pointer" }}
-              onClick={() => onSelect(item.name, item.secondary, item.color)}>
-              <Icon name={item.name} secondary={item.secondary} color={item.color}
-                className="h-7 max-w-7" style={{ width: 28, height: 28 }} />
-              <span className="name-code">
-                {item.name.length > 30 ? item.name.substring(0, 30) + "..." : item.name}
-              </span>
-              {item.color && (
-                <div style={{
-                  width: 14, height: 14, borderRadius: 3, flexShrink: 0,
-                  background: colorClassMap[item.color] ? getCssColorForClass(colorClassMap[item.color]) : item.color,
-                }} title={item.color} />
-              )}
-            </div>
-          ))}
+          {group.items.map((item, i) => {
+            const wide = isWideName(item.name, item.secondary);
+            return (
+              <div key={i} className="example-row" style={{ cursor: "pointer" }}
+                onClick={() => onSelect(item.name, item.secondary, item.color)}>
+                <Icon name={item.name} secondary={item.secondary} color={item.color}
+                  className={wide ? "h-7" : "h-7 max-w-7"}
+                  style={wide ? { height: 28 } : { width: 28, height: 28 }} />
+                <span className="name-code">
+                  {item.name.length > 30 ? item.name.substring(0, 30) + "..." : item.name}
+                </span>
+                {item.color && (
+                  <div style={{
+                    width: 14, height: 14, borderRadius: 3, flexShrink: 0,
+                    background: colorClassMap[item.color] ? getCssColorForClass(colorClassMap[item.color]) : item.color,
+                  }} title={item.color} />
+                )}
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
@@ -237,11 +434,17 @@ function Browse({ onSelect }: { onSelect: (name: string) => void }) {
 
 function App() {
   const [tab, setTab] = useState("Icon Playground");
-  const [pgState, setPgState] = useState({ name: "aws-ec2", secondary: "", color: "" });
+  const [pgState, setPgState] = useState({ name: "aws-ec2", secondary: "", color: "", square: "auto" as "auto" | "true" | "false" });
+  const [resState, setResState] = useState({ primary: "Kubernetes::Pod", secondary: "" });
 
   const switchToPlayground = (name: string, secondary?: string, color?: string) => {
-    setPgState({ name, secondary: secondary || "", color: color || "" });
+    setPgState({ name, secondary: secondary || "", color: color || "", square: "auto" });
     setTab("Icon Playground");
+  };
+
+  const switchToResource = (primary: string, secondary?: string) => {
+    setResState({ primary, secondary: secondary || "" });
+    setTab("Resource Icons");
   };
 
   return (
@@ -251,8 +454,14 @@ function App() {
         ~{allIconNames.length} curated SVG icons for cloud infrastructure &mdash;{" "}
         <a href="https://github.com/flanksource/flanksource-icons">GitHub</a>
       </p>
-      <Tabs tabs={["Icon Playground", "Examples", "File Types", "Browse All"]} active={tab} onSelect={setTab} />
+      <Tabs tabs={["Icon Playground", "Resource Icons", "Examples", "File Types", "Browse All"]} active={tab} onSelect={setTab} />
       {tab === "Icon Playground" && <PlaygroundControlled {...pgState} onChange={setPgState} />}
+      {tab === "Resource Icons" && (
+        <>
+          <ResourcePlayground {...resState} onChange={setResState} />
+          <ResourceExamples onSelect={switchToResource} />
+        </>
+      )}
       {tab === "Examples" && <Examples onSelect={switchToPlayground} />}
       {tab === "File Types" && <FileTypeExamples />}
       {tab === "Browse All" && <Browse onSelect={(name) => switchToPlayground(name)} />}
@@ -260,18 +469,27 @@ function App() {
   );
 }
 
-function PlaygroundControlled({ name, secondary, color, onChange }: {
-  name: string; secondary: string; color: string;
-  onChange: (s: { name: string; secondary: string; color: string }) => void;
+function PlaygroundControlled({ name, secondary, color, square, onChange }: {
+  name: string; secondary: string; color: string; square: "auto" | "true" | "false";
+  onChange: (s: { name: string; secondary: string; color: string; square: "auto" | "true" | "false" }) => void;
 }) {
   const [cls, setCls] = useState("");
-  const displayClass = cls || "h-6 max-w-6";
+  const squareProp: boolean | undefined =
+    square === "true" ? true : square === "false" ? false : undefined;
+  const autoWide = isWideName(name, secondary);
+  const renderingWide = squareProp === false || (squareProp === undefined && autoWide);
+  // When the icon is rendering aspect-preserving, only constrain height — letting
+  // width be intrinsic. Otherwise constrain both so the preview shows a square box.
+  const previewStyle: React.CSSProperties =
+    renderingWide ? { height: 64 } : { width: 64, height: 64 };
+  const displayClass = cls || (renderingWide ? "h-16" : "h-6 max-w-6");
   const steps = useMemo(() => resolveSteps(name, secondary), [name, secondary]);
 
   let code = "<Icon";
   if (name) code += ` name="${name}"`;
   if (secondary) code += ` secondary="${secondary}"`;
   if (color) code += ` color="${color}"`;
+  if (squareProp !== undefined) code += ` square={${squareProp}}`;
   if (cls) code += ` className="${cls}"`;
   code += " />";
 
@@ -285,25 +503,38 @@ function PlaygroundControlled({ name, secondary, color, onChange }: {
           <div className="form-group">
             <label>Name</label>
             <input type="text" value={name}
-              onChange={(e) => onChange({ name: e.target.value, secondary, color })}
+              onChange={(e) => onChange({ name: e.target.value, secondary, color, square })}
               placeholder='e.g. aws-ec2, Kubernetes::Namespace, kubernetes' />
           </div>
           <div className="form-group">
             <label>Secondary (fallback)</label>
             <input type="text" value={secondary}
-              onChange={(e) => onChange({ name, secondary: e.target.value, color })}
+              onChange={(e) => onChange({ name, secondary: e.target.value, color, square })}
               placeholder="e.g. k8s" />
           </div>
           <div className="form-group">
             <label>Color</label>
             <input type="text" value={color}
-              onChange={(e) => onChange({ name, secondary, color: e.target.value })}
+              onChange={(e) => onChange({ name, secondary, color: e.target.value, square })}
               placeholder='e.g. error, success, #ff0000, blue' />
             <div className="color-swatches">
               {swatchColors.map((c) => (
                 <div key={c.name} className={`color-swatch ${color === c.name ? "active" : ""}`}
                   style={{ background: c.bg }} title={c.name}
-                  onClick={() => onChange({ name, secondary, color: c.name })} />
+                  onClick={() => onChange({ name, secondary, color: c.name, square })} />
+              ))}
+            </div>
+          </div>
+          <div className="form-group">
+            <label>Square</label>
+            <div className="color-swatches">
+              {(["auto", "true", "false"] as const).map((opt) => (
+                <button key={opt}
+                  className={`tab ${square === opt ? "active" : ""}`}
+                  style={{ padding: "4px 10px", fontSize: 12 }}
+                  onClick={() => onChange({ name, secondary, color, square: opt })}>
+                  {opt}
+                </button>
               ))}
             </div>
           </div>
@@ -317,8 +548,8 @@ function PlaygroundControlled({ name, secondary, color, onChange }: {
         <div>
           <div className={`preview-area ${hasIcon ? "resolved" : name ? "not-found" : ""}`}>
             {name ? (
-              <Icon name={name} secondary={secondary} color={color} className={displayClass}
-                style={{ width: 64, height: 64 }} />
+              <Icon name={name} secondary={secondary} color={color} square={squareProp}
+                className={displayClass} style={previewStyle} />
             ) : (
               <span className="preview-label">Enter an icon name</span>
             )}
