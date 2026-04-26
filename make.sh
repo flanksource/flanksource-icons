@@ -54,7 +54,7 @@ cp iconContext.tsx $reactIconsAll/iconContext.tsx
 
 # ESM bundle — externalize @flanksource/icons/mi (icons loaded at runtime)
 # and @iconify/react (peer-installed by consumers)
-npx esbuild $reactIconsAll/Icon.tsx \
+pnpm exec esbuild $reactIconsAll/Icon.tsx \
   --bundle --format=esm --jsx=automatic \
   --external:react --external:react/jsx-runtime \
   --external:@flanksource/icons/mi \
@@ -62,7 +62,7 @@ npx esbuild $reactIconsAll/Icon.tsx \
   --outfile=$iconDir/index.mjs
 
 # CJS bundle
-npx esbuild $reactIconsAll/Icon.tsx \
+pnpm exec esbuild $reactIconsAll/Icon.tsx \
   --bundle --format=cjs --jsx=automatic \
   --external:react --external:react/jsx-runtime \
   --external:@flanksource/icons/mi \
@@ -130,11 +130,21 @@ cat <<< $(jq '.exports["./icon"] = { "types": "./icon/index.d.ts", "require": ".
 # "Cannot read properties of null".
 react_root=$(node -e 'console.log(require.resolve("react/package.json"))' | xargs dirname)
 cp DemoApp.tsx $reactIconsAll/
-npx esbuild $reactIconsAll/DemoApp.tsx \
+# Build the new @flanksource/icons-ui package first so the demo can browse it
+# via a side-by-side tab. Skipped silently if the package directory is absent.
+icons_ui_dir=$base/packages/ui
+icons_ui_alias=""
+if [ -d "$icons_ui_dir" ]; then
+  echo "Building @flanksource/icons-ui for the demo…"
+  (cd "$icons_ui_dir" && pnpm install --silent && pnpm run build:codegen >/dev/null)
+  icons_ui_alias="--alias:@flanksource/icons-ui=$icons_ui_dir/src/index.ts"
+fi
+pnpm exec esbuild $reactIconsAll/DemoApp.tsx \
   --bundle --format=esm --jsx=automatic \
   --alias:@flanksource/icons/mi=$reactIconsAll/mi/index.mjs \
   --alias:react=$react_root/index.js \
   --alias:react/jsx-runtime=$react_root/jsx-runtime.js \
+  $icons_ui_alias \
   --outfile=$reactIconsAll/demo-bundle.js \
   --minify
 

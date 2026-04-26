@@ -5,6 +5,12 @@ import { iconifyLogos, iconifyDevicon } from "./iconifyAllowlist";
 import { IconMap } from "@flanksource/icons/mi";
 import type { IconType } from "./iconBase";
 import { isWideViewBox } from "./iconBase";
+// New per-component icon set generated from hack/icon-selections.json. The
+// alias in make.sh resolves this to packages/ui/src/index.ts, so esbuild
+// inlines every component into the demo bundle. Falls back to an empty
+// namespace if the package wasn't built (rare: only when running the demo
+// outside the standard build).
+import * as IconsUi from "@flanksource/icons-ui";
 
 function isWideName(name: string | undefined, secondary?: string): boolean {
   const lookup = (n?: string) => (n ? findByName(n, IconMap) : undefined);
@@ -172,6 +178,7 @@ function ResourcePlayground({ primary, secondary, onChange }: {
             })() : (
               <span className="preview-label">Enter a primary or secondary value</span>
             )}
+
             {tier.kind === "bundled" && <span className="preview-label">bundled · {tier.name}</span>}
             {tier.kind === "iconify" && <span className="preview-label">{tier.collection}:{tier.slug}</span>}
             {tier.kind === "url" && <span className="preview-label">url</span>}
@@ -432,10 +439,461 @@ function Browse({ onSelect }: { onSelect: (name: string) => void }) {
   );
 }
 
+// ---- Icons UI (new) ----------------------------------------------------------
+// Build a stable list of base names (outline variants without the "Filled"
+// suffix). For each base we record whether a Filled twin exists so the
+// browser can offer the variant toggle per icon.
+type IconsUiEntry = { name: string; outline?: React.FC<any>; filled?: React.FC<any> };
+const iconsUiEntries: IconsUiEntry[] = (() => {
+  const map = new Map<string, IconsUiEntry>();
+  for (const [exportName, fn] of Object.entries(IconsUi)) {
+    if (typeof fn !== "function") continue; // skip type-only re-exports
+    if (exportName.endsWith("Filled")) {
+      const base = exportName.slice(0, -"Filled".length);
+      const e = map.get(base) ?? { name: base };
+      e.filled = fn as React.FC<any>;
+      map.set(base, e);
+    } else {
+      const e = map.get(exportName) ?? { name: exportName };
+      e.outline = fn as React.FC<any>;
+      map.set(exportName, e);
+    }
+  }
+  return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
+})();
+
+function IconsUiBrowse({ onSelect }: { onSelect: (name: string) => void }) {
+  const [search, setSearch] = useState("");
+  const [variant, setVariant] = useState<"outline" | "filled">("outline");
+  const filtered = useMemo(
+    () =>
+      iconsUiEntries.filter((e) => e.name.toLowerCase().includes(search.toLowerCase())),
+    [search],
+  );
+  return (
+    <div className="card">
+      <div className="search-bar">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search icons-ui (UiCheck, UiUpload, UiClass, …)"
+        />
+        <span id="iconCount">
+          {filtered.length} / {iconsUiEntries.length}
+        </span>
+        <div className="color-swatches" style={{ marginTop: 0 }}>
+          {(["outline", "filled"] as const).map((v) => (
+            <button
+              key={v}
+              type="button"
+              className={`tab ${variant === v ? "active" : ""}`}
+              style={{ padding: "4px 12px", fontSize: 12 }}
+              onClick={() => setVariant(v)}
+            >
+              {v}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div style={{ fontSize: 12, color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
+        Generated from <code>hack/icon-selections.json</code>. Click any icon to open the
+        detail view (variant toggle, color & size controls, copy import + JSX). Outline
+        icons use <code>currentColor</code> so <code>className="text-blue-500"</code>{" "}
+        works; filled JetBrains expui glyphs keep their brand colors.
+      </div>
+      <div className="icons-grid">
+        {filtered.map((entry) => {
+          // Variant fallback: if the user picked "filled" but only outline exists, render
+          // the outline rather than nothing — clearer than an empty cell.
+          const Comp = variant === "filled" ? entry.filled ?? entry.outline : entry.outline ?? entry.filled;
+          if (!Comp) return null;
+          const has = entry.outline && entry.filled ? "both" : entry.filled ? "filled-only" : "outline-only";
+          return (
+            <div
+              key={entry.name}
+              className="icon-item"
+              onClick={() => onSelect(entry.name)}
+              title={`${entry.name} (${has}) — click for detail`}
+            >
+              <Comp width={40} height={40} />
+              <div className="icon-name" style={{ fontFamily: "'SF Mono', Monaco, monospace" }}>
+                {entry.name}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ---- Icons UI detail page ----------------------------------------------------
+const COLOR_PRESETS: Array<{ label: string; className?: string; css?: string }> = [
+  { label: "currentColor", css: "currentColor" },
+  { label: "slate", className: "text-slate-700", css: "#334155" },
+  { label: "blue", className: "text-blue-500", css: "#3b82f6" },
+  { label: "emerald", className: "text-emerald-600", css: "#059669" },
+  { label: "amber", className: "text-amber-600", css: "#d97706" },
+  { label: "rose", className: "text-rose-500", css: "#f43f5e" },
+  { label: "violet", className: "text-violet-600", css: "#7c3aed" },
+];
+
+function IconsUiDetail({ name, onBack, onOpen }: { name: string; onBack: () => void; onOpen: (n: string) => void }) {
+  const entry = iconsUiEntries.find((e) => e.name === name);
+  const [variant, setVariant] = useState<"outline" | "filled">(
+    entry?.outline ? "outline" : "filled",
+  );
+  const [size, setSize] = useState(48);
+  const [colorIdx, setColorIdx] = useState(0);
+  const [customColor, setCustomColor] = useState("");
+  const [title, setTitle] = useState("");
+  const [copied, setCopied] = useState<string | null>(null);
+  const [svgString, setSvgString] = useState<string>("");
+  const previewRef = React.useRef<HTMLDivElement | null>(null);
+  // Refresh the raw-SVG view from the live preview after every render. This
+  // captures whatever React painted (current variant, size, color), so the
+  // copied SVG always matches the on-screen icon.
+  React.useEffect(() => {
+    const svg = previewRef.current?.querySelector("svg");
+    if (!svg) { setSvgString(""); return; }
+    // Clone, normalise color to currentColor on the wrapper if a custom color
+    // is set so the copied SVG is portable (it'll inherit color from CSS).
+    const clone = svg.cloneNode(true) as SVGElement;
+    setSvgString(clone.outerHTML);
+  });
+
+  if (!entry) {
+    return (
+      <div className="card">
+        <button className="tab" onClick={onBack}>← Back</button>
+        <p>Icon not found: <code>{name}</code></p>
+      </div>
+    );
+  }
+
+  const Comp = variant === "filled" ? entry.filled ?? entry.outline : entry.outline ?? entry.filled;
+  const altComp = variant === "filled" ? entry.outline : entry.filled;
+  if (!Comp) {
+    return (
+      <div className="card">
+        <button className="tab" onClick={onBack}>← Back</button>
+        <p>Icon has no renderable variant: <code>{name}</code></p>
+      </div>
+    );
+  }
+
+  const compNameForVariant = variant === "filled"
+    ? (entry.filled ? `${entry.name}Filled` : entry.name)
+    : entry.name;
+  const importedNames = [entry.outline ? entry.name : null, entry.filled ? `${entry.name}Filled` : null]
+    .filter(Boolean)
+    .join(", ");
+  const importLine = `import { ${importedNames} } from "@flanksource/icons-ui";`;
+
+  const colorPreset = COLOR_PRESETS[colorIdx];
+  const colorSpec = customColor.trim() || colorPreset.css || "currentColor";
+  const className = customColor.trim() ? "" : colorPreset.className ?? "";
+
+  // JSX snippet — only show props that aren't defaults.
+  const props: string[] = [];
+  if (size !== 16) props.push(`size={${size}}`);
+  if (className) props.push(`className="${className}"`);
+  if (!className && customColor.trim()) props.push(`style={{ color: "${customColor.trim()}" }}`);
+  if (title) props.push(`title="${title}"`);
+  const jsxSnippet = `<${compNameForVariant}${props.length ? " " + props.join(" ") : ""} />`;
+
+  const previewStyle: React.CSSProperties = {
+    color: colorSpec,
+  };
+
+  const copy = (s: string, label: string) => {
+    void navigator.clipboard?.writeText(s);
+    setCopied(label);
+    setTimeout(() => setCopied(null), 1400);
+  };
+
+  // Source attribution metadata is attached by the codegen on the underlying
+  // function. `Object.assign` preserves the static field.
+  const sourceMeta = (Comp as any).__source ?? "(unknown)";
+
+  return (
+    <div className="card">
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+        <button className="tab" onClick={onBack} style={{ padding: "6px 14px" }}>← Back to grid</button>
+        <h2 style={{ margin: 0, fontFamily: "'SF Mono', Monaco, monospace" }}>{entry.name}</h2>
+        <span
+          style={{
+            fontSize: 11,
+            padding: "2px 8px",
+            background: "#f3f4f6",
+            color: "#6b7280",
+            borderRadius: 999,
+            fontFamily: "'SF Mono', Monaco, monospace",
+          }}
+          title={`Upstream: ${sourceMeta}`}
+        >
+          {sourceMeta}
+        </span>
+      </div>
+
+      <div className="playground-grid">
+        <div>
+          <div className="form-group">
+            <label>Variant</label>
+            <div className="color-swatches">
+              {(["outline", "filled"] as const).map((v) => {
+                const available = v === "outline" ? !!entry.outline : !!entry.filled;
+                return (
+                  <button
+                    key={v}
+                    type="button"
+                    className={`tab ${variant === v ? "active" : ""}`}
+                    style={{ padding: "4px 12px", fontSize: 12, opacity: available ? 1 : 0.4 }}
+                    onClick={() => available && setVariant(v)}
+                    disabled={!available}
+                    title={available ? `Switch to ${v}` : `${v} variant not available for this icon`}
+                  >
+                    {v}{!available ? " (n/a)" : ""}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>Color</label>
+            <div className="color-swatches">
+              {COLOR_PRESETS.map((c, i) => (
+                <div
+                  key={c.label}
+                  className={`color-swatch ${colorIdx === i && !customColor ? "active" : ""}`}
+                  style={{ background: c.css ?? "transparent", border: c.css === "currentColor" ? "2px dashed #999" : undefined }}
+                  title={c.label + (c.className ? ` (${c.className})` : "")}
+                  onClick={() => { setColorIdx(i); setCustomColor(""); }}
+                />
+              ))}
+            </div>
+            <input
+              type="text"
+              value={customColor}
+              onChange={(e) => setCustomColor(e.target.value)}
+              placeholder="custom CSS color (e.g. #ff0080, hsl(280 80% 50%))"
+              style={{ marginTop: 8 }}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Size: {size}px</label>
+            <input
+              type="range"
+              min={16}
+              max={96}
+              step={1}
+              value={size}
+              onChange={(e) => setSize(Number(e.target.value))}
+              style={{ width: "100%" }}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Accessible label (title)</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder='e.g. "upload file" — sets role="img" + aria-label'
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Import</label>
+            <div className="code-snippet" style={{ position: "relative" }}>
+              {importLine}
+              <button
+                type="button"
+                onClick={() => copy(importLine, "import")}
+                style={{
+                  position: "absolute",
+                  top: 8,
+                  right: 8,
+                  padding: "2px 8px",
+                  fontSize: 11,
+                  background: copied === "import" ? "#16a34a" : "#475569",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 4,
+                  cursor: "pointer",
+                }}
+              >
+                {copied === "import" ? "✓ copied" : "copy"}
+              </button>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>JSX</label>
+            <div className="code-snippet" style={{ position: "relative" }}>
+              {jsxSnippet}
+              <button
+                type="button"
+                onClick={() => copy(jsxSnippet, "jsx")}
+                style={{
+                  position: "absolute",
+                  top: 8,
+                  right: 8,
+                  padding: "2px 8px",
+                  fontSize: 11,
+                  background: copied === "jsx" ? "#16a34a" : "#475569",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 4,
+                  cursor: "pointer",
+                }}
+              >
+                {copied === "jsx" ? "✓ copied" : "copy"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div ref={previewRef} className="preview-area resolved detail-large-preview" style={{ ...previewStyle, padding: 24 }}>
+            <Comp width={size} height={size} className={className || undefined} title={title || undefined} />
+            <span className="preview-label">{compNameForVariant} @ {size}px</span>
+          </div>
+
+          <div style={{ marginTop: 16 }}>
+            <div style={{ fontSize: 12, color: "#666", marginBottom: 8, fontWeight: 600 }}>Sizes</div>
+            <div style={{ display: "flex", gap: 16, alignItems: "center", padding: 16, background: "#fafafa", borderRadius: 6, ...previewStyle }}>
+              {[16, 24, 32, 48].map((s) => (
+                <div key={s} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+                  <Comp width={s} height={s} className={className || undefined} />
+                  <span style={{ fontSize: 10, color: "#888" }}>{s}px</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {altComp && (() => {
+            const AltComp = altComp;
+            return (
+              <div style={{ marginTop: 16 }}>
+                <div style={{ fontSize: 12, color: "#666", marginBottom: 8, fontWeight: 600 }}>
+                  Other variant ({variant === "filled" ? "outline" : "filled"})
+                </div>
+                <div style={{ display: "flex", gap: 16, alignItems: "center", padding: 16, background: "#fafafa", borderRadius: 6, ...previewStyle }}>
+                  {[16, 24, 32, 48].map((s) => (
+                    <div key={s} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+                      <AltComp width={s} height={s} className={className || undefined} />
+                      <span style={{ fontSize: 10, color: "#888" }}>{s}px</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+
+          {(() => {
+            // Sub-icon variants — find every component in the bundle whose
+            // name starts with this entry's name (Ui<Base><Suffix>) but is a
+            // longer string. e.g. for UiDatabase we surface UiDatabasePlus,
+            // UiDatabaseMinus, etc. Skip the row's own outline/filled twins.
+            const variants = iconsUiEntries
+              .filter((e) =>
+                e.name !== entry.name &&
+                e.name.startsWith(entry.name) &&
+                // Don't surface the *Filled twin (already shown via the
+                // "Other variant" block above).
+                e.name !== entry.name + "Filled" &&
+                // Don't surface composites of an unrelated base just because
+                // of name overlap — only single-suffix children. e.g. for
+                // entry "UiUser" we want UiUserPlus but not UiUserCircle
+                // (UserCircle is a separate base row).
+                /^[A-Z][a-z]+$/.test(e.name.slice(entry.name.length)),
+              )
+              .sort((a, b) => a.name.localeCompare(b.name));
+            if (variants.length === 0) return null;
+            return (
+              <div style={{ marginTop: 16 }}>
+                <div style={{ fontSize: 12, color: "#666", marginBottom: 8, fontWeight: 600 }}>
+                  Sub-icon variants ({variants.length})
+                </div>
+                <div style={{ display: "flex", gap: 16, alignItems: "flex-end", padding: 16, background: "#fafafa", borderRadius: 6, flexWrap: "wrap" }}>
+                  {variants.map((v) => {
+                    const VComp = v.outline ?? v.filled;
+                    if (!VComp) return null;
+                    return (
+                      <div
+                        key={v.name}
+                        style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, cursor: "pointer", padding: 6, borderRadius: 4 }}
+                        onClick={() => onOpen(v.name)}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "#eef2ff")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                        title={`Click to open ${v.name}`}
+                      >
+                        <VComp width={32} height={32} />
+                        <span style={{ fontSize: 11, color: "#374151", fontFamily: "'SF Mono', Monaco, monospace" }}>
+                          {v.name.slice(entry.name.length)}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
+          <div style={{ marginTop: 16 }}>
+            <div style={{ fontSize: 12, color: "#666", marginBottom: 8, fontWeight: 600, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span>Raw SVG ({svgString.length} bytes)</span>
+              <button
+                type="button"
+                onClick={() => copy(svgString, "svg")}
+                disabled={!svgString}
+                style={{
+                  padding: "2px 10px",
+                  fontSize: 11,
+                  background: copied === "svg" ? "#16a34a" : "#475569",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 4,
+                  cursor: svgString ? "pointer" : "not-allowed",
+                  opacity: svgString ? 1 : 0.5,
+                }}
+              >
+                {copied === "svg" ? "✓ copied" : "copy SVG"}
+              </button>
+            </div>
+            <pre
+              style={{
+                fontSize: 11,
+                fontFamily: "'SF Mono', Monaco, 'Cascadia Code', monospace",
+                background: "#0f172a",
+                color: "#e2e8f0",
+                padding: 12,
+                borderRadius: 4,
+                overflowX: "auto",
+                maxHeight: 240,
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-all",
+                margin: 0,
+              }}
+            >
+              {svgString || <span style={{ color: "#94a3b8" }}>(rendering…)</span>}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [tab, setTab] = useState("Icon Playground");
   const [pgState, setPgState] = useState({ name: "aws-ec2", secondary: "", color: "", square: "auto" as "auto" | "true" | "false" });
   const [resState, setResState] = useState({ primary: "Kubernetes::Pod", secondary: "" });
+  const [iconsUiDetail, setIconsUiDetail] = useState<string | null>(null);
 
   const switchToPlayground = (name: string, secondary?: string, color?: string) => {
     setPgState({ name, secondary: secondary || "", color: color || "", square: "auto" });
@@ -451,10 +909,23 @@ function App() {
     <>
       <h1>Flanksource Icons</h1>
       <p className="subtitle">
-        ~{allIconNames.length} curated SVG icons for cloud infrastructure &mdash;{" "}
+        ~{allIconNames.length} curated icons in <code>@flanksource/icons</code>{" "}
+        + {iconsUiEntries.length} curated React components in{" "}
+        <code>@flanksource/icons-ui</code> &mdash;{" "}
         <a href="https://github.com/flanksource/flanksource-icons">GitHub</a>
       </p>
-      <Tabs tabs={["Icon Playground", "Resource Icons", "Examples", "File Types", "Browse All"]} active={tab} onSelect={setTab} />
+      <Tabs
+        tabs={[
+          "Icon Playground",
+          "Resource Icons",
+          "Examples",
+          "File Types",
+          "Browse All",
+          `Icons UI (${iconsUiEntries.length})`,
+        ]}
+        active={tab}
+        onSelect={setTab}
+      />
       {tab === "Icon Playground" && <PlaygroundControlled {...pgState} onChange={setPgState} />}
       {tab === "Resource Icons" && (
         <>
@@ -465,6 +936,11 @@ function App() {
       {tab === "Examples" && <Examples onSelect={switchToPlayground} />}
       {tab === "File Types" && <FileTypeExamples />}
       {tab === "Browse All" && <Browse onSelect={(name) => switchToPlayground(name)} />}
+      {tab.startsWith("Icons UI") && (
+        iconsUiDetail
+          ? <IconsUiDetail name={iconsUiDetail} onBack={() => setIconsUiDetail(null)} onOpen={(n) => setIconsUiDetail(n)} />
+          : <IconsUiBrowse onSelect={(name) => setIconsUiDetail(name)} />
+      )}
     </>
   );
 }

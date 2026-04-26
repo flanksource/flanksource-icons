@@ -1,0 +1,2200 @@
+{
+  "savedAt": "2026-04-26T12:00:33.336Z",
+  "total": 274,
+  "bothChosen": 271,
+  "anyChosen": 272,
+  "rows": [
+    {
+      "consumerName": "chevron-down",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:caret-down-light",
+      "filled": "ph:caret-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chevron-right",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:caret-right-light",
+      "filled": "ph:caret-right-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chevron-up",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:caret-up-light",
+      "filled": "ph:caret-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "close",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:x-light",
+      "filled": "ph:x-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "ellipsis",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:dots-three-light",
+      "filled": "ph:dots-three-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "collapse-all",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "jb-expui-general:collapseAll",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "expand-all",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "jb-expui-general:expandAll",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "search",
+      "group": "ui-controls",
+      "status": "EXISTS",
+      "outline": "ph:magnifying-glass-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "filter",
+      "group": "ui-controls",
+      "status": "EXISTS",
+      "outline": "ph:funnel-light",
+      "filled": "ph:funnel-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "add",
+      "group": "ui-controls",
+      "status": "EXISTS",
+      "outline": "ph:plus-circle-light",
+      "filled": "ph:plus-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "remove",
+      "group": "ui-controls",
+      "status": "EXISTS",
+      "outline": "ph:minus-circle-light",
+      "filled": "ph:minus-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "eye",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:eye-light",
+      "filled": "ph:eye-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "eye-closed",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:eye-slash-light",
+      "filled": "ph:eye-slash-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "x -> close",
+      "group": "ui-controls",
+      "status": "ALIAS",
+      "outline": "ph:x-light",
+      "filled": "ph:x-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "caret-down -> chevron-down",
+      "group": "ui-controls",
+      "status": "ALIAS",
+      "outline": "ph:caret-down-light",
+      "filled": "ph:caret-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "magnifying-glass -> search",
+      "group": "ui-controls",
+      "status": "ALIAS",
+      "outline": "ph:magnifying-glass-light",
+      "filled": "skip",
+      "note": "find new solid fill"
+    },
+    {
+      "consumerName": "funnel -> filter",
+      "group": "ui-controls",
+      "status": "ALIAS",
+      "outline": "ph:funnel-light",
+      "filled": "ph:funnel-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chevrons-down",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:caret-double-down-light",
+      "filled": "ph:caret-double-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chevrons-up",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:caret-double-up-light",
+      "filled": "ph:caret-double-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "square",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:square-light",
+      "filled": "ph:square-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "menu",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:list-light",
+      "filled": "ph:list-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "dots-vertical",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:dots-three-vertical-light",
+      "filled": "ph:dots-three-vertical-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "arrow-left",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:arrow-left-light",
+      "filled": "ph:arrow-left-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "link",
+      "group": "navigation",
+      "status": "EXISTS",
+      "outline": "ph:link-light",
+      "filled": "ph:link-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "link-external",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:arrow-square-out-light",
+      "filled": "ph:arrow-square-out-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "globe",
+      "group": "navigation",
+      "status": "EXISTS",
+      "outline": "ph:globe-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "location",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:map-pin-light",
+      "filled": "ph:map-pin-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "route",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:path-light",
+      "filled": "ph:path-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "arrow-right",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:arrow-right-light",
+      "filled": "ph:arrow-right-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "arrow-up",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:arrow-up-light",
+      "filled": "ph:arrow-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "arrow-down",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:arrow-down-light",
+      "filled": "ph:arrow-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "external-link",
+      "group": "navigation",
+      "status": "ALIAS",
+      "outline": "ph:arrow-square-out-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "home",
+      "group": "navigation",
+      "status": "NEW",
+      "outline": "ph:house-light",
+      "filled": "ph:house-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "layout-dashboard",
+      "group": "layout-dashboard",
+      "status": "NEW",
+      "outline": "ph:squares-four-light",
+      "filled": "ph:squares-four-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "package",
+      "group": "layout-dashboard",
+      "status": "NEW",
+      "outline": "ph:package-light",
+      "filled": "ph:package-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "puzzle",
+      "group": "layout-dashboard",
+      "status": "NEW",
+      "outline": "ph:puzzle-piece-light",
+      "filled": "ph:puzzle-piece-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "box",
+      "group": "layout-dashboard",
+      "status": "NEW",
+      "outline": "ph:cube-light",
+      "filled": "ph:cube-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "grid",
+      "group": "layout-dashboard",
+      "status": "NEW",
+      "outline": "ph:grid-four-light",
+      "filled": "ph:grid-four-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "sidebar",
+      "group": "layout-dashboard",
+      "status": "NEW",
+      "outline": "ph:sidebar-light",
+      "filled": "ph:sidebar-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "edit",
+      "group": "forms-editing",
+      "status": "NEW",
+      "outline": "ph:pencil-simple-light",
+      "filled": "ph:pencil-simple-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "save",
+      "group": "forms-editing",
+      "status": "NEW",
+      "outline": "ph:floppy-disk-light",
+      "filled": "ph:floppy-disk-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "cancel",
+      "group": "forms-editing",
+      "status": "ALIAS",
+      "outline": "ph:x-light",
+      "filled": "ph:x-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "form",
+      "group": "forms-editing",
+      "status": "NEW",
+      "outline": "ph:list-bullets-light",
+      "filled": "ph:list-bullets-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "select",
+      "group": "forms-editing",
+      "status": "NEW",
+      "outline": "ph:selection-light",
+      "filled": "ph:selection-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "calendar",
+      "group": "forms-editing",
+      "status": "NEW",
+      "outline": "ph:calendar-light",
+      "filled": "ph:calendar-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "calendar-blank",
+      "group": "forms-editing",
+      "status": "NEW",
+      "outline": "ph:calendar-blank-light",
+      "filled": "ph:calendar-blank-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "warning-circle",
+      "group": "health-status",
+      "status": "EXISTS",
+      "outline": "ph:warning-circle-light",
+      "filled": "ph:warning-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "warning-triangle",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:warning-light",
+      "filled": "ph:warning-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "error",
+      "group": "health-status",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "circle-x",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:x-circle-light",
+      "filled": "ph:x-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "info",
+      "group": "health-status",
+      "status": "EXISTS",
+      "outline": "ph:info-light",
+      "filled": "ph:info-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "question",
+      "group": "health-status",
+      "status": "EXISTS",
+      "outline": "ph:question-light",
+      "filled": "ph:question-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "circle-outline",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:circle-light",
+      "filled": "ph:circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "circle-filled",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:circle-light",
+      "filled": "ph:circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "pulse",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:pulse-light",
+      "filled": "ph:pulse-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "lightbulb",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:lightbulb-light",
+      "filled": "ph:lightbulb-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "debug",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:bug-light",
+      "filled": "ph:bug-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "loader",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:spinner-light",
+      "filled": "ph:spinner-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "skull",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:skull-light",
+      "filled": "ph:skull-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "siren",
+      "group": "health-status",
+      "status": "NEW",
+      "outline": "ph:siren-light",
+      "filled": "ph:siren-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "check",
+      "group": "approval-review",
+      "status": "EXISTS",
+      "outline": "ph:check-light",
+      "filled": "ph:check-circle-fill",
+      "note": "Filled variant uses ph:check-circle-fill (circle) instead of ph:check-fill (rounded square) per design preference."
+    },
+    {
+      "consumerName": "check-thin -> check",
+      "group": "approval-review",
+      "status": "ALIAS",
+      "outline": "ph:check-light",
+      "filled": "ph:check-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "pass",
+      "group": "approval-review",
+      "status": "EXISTS",
+      "outline": "ph:check-circle-light",
+      "filled": "ph:check-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "star",
+      "group": "approval-review",
+      "status": "EXISTS",
+      "outline": "ph:star-light",
+      "filled": "ph:star-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "lock",
+      "group": "approval-review",
+      "status": "EXISTS",
+      "outline": "ph:lock-light",
+      "filled": "ph:lock-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "thumbs-up",
+      "group": "approval-review",
+      "status": "NEW",
+      "outline": "ph:thumbs-up-light",
+      "filled": "ph:thumbs-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "thumbs-down",
+      "group": "approval-review",
+      "status": "NEW",
+      "outline": "ph:thumbs-down-light",
+      "filled": "ph:thumbs-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "seal-check",
+      "group": "approval-review",
+      "status": "NEW",
+      "outline": "ph:seal-check-light",
+      "filled": "ph:seal-check-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "key",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:key-light",
+      "filled": "ph:key-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "shield",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:shield-light",
+      "filled": "ph:shield-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "fingerprint",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:fingerprint-light",
+      "filled": "ph:fingerprint-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "user-circle",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:user-circle-light",
+      "filled": "ph:user-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "sign-in",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:sign-in-light",
+      "filled": "ph:sign-in-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "sign-out",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:sign-out-light",
+      "filled": "ph:sign-out-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "lock-open",
+      "group": "security-auth",
+      "status": "NEW",
+      "outline": "ph:lock-open-light",
+      "filled": "ph:lock-open-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-critical",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:caret-double-up-light",
+      "filled": "ph:caret-double-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-high",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:caret-up-light",
+      "filled": "ph:caret-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-medium",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:minus-light",
+      "filled": "ph:minus-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-low",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:caret-double-down-light",
+      "filled": "ph:caret-double-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-info",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:info-light",
+      "filled": "ph:info-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-warning",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:warning-light",
+      "filled": "ph:warning-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "severity-blocker",
+      "group": "severity",
+      "status": "NEW",
+      "outline": "ph:warning-octagon-light",
+      "filled": "ph:warning-octagon-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-cost",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:currency-dollar-light",
+      "filled": "ph:currency-dollar-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-availability",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:heartbeat-light",
+      "filled": "ph:heartbeat-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-performance",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:gauge-light",
+      "filled": "ph:gauge-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-security",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:shield-check-light",
+      "filled": "ph:shield-check-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-integration",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:plug-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-compliance",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:bank-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-reliability",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:clock-light",
+      "filled": "ph:clock-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-technical-debt",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:wrench-light",
+      "filled": "ph:wrench-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "insight-recommendation",
+      "group": "insight",
+      "status": "NEW",
+      "outline": "ph:lightbulb-light",
+      "filled": "ph:lightbulb-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-create",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:plus-circle-light",
+      "filled": "ph:plus-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-update",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:pencil-simple-light",
+      "filled": "ph:pencil-simple-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-delete",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:trash-light",
+      "filled": "ph:trash-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-diff",
+      "group": "change-types",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": "Aliases the incumbent svg/diff.svg used by UiDiff. No filled variant — diff has no semantic fill."
+    },
+    {
+      "consumerName": "change-user-created",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:user-plus-light",
+      "filled": "ph:user-plus-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-user-deleted",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:user-minus-light",
+      "filled": "ph:user-minus-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-group-member-added",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:users-three-light",
+      "filled": "ph:users-three-fill",
+      "note": "Update the groups to add plus and minus icon"
+    },
+    {
+      "consumerName": "change-group-member-removed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:users-three-light",
+      "filled": "ph:users-three-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-screenshot",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:camera-light",
+      "filled": "ph:camera-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-permission-added",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:key-light",
+      "filled": "ph:key-fill",
+      "note": "add plus - minus icons to "
+    },
+    {
+      "consumerName": "change-permission-removed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:key-light",
+      "filled": "ph:key-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-deployment",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:rocket-launch-light",
+      "filled": "ph:rocket-launch-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-promotion",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:arrow-fat-line-right-light",
+      "filled": "skip",
+      "note": "promote is left to right "
+    },
+    {
+      "consumerName": "change-approved",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:check-circle-light",
+      "filled": "ph:check-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-rejected",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:x-circle-light",
+      "filled": "ph:x-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-rollback",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:arrow-counter-clockwise-light",
+      "filled": "ph:arrow-counter-clockwise-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-backup-started",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "mdi:database-arrow-up",
+      "filled": "skip",
+      "note": "use ph database and up "
+    },
+    {
+      "consumerName": "change-backup-completed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "mdi:database-check",
+      "filled": null,
+      "note": "us ph databse and check"
+    },
+    {
+      "consumerName": "change-backup-restored",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "mdi:database-arrow-down",
+      "filled": "skip",
+      "note": "us ph database and restore "
+    },
+    {
+      "consumerName": "change-backup-failed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "mdi:database-alert",
+      "filled": "skip",
+      "note": "us phg"
+    },
+    {
+      "consumerName": "change-backup-deleted",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "mdi:database-remove",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "change-pipeline-run-started",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:play-circle-light",
+      "filled": "ph:play-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-pipeline-run-completed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:check-circle-light",
+      "filled": "ph:check-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-pipeline-run-failed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:x-circle-light",
+      "filled": "ph:x-circle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-scaling",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:arrows-out-line-horizontal-light",
+      "filled": "ph:arrows-out-line-horizontal-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-certificate-renewed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:certificate-light",
+      "filled": "ph:certificate-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-certificate-expired",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "tabler:certificate-off",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "change-cost-change",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:currency-dollar-light",
+      "filled": "ph:currency-dollar-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-playbook-started",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:play-circle-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "change-playbook-completed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:check-circle-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "change-playbook-failed",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:x-circle-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "change-run-instances",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:hard-drives-light",
+      "filled": "ph:hard-drives-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "change-register-node",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "mdi:server-plus",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "change-pulled",
+      "group": "change-types",
+      "status": "NEW",
+      "outline": "ph:download-simple-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "list-flat",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:list-light",
+      "filled": "ph:list-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "list-tree",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:tree-structure-light",
+      "filled": "ph:tree-structure-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "table",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:table-light",
+      "filled": "ph:table-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "graph",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:chart-line-light",
+      "filled": "ph:chart-line-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "boxes",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:stack-light",
+      "filled": "ph:stack-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "inbox",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:tray-light",
+      "filled": "ph:tray-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "table-properties",
+      "group": "trees-lists-tables",
+      "status": "ALIAS",
+      "outline": "ph:table-light",
+      "filled": "ph:table-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "rows",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:rows-light",
+      "filled": "ph:rows-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "columns",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:columns-light",
+      "filled": "ph:columns-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "kanban",
+      "group": "trees-lists-tables",
+      "status": "NEW",
+      "outline": "ph:kanban-light",
+      "filled": "ph:kanban-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chart-bar",
+      "group": "data-analytics",
+      "status": "NEW",
+      "outline": "ph:chart-bar-light",
+      "filled": "ph:chart-bar-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chart-pie",
+      "group": "data-analytics",
+      "status": "NEW",
+      "outline": "ph:chart-pie-light",
+      "filled": "ph:chart-pie-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "git-graph",
+      "group": "data-analytics",
+      "status": "NEW",
+      "outline": "ph:graph-light",
+      "filled": "ph:graph-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "trend-up",
+      "group": "data-analytics",
+      "status": "NEW",
+      "outline": "ph:trend-up-light",
+      "filled": "ph:trend-up-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "trend-down",
+      "group": "data-analytics",
+      "status": "NEW",
+      "outline": "ph:trend-down-light",
+      "filled": "ph:trend-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "funnel-data",
+      "group": "data-analytics",
+      "status": "ALIAS",
+      "outline": "ph:funnel-light",
+      "filled": "ph:funnel-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "playbook",
+      "group": "playbooks-workflows",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "workflow",
+      "group": "playbooks-workflows",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "rocket",
+      "group": "playbooks-workflows",
+      "status": "EXISTS",
+      "outline": "ph:rocket-launch-light",
+      "filled": "ph:rocket-launch-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "ship-wheel",
+      "group": "playbooks-workflows",
+      "status": "NEW",
+      "outline": "lucide:ship-wheel",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "zap",
+      "group": "playbooks-workflows",
+      "status": "NEW",
+      "outline": "ph:lightning-light",
+      "filled": "ph:lightning-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "play",
+      "group": "runtime-process",
+      "status": "NEW",
+      "outline": "jb-expui-run:run",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "pause",
+      "group": "runtime-process",
+      "status": "NEW",
+      "outline": "jb-expui-run:pause",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "stop",
+      "group": "runtime-process",
+      "status": "NEW",
+      "outline": "jb-expui-run:stop",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "skip-forward",
+      "group": "runtime-process",
+      "status": "NEW",
+      "outline": "ph:skip-forward-light",
+      "filled": "ph:skip-forward-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "history",
+      "group": "runtime-process",
+      "status": "NEW",
+      "outline": "ph:clock-counter-clockwise-light",
+      "filled": "ph:clock-counter-clockwise-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "config",
+      "group": "configs-metadata",
+      "status": "EXISTS",
+      "outline": "ph:gear-light",
+      "filled": "ph:gear-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "tag",
+      "group": "configs-metadata",
+      "status": "NEW",
+      "outline": "ph:tag-light",
+      "filled": "ph:tag-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "cog",
+      "group": "configs-metadata",
+      "status": "ALIAS",
+      "outline": "ph:gear-light",
+      "filled": "ph:gear-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "sliders",
+      "group": "configs-metadata",
+      "status": "NEW",
+      "outline": "ph:sliders-light",
+      "filled": "ph:sliders-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "toggle-on",
+      "group": "configs-metadata",
+      "status": "NEW",
+      "outline": "ph:toggle-right-light",
+      "filled": "ph:toggle-right-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "toggle-off",
+      "group": "configs-metadata",
+      "status": "NEW",
+      "outline": "ph:toggle-left-light",
+      "filled": "ph:toggle-left-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-package",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:package",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-namespace",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:moduleGroup",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-module",
+      "group": "uir-ast-code",
+      "status": "ALIAS",
+      "outline": "jb-expui-nodes:module",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-import",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-general:import",
+      "filled": "skip",
+      "note": "find different concept"
+    },
+    {
+      "consumerName": "uir-export",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-general:export",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-class",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:class",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-struct",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:record",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-interface",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:interface",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-trait",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:interface",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-record",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:record",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-type-alias",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:alias",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-enum",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:enum",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-enum-member",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:multipleTypeDefinitions",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-type-parameter",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:type",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-function",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:function",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-method",
+      "group": "uir-ast-code",
+      "status": "ALIAS",
+      "outline": "jb-expui-nodes:method",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-constructor",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:constructor",
+      "filled": "skip",
+      "note": "use new glyph"
+    },
+    {
+      "consumerName": "uir-lambda",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:lambda",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-async-fn",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-breakpoints:breakpointLambda",
+      "filled": "skip",
+      "note": "find different concept "
+    },
+    {
+      "consumerName": "uir-macro",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": null,
+      "filled": null,
+      "note": ""
+    },
+    {
+      "consumerName": "uir-decorator",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:annotation",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-field",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:field",
+      "filled": "skip",
+      "note": "use an input field style"
+    },
+    {
+      "consumerName": "uir-property",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:property",
+      "filled": "skip",
+      "note": "find different concepts "
+    },
+    {
+      "consumerName": "uir-variable",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:variable",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-constant",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:constant",
+      "filled": "skip",
+      "note": "find a different concept "
+    },
+    {
+      "consumerName": "uir-parameter",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:parameter",
+      "filled": "skip",
+      "note": "use $v jv=b"
+    },
+    {
+      "consumerName": "uir-keyword",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "mdi:alphabetical",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-operator",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "ph:math-operations-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-string",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:textArea",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-numeric",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-general:hashtag",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-boolean",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": null,
+      "filled": null,
+      "note": "use a true/false"
+    },
+    {
+      "consumerName": "uir-array",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-json:array",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-object",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-json:object",
+      "filled": "skip",
+      "note": "use different concepts "
+    },
+    {
+      "consumerName": "uir-null",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-status:errorOutline",
+      "filled": "skip",
+      "note": "find some different concepts"
+    },
+    {
+      "consumerName": "uir-event",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:exception",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-endpoint",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-toolwindows:web",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-test",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:test",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-comment",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-toolwindows:documentation",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-unknown",
+      "group": "uir-ast-code",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:unknown",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-schema",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:dataSchema",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-table",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "ph:table-light",
+      "filled": "jb-expui-nodes:dataTables",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-view",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:dataTables",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-trigger",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-actions:lightning",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-stored-proc",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:method",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-function",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:function",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-index",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-actions:findEntireFile",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-column",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:dataColumn",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-primary-key",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-nodes:dataColumn",
+      "filled": "skip",
+      "note": "use PK glyph"
+    },
+    {
+      "consumerName": "uir-sql-foreign-key",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-actions:diagramDiff",
+      "filled": "skip",
+      "note": "us FK glyph"
+    },
+    {
+      "consumerName": "uir-sql-constraint",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "tabler:math-equal-greater",
+      "filled": "skip",
+      "note": "find new expression based varians "
+    },
+    {
+      "consumerName": "uir-sql-sequence",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-actions:groupByModule",
+      "filled": "skip",
+      "note": "use jb numeric but with a blue hash"
+    },
+    {
+      "consumerName": "uir-sql-array",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "jb-expui-json:array",
+      "filled": "skip",
+      "note": "look for different options"
+    },
+    {
+      "consumerName": "uir-sql-query",
+      "group": "uir-sql",
+      "status": "NEW",
+      "outline": "tabler:sql",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "uir-sql-database",
+      "group": "uir-sql",
+      "status": "ALIAS",
+      "outline": "jb-expui-toolwindows:toolWindowDataView",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "file",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:file-light",
+      "filled": "ph:file-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "file-code",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:file-code-light",
+      "filled": "ph:file-code-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "folder",
+      "group": "files-code",
+      "status": "EXISTS",
+      "outline": "ph:folder-light",
+      "filled": "ph:folder-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "json",
+      "group": "files-code",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "markdown",
+      "group": "files-code",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "copy",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:copy-light",
+      "filled": "ph:copy-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "code-2",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:code-light",
+      "filled": "ph:code-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "binary",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:binary-light",
+      "filled": "ph:binary-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "braces",
+      "group": "files-code",
+      "status": "ALIAS",
+      "outline": "ph:brackets-curly-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "file-json",
+      "group": "files-code",
+      "status": "ALIAS",
+      "outline": "lucide:file-json",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "file-text",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:file-text-light",
+      "filled": "ph:file-text-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "file-spreadsheet",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "lucide:file-spreadsheet",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "function-square",
+      "group": "files-code",
+      "status": "ALIAS",
+      "outline": "lucide:function-square",
+      "filled": "ph:function-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "download",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:download-simple-light",
+      "filled": "ph:download-simple-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "upload",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:upload-simple-light",
+      "filled": "ph:upload-simple-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "archive",
+      "group": "files-code",
+      "status": "NEW",
+      "outline": "ph:archive-light",
+      "filled": "ph:archive-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "folder-git-2",
+      "group": "files-code",
+      "status": "ALIAS",
+      "outline": "lucide:folder-git-2",
+      "filled": "jb-expui-nodes:folderGithub",
+      "note": ""
+    },
+    {
+      "consumerName": "git-branch",
+      "group": "git-source-control",
+      "status": "NEW",
+      "outline": "ph:git-branch-light",
+      "filled": "ph:git-branch-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "git-merge",
+      "group": "git-source-control",
+      "status": "NEW",
+      "outline": "ph:git-merge-light",
+      "filled": "ph:git-merge-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "git-pull-request -> git-pr",
+      "group": "git-source-control",
+      "status": "ALIAS",
+      "outline": "ph:git-pull-request-light",
+      "filled": "ph:git-pull-request-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "repo -> folder-git",
+      "group": "git-source-control",
+      "status": "ALIAS",
+      "outline": "ph:git-fork-light",
+      "filled": "ph:git-fork-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "diff",
+      "group": "git-source-control",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "terminal",
+      "group": "dev-tools",
+      "status": "NEW",
+      "outline": "ph:terminal-window-light",
+      "filled": "ph:terminal-window-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "command",
+      "group": "dev-tools",
+      "status": "NEW",
+      "outline": "ph:command-light",
+      "filled": "ph:command-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "wrench",
+      "group": "dev-tools",
+      "status": "NEW",
+      "outline": "ph:wrench-light",
+      "filled": "ph:wrench-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "bug",
+      "group": "dev-tools",
+      "status": "NEW",
+      "outline": "ph:bug-light",
+      "filled": "ph:bug-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "sparkles",
+      "group": "ai-ml",
+      "status": "NEW",
+      "outline": "ph:sparkle-light",
+      "filled": "ph:sparkle-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "brain",
+      "group": "ai-ml",
+      "status": "NEW",
+      "outline": "ph:brain-light",
+      "filled": "ph:brain-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "robot-ai",
+      "group": "ai-ml",
+      "status": "ALIAS",
+      "outline": "ph:robot-light",
+      "filled": "ph:robot-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "magic-wand",
+      "group": "ai-ml",
+      "status": "NEW",
+      "outline": "ph:magic-wand-light",
+      "filled": "ph:magic-wand-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "server",
+      "group": "infrastructure",
+      "status": "EXISTS",
+      "outline": "incumbent",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "server-process",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "ph:hard-drives-light",
+      "filled": "ph:hard-drives-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "database",
+      "group": "infrastructure",
+      "status": "EXISTS",
+      "outline": "ph:database-light",
+      "filled": "ph:database-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "database-plus",
+      "group": "infrastructure",
+      "status": "EXISTS",
+      "outline": "ph:database-light",
+      "filled": "ph:database-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "cloud",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "ph:cloud-light",
+      "filled": "ph:cloud-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "cloud-download",
+      "group": "infrastructure",
+      "status": "EXISTS",
+      "outline": "ph:cloud-arrow-down-light",
+      "filled": "ph:cloud-arrow-down-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "chip",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "ph:cpu-light",
+      "filled": "ph:cpu-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "network",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "ph:network-light",
+      "filled": "ph:network-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "broadcast",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "ph:broadcast-light",
+      "filled": "ph:broadcast-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "queue",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "ph:queue-light",
+      "filled": "ph:queue-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "swap",
+      "group": "infrastructure",
+      "status": "NEW",
+      "outline": "jb-expui-actions:swapPanels",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "refresh",
+      "group": "actions-tools",
+      "status": "NEW",
+      "outline": "ph:arrows-clockwise-light",
+      "filled": "ph:arrows-clockwise-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "arrows-clockwise -> refresh",
+      "group": "actions-tools",
+      "status": "ALIAS",
+      "outline": "ph:arrows-clockwise-light",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "trash",
+      "group": "actions-tools",
+      "status": "EXISTS",
+      "outline": "ph:trash-light",
+      "filled": "ph:trash-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "beaker",
+      "group": "actions-tools",
+      "status": "NEW",
+      "outline": "ph:flask-light",
+      "filled": "ph:flask-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "person -> user",
+      "group": "people-orgs",
+      "status": "ALIAS",
+      "outline": "ph:user-light",
+      "filled": "ph:user-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "organization",
+      "group": "people-orgs",
+      "status": "NEW",
+      "outline": "ph:buildings-light",
+      "filled": "ph:buildings-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "hubot",
+      "group": "people-orgs",
+      "status": "NEW",
+      "outline": "ph:robot-light",
+      "filled": "ph:robot-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "clock",
+      "group": "time",
+      "status": "EXISTS",
+      "outline": "ph:clock-light",
+      "filled": "ph:clock-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "watch",
+      "group": "time",
+      "status": "NEW",
+      "outline": "ph:timer-light",
+      "filled": "ph:timer-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "stopwatch -> watch (timer)",
+      "group": "time",
+      "status": "ALIAS",
+      "outline": "ph:timer-light",
+      "filled": "ph:timer-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "hourglass-medium -> hourglass",
+      "group": "time",
+      "status": "ALIAS",
+      "outline": "ph:hourglass-medium-light",
+      "filled": "ph:hourglass-medium-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "bell",
+      "group": "communication",
+      "status": "NEW",
+      "outline": "ph:bell-light",
+      "filled": "ph:bell-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "bell-slash",
+      "group": "communication",
+      "status": "NEW",
+      "outline": "ph:bell-slash-light",
+      "filled": "ph:bell-slash-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "envelope",
+      "group": "communication",
+      "status": "NEW",
+      "outline": "ph:envelope-light",
+      "filled": "ph:envelope-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "phone",
+      "group": "communication",
+      "status": "NEW",
+      "outline": "ph:phone-light",
+      "filled": "ph:phone-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "share",
+      "group": "communication",
+      "status": "NEW",
+      "outline": "ph:share-network-light",
+      "filled": "ph:share-network-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "at",
+      "group": "communication",
+      "status": "NEW",
+      "outline": "ph:at-light",
+      "filled": "ph:at-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "image",
+      "group": "media",
+      "status": "NEW",
+      "outline": "ph:image-light",
+      "filled": "ph:image-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "camera",
+      "group": "media",
+      "status": "NEW",
+      "outline": "ph:camera-light",
+      "filled": "ph:camera-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "video",
+      "group": "media",
+      "status": "NEW",
+      "outline": "ph:video-camera-light",
+      "filled": "ph:video-camera-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "speaker",
+      "group": "media",
+      "status": "NEW",
+      "outline": "ph:speaker-high-light",
+      "filled": "ph:speaker-high-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "users-three",
+      "group": "people-orgs",
+      "status": "NEW",
+      "outline": "ph:users-three-light",
+      "filled": "ph:users-three-fill",
+      "note": "User group / multi-person glyph. Receives sub-icon composites (UsersPlus, UsersMinus, UsersCheck)."
+    }
+  ]
+}

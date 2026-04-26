@@ -1,33 +1,9 @@
-import * as React from "react";
 import { Icon as IconifyIcon } from "@iconify/react";
+import * as MiIcons from "@flanksource/icons/mi";
 import { findByName, processIconNameSearch, resolveColor } from "./iconResolver";
 import { iconifyLogos, iconifyDevicon } from "./iconifyAllowlist";
 import { isWideViewBox } from "./iconBase";
 import type { IconType } from "./iconBase";
-
-// Lazy resolution so importing ResourceIcon does not require the built
-// @flanksource/icons/mi package to be on the module path (e.g. during tests
-// or in environments where the consumer hasn't run the build yet). At runtime
-// inside a published package, this resolves to the bundled IconMap.
-declare const require: ((id: string) => unknown) | undefined;
-
-let cachedDefaultMap: Record<string, IconType> | undefined;
-function getDefaultIconMap(): Record<string, IconType> {
-  if (cachedDefaultMap) return cachedDefaultMap;
-  try {
-    if (typeof require === "function") {
-      const mod = require("@flanksource/icons/mi") as {
-        IconMap?: Record<string, IconType>;
-      };
-      cachedDefaultMap = mod.IconMap ?? {};
-    } else {
-      cachedDefaultMap = {};
-    }
-  } catch {
-    cachedDefaultMap = {};
-  }
-  return cachedDefaultMap;
-}
 
 export type IconifyCollection = "logos" | "devicon";
 
@@ -84,7 +60,10 @@ export function ResourceIcon({
   iconMap,
   ...rest
 }: ResourceIconProps) {
-  const map = iconMap ?? getDefaultIconMap();
+  const bundledIcons = MiIcons as unknown as {
+    IconMap?: Record<string, IconType>;
+  } & Record<string, IconType>;
+  const map = iconMap ?? bundledIcons.IconMap ?? bundledIcons;
   const bundled: IconType | undefined =
     findByName(primary, map) ?? findByName(secondary, map);
 
