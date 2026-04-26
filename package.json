@@ -10,13 +10,13 @@
   "homepage": "https://github.com/flanksource/flanksource-icons#readme",
   "version": "1.0.54",
   "scripts": {
-    "build": "git submodule update --init --recursive && npm install &&  npm run svg",
+    "build": "git submodule update --init --recursive && pnpm install && pnpm run svg",
     "svg": "bash make.sh",
-    "prepublishOnly": "npm run svg",
+    "prepublishOnly": "pnpm run svg",
     "svgo": "bash svgo.sh",
     "svg-resize": "cd svg && bash resize.sh",
     "gen:iconify": "tsx hack/fetch-iconify-collections.ts",
-    "test": "npx tsx --test iconResolver.test.ts fileTypeMap.test.ts ResourceIcon.test.tsx iconBase.test.ts"
+    "test": "pnpm exec tsx --test iconResolver.test.ts fileTypeMap.test.ts ResourceIcon.test.tsx iconBase.test.ts"
   },
   "keywords": [],
   "author": "",

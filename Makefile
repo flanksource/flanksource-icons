@@ -19,7 +19,7 @@ URL := http://localhost:$(PORT)
 
 demo:
 	@echo "Building demo (React bundle)..."
-	npm run svg
+	pnpm run svg
 	@echo "Demo built — serve react-icons/packages/_react-icons_all/ with demo.html"
 
 dist: demo
@@ -37,6 +37,6 @@ serve: dist
 	   if command -v open >/dev/null 2>&1; then open "$(URL)"; \
 	   elif command -v xdg-open >/dev/null 2>&1; then xdg-open "$(URL)"; \
 	   else echo "Open $(URL) in your browser"; fi ) &
-	npx serve -l $(PORT) dist
+	pnpm exec serve -l $(PORT) dist
 
 .PHONY: demo dist serve

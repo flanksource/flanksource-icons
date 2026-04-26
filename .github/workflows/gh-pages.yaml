@@ -15,16 +15,20 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build icons and demo bundle
-        run: npm run svg
+        run: pnpm run svg
 
       - name: Prepare publish directory
         run: |
