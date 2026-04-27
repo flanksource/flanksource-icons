@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Icon as IconifyIcon } from "@iconify/react";
 import * as MiIcons from "@flanksource/icons/mi";
 import { findByName, processIconNameSearch, resolveColor } from "./iconResolver";

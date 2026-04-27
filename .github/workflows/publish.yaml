@@ -69,6 +69,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build icons
+        run: pnpm run svg
+
+      - name: Self-link built package for tests
+        run: |
+          mkdir -p node_modules/@flanksource
+          ln -sfn ../../react-icons/packages/_react-icons_all node_modules/@flanksource/icons
+
       - name: Run tests
         run: pnpm test
 
