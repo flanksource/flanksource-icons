@@ -139,6 +139,7 @@ if [ -d "$icons_ui_dir" ]; then
   (cd "$icons_ui_dir" && pnpm install --silent && pnpm run build:codegen >/dev/null)
   icons_ui_alias="--alias:@flanksource/icons-ui=$icons_ui_dir/src/index.ts"
 fi
+node scripts/generate-llm-txt.mjs
 pnpm exec esbuild $reactIconsAll/DemoApp.tsx \
   --bundle --format=esm --jsx=automatic \
   --alias:@flanksource/icons/mi=$reactIconsAll/mi/index.mjs \

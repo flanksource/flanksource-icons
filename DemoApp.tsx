@@ -889,6 +889,63 @@ function IconsUiDetail({ name, onBack, onOpen }: { name: string; onBack: () => v
   );
 }
 
+function LlmUsage() {
+  return (
+    <div className="card">
+      <h2 style={{ marginTop: 0 }}>LLM Usage</h2>
+      <p style={{ color: "#555", lineHeight: 1.6 }}>
+        Use <a href="llm.txt" target="_blank" rel="noopener noreferrer">llm.txt</a>{" "}
+        for copy-ready examples and complete generated listings of{" "}
+        <code>@flanksource/icons</code> names and <code>@flanksource/icons-ui</code>{" "}
+        components.
+      </p>
+
+      <div className="examples-grid" style={{ marginTop: 16 }}>
+        <div className="example-card">
+          <h3>Icon names</h3>
+          <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5, marginBottom: 8 }}>
+            Prefer exact names from the generated list. The demo currently exposes{" "}
+            {allIconNames.length} bundled SVG icons.
+          </div>
+          <div className="code-snippet" style={{ fontSize: 12 }}>
+            {'import { Icon } from "@flanksource/icons/icon";\n\n<Icon name="aws-ec2" className="h-6 max-w-6" />\n<Icon name="k8s-pod" color="blue" />'}
+          </div>
+        </div>
+
+        <div className="example-card">
+          <h3>Runtime resources</h3>
+          <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5, marginBottom: 8 }}>
+            Use ResourceIcon when the name comes from provider, resource type, service, or config data.
+          </div>
+          <div className="code-snippet" style={{ fontSize: 12 }}>
+            {'import { ResourceIcon } from "@flanksource/icons/icon";\n\n<ResourceIcon primary="Kubernetes::Pod" secondary="KubernetesResource" />\n<ResourceIcon primary="datadog" />'}
+          </div>
+        </div>
+
+        <div className="example-card">
+          <h3>File types</h3>
+          <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5, marginBottom: 8 }}>
+            Use FileTypeIcon for filenames and extensions instead of guessing icon names.
+          </div>
+          <div className="code-snippet" style={{ fontSize: 12 }}>
+            {'import { FileTypeIcon } from "@flanksource/icons/icon";\n\n<FileTypeIcon name="config.yaml" />\n<FileTypeIcon name="main.go" />'}
+          </div>
+        </div>
+
+        <div className="example-card">
+          <h3>UI components</h3>
+          <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5, marginBottom: 8 }}>
+            Use the {iconsUiEntries.length} generated React components for interface controls and states.
+          </div>
+          <div className="code-snippet" style={{ fontSize: 12 }}>
+            {'import { UiCheck, UiSearch, UiUpload } from "@flanksource/icons-ui";\n\n<UiSearch size={16} className="text-slate-700" />\n<UiCheck size={16} className="text-emerald-600" />\n<UiUpload size={16} />'}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [tab, setTab] = useState("Icon Playground");
   const [pgState, setPgState] = useState({ name: "aws-ec2", secondary: "", color: "", square: "auto" as "auto" | "true" | "false" });
@@ -912,7 +969,8 @@ function App() {
         ~{allIconNames.length} curated icons in <code>@flanksource/icons</code>{" "}
         + {iconsUiEntries.length} curated React components in{" "}
         <code>@flanksource/icons-ui</code> &mdash;{" "}
-        <a href="https://github.com/flanksource/flanksource-icons">GitHub</a>
+        <a href="https://github.com/flanksource/flanksource-icons">GitHub</a>{" "}
+        &middot; <a href="llm.txt">llm.txt</a>
       </p>
       <Tabs
         tabs={[
@@ -922,6 +980,7 @@ function App() {
           "File Types",
           "Browse All",
           `Icons UI (${iconsUiEntries.length})`,
+          "LLM Usage",
         ]}
         active={tab}
         onSelect={setTab}
@@ -936,6 +995,7 @@ function App() {
       {tab === "Examples" && <Examples onSelect={switchToPlayground} />}
       {tab === "File Types" && <FileTypeExamples />}
       {tab === "Browse All" && <Browse onSelect={(name) => switchToPlayground(name)} />}
+      {tab === "LLM Usage" && <LlmUsage />}
       {tab.startsWith("Icons UI") && (
         iconsUiDetail
           ? <IconsUiDetail name={iconsUiDetail} onBack={() => setIconsUiDetail(null)} onOpen={(n) => setIconsUiDetail(n)} />
