@@ -1,0 +1,285 @@
+# Flanksource Icons LLM Usage
+
+This file is generated from the Flanksource Icons repository for LLMs and coding agents.
+Use exact icon names from the listings below when generating code.
+
+Demo: https://flanksource.github.io/flanksource-icons/
+Repository: https://github.com/flanksource/flanksource-icons
+NPM packages: @flanksource/icons, @flanksource/icons-ui
+
+## Install
+
+```sh
+pnpm add @flanksource/icons @flanksource/icons-ui
+```
+
+Both packages require React as a peer dependency.
+
+## Choose The Right Component
+
+- Use @flanksource/icons/icon Icon when you know a curated SVG icon name.
+- Use ResourceIcon when the icon name comes from runtime data such as resource type, cloud provider, service, or config class.
+- Use FileTypeIcon when rendering file names or file extensions.
+- Use @flanksource/icons-ui components for UI actions, status, navigation, and product interface symbols.
+
+## Usage Examples
+
+```tsx
+import { Icon, ResourceIcon, FileTypeIcon } from "@flanksource/icons/icon";
+
+export function Examples() {
+  return (
+    <>
+      <Icon name="aws-ec2" className="h-6 max-w-6" />
+      <Icon name="k8s-pod" color="blue" />
+      <ResourceIcon primary="Kubernetes::Pod" secondary="KubernetesResource" className="h-6 max-w-6" />
+      <ResourceIcon primary="datadog" className="h-6 max-w-6" />
+      <FileTypeIcon name="config.yaml" className="h-6 max-w-6" />
+    </>
+  );
+}
+```
+
+```tsx
+import { UiCheck, UiUpload, UiSearch, UiWarningCircleFilled } from "@flanksource/icons-ui";
+
+export function Toolbar() {
+  return (
+    <>
+      <UiSearch size={16} className="text-slate-700" />
+      <UiUpload size={16} />
+      <UiCheck size={16} className="text-emerald-600" title="complete" />
+      <UiWarningCircleFilled size={16} className="text-amber-600" />
+    </>
+  );
+}
+```
+
+## Resolution Notes
+
+Icon accepts exact names from the @flanksource/icons listing and also supports the aliases and prefix matching built into the package.
+ResourceIcon first checks bundled icons, then falls back to allowed Iconify logo/devicon matches when enabled.
+FileTypeIcon maps common filenames and extensions to bundled icons.
+Most @flanksource/icons-ui outline icons use currentColor, so CSS color utilities such as className="text-blue-500" work.
+
+## @flanksource/icons Names (1125)
+
+access-denied, activemq, activity, activity-feed, activity-feed-o, add, add-alarm, add-alarm-clock
+add-alert, add-certificate, add-clock, add-cloud, add-cost, add-database, add-disk, add-email
+add-firewall, add-folder, add-group, add-heart, add-inbox, add-key, add-list, add-network-card
+add-node, add-page, add-properties, add-receipt, add-shield, add-snapshot, add-tag, add-ticket
+add-user, advanced-search, ai, airflow, akamai, alarm, alarm-bell, alarm-clock
+alarm-clock-check, alarm-clock-off, alarm2, alarm3, alert, angular, ansible, anthropic
+apache, apache-pulsar, apache-spark, approval, approve, archive, argo, artifact-registry
+ask-question, auth0, aws, aws-ack, aws-acm, aws-alb, aws-ami, aws-api-gateway
+aws-audit-manager, aws-auto-scaling, aws-beanstalk, aws-cloud-directory, aws-cloudformation, aws-cloudfront, aws-cloudtrail, aws-cloudwatch
+aws-cloudwatch-alarm, aws-config, aws-detective, aws-directory-service, aws-dnszone, aws-documentdb, aws-dynamodb, aws-ebs-volume
+aws-ec2, aws-ec2-a1, aws-ec2-ami, aws-ec2-auto-scaling, aws-ec2-beanstalk, aws-ec2-c5, aws-ec2-c6a, aws-ec2-c6g
+aws-ec2-c6i, aws-ec2-c7g, aws-ec2-cloudwatch, aws-ec2-d2, aws-ec2-d3, aws-ec2-db, aws-ec2-dl1, aws-ec2-eip
+aws-ec2-f1, aws-ec2-g4ad, aws-ec2-g4dn, aws-ec2-g5, aws-ec2-h1, aws-ec2-habana-gaudi, aws-ec2-hmi, aws-ec2-hpc6a
+aws-ec2-i3, aws-ec2-i3en, aws-ec2-im4gn, aws-ec2-inf1, aws-ec2-instance, aws-ec2-instances, aws-ec2-is4gen, aws-ec2-m1-mac
+aws-ec2-m4, aws-ec2-m5, aws-ec2-m6a, aws-ec2-m6g, aws-ec2-m6i, aws-ec2-mac, aws-ec2-p2, aws-ec2-p3
+aws-ec2-p4, aws-ec2-r4, aws-ec2-r5, aws-ec2-r6g, aws-ec2-r6i, aws-ec2-rdn, aws-ec2-route-table, aws-ec2-spot
+aws-ec2-t3, aws-ec2-t3a, aws-ec2-t4g, aws-ec2-trainium, aws-ec2-trn1, aws-ec2-vpc, aws-ec2-vt1, aws-ec2-x1
+aws-ec2-x2gd, aws-ec2-x2iedn, aws-ec2-x2iezn, aws-ec2-z1d, aws-ecr, aws-ecr-repository, aws-ecs, aws-ecs-service
+aws-ecs-task, aws-efs, aws-eks-cluster, aws-elastic-ip, aws-elasticache, aws-elb, aws-eni, aws-fargate
+aws-firewall, aws-firewall-manager, aws-guard-duty, aws-iam, aws-iam-role, aws-iam-sts, aws-iam-user, aws-inspector
+aws-kms, aws-lambda, aws-macie, aws-rds, aws-route53-hostedzone, aws-s3, aws-secrets-manager, aws-security-group
+aws-ses, aws-shield, aws-sns, aws-sqs, aws-trusted-advisor, aws-trusted-advisor-cost, aws-trusted-advisor-fault-tolerance, aws-trusted-advisor-security
+aws-vpc, aws-waf, azure, azure-aci, azure-acl, azure-acr, azure-activity-log, azure-ad
+azure-advisor, azure-aks, azure-api-management, azure-app-registration, azure-app-service, azure-application-gateway, azure-availability-set, azure-bastion
+azure-cdn, azure-container-app, azure-cosmos, azure-data-factory, azure-devops, azure-devops-pipeline, azure-disk, azure-disk-snapshot
+azure-dns, azure-enterprise-app, azure-event-hub, azure-firewall, azure-front-door, azure-function, azure-group, azure-image
+azure-ip, azure-key-vault, azure-key-vaults, azure-load-balancer, azure-load-balancers, azure-log-analytics, azure-logic-app, azure-managed-identity
+azure-metrics, azure-monitor, azure-nat, azure-network-interface, azure-postgres, azure-redis, azure-resource-group, azure-route-table
+azure-sentinel, azure-service-bus, azure-service-fabric, azure-sql-server, azure-static-web-app, azure-storage, azure-storage-container, azure-subscription
+azure-synapse, azure-traffic-manager, azure-user, azure-vm, azure-vm-scaleset, azure-vnet, azure-vpn, backstage
+badge, badge-check, badge-check2, badge-wait, ban, bazel, bell, bizagi
+block, bluelineconsole, bot, bot-broken, bot2, boundary, brain, broadcast
+broadcast2, broken-heart, browser, bug, c, c-sharp, ca, caddy
+cal, calico, canary-checker, canary-checker-white, cancel, casbin, cassandra, ceph
+cert-manager, certificate, cfg, changes, chatgpt, check, check-database, check-docker
+check-green, checkmark, checkout, cilium, cisco, classroom, claude, claude_logo
+clickhouse, clickhouse_logo, clock, clone, cloud-build, cloud-done, cloud-download, cloud-error
+cloud-fire, cloud-upload, cloudflare, cloudformation, cloudsql, cloudwatch, cloudwatch-alarm, cloudwatch-config
+cluster, cmake, cni, cnrm, cockroachdb, code, cog, compare
+compute-engine, config, config-db, config-db-white, confluence, connected, console, consul
+containerd, containerdPull, containerdPush, copilot, copilot_logo, coredns, cpp, cpu
+critical, cross, cross-o, crosshair, crossplane, crossplane-logo, csharp, csi
+css, csv, d365, dart, dashboard-line, data-center, data-grid, data-transfer
+database, database-fill, database-fill-gear, database-plus, database-restore, database-search, database-search-o, databases
+databricks, datadog, datapower-monitoring, datapower-routing, dead, deb, debian, decrease
+default-file, deployment, details, dex, diff, discord, disk, disk-error
+disk-failed, disk-success, django, dns, dns2, docker, dockerPull, dockerPush
+docx, dollar, dotenv, dotnet, dots-triple, down, down-bordered, down-database
+down-shield, download, download-archive, download-cloud, dynatrace, ec2, ecr, edit
+edit-property, editorconfig, eks, elastic, elasticsearch, elb, elixir, email
+entra, entra-conditional-access, entra-connect, envoy, envoy-gateway, erlang, error, error-circle-outline
+error-database, error-diamond, error-network-card, etcd, exchange, expired, export, external-sercrets
+fail, falco, fastly, file-loop, filter, fire, firewall, flagger
+flanksource, flanksource-icon, flow2, fluentd, flux, folder, folder-git, folder-shared
+function, gcp, gcp-access-context-manager, gcp-administration, gcp-advanced-agent-modeling, gcp-advanced-solutions-lab, gcp-agent-assist, gcp-ai-hub
+gcp-ai-platform, gcp-ai-platform-unified, gcp-analytics-hub, gcp-anthos, gcp-anthos-config-management, gcp-anthos-service-mesh, gcp-api, gcp-api-analytics
+gcp-api-monetization, gcp-apigee-api-platform, gcp-apigee-sense, gcp-app-engine, gcp-artifact-registry, gcp-asset-inventory, gcp-assured-workloads, gcp-automl
+gcp-automl-natural-language, gcp-automl-tables, gcp-automl-translation, gcp-automl-video-intelligence, gcp-automl-vision, gcp-bare-metal-solutions, gcp-batch, gcp-beyondcorp
+gcp-bigquery, gcp-bigtable, gcp-billing, gcp-binary-authorization, gcp-catalog, gcp-certificate-authority-service, gcp-certificate-manager, gcp-cloud-api-gateway
+gcp-cloud-apis, gcp-cloud-armor, gcp-cloud-asset-inventory, gcp-cloud-audit-logs, gcp-cloud-build, gcp-cloud-cdn, gcp-cloud-code, gcp-cloud-composer
+gcp-cloud-data-fusion, gcp-cloud-deploy, gcp-cloud-deployment-manager, gcp-cloud-dns, gcp-cloud-domains, gcp-cloud-ekm, gcp-cloud-endpoints, gcp-cloud-external-ip-addresses
+gcp-cloud-firewall-rules, gcp-cloud-for-marketing, gcp-cloud-functions, gcp-cloud-generic, gcp-cloud-gpu, gcp-cloud-healthcare-api, gcp-cloud-healthcare-marketplace, gcp-cloud-hsm
+gcp-cloud-ids, gcp-cloud-inference-api, gcp-cloud-interconnect, gcp-cloud-jobs-api, gcp-cloud-load-balancing, gcp-cloud-logging, gcp-cloud-media-edge, gcp-cloud-monitoring
+gcp-cloud-nat, gcp-cloud-natural-language-api, gcp-cloud-network, gcp-cloud-ops, gcp-cloud-optimization-ai, gcp-cloud-optimization-ai---fleet-routing-api, gcp-cloud-router, gcp-cloud-routes
+gcp-cloud-run, gcp-cloud-run-for-anthos, gcp-cloud-scheduler, gcp-cloud-security-scanner, gcp-cloud-shell, gcp-cloud-spanner, gcp-cloud-sql, gcp-cloud-storage
+gcp-cloud-tasks, gcp-cloud-test-lab, gcp-cloud-tpu, gcp-cloud-translation-api, gcp-cloud-vision-api, gcp-cloud-vpn, gcp-compute-engine, gcp-configuration-management
+gcp-connectivity-test, gcp-connectors, gcp-contact-center-ai, gcp-container-optimized-os, gcp-container-registry, gcp-data-catalog, gcp-data-labeling, gcp-data-layers
+gcp-data-loss-prevention-api, gcp-data-qna, gcp-data-studio, gcp-data-transfer, gcp-database-migration-service, gcp-dataflow, gcp-datalab, gcp-dataplex
+gcp-datapol, gcp-dataprep, gcp-dataproc, gcp-dataproc-metastore, gcp-datashare, gcp-datastore, gcp-datastream, gcp-debugger
+gcp-developer-portal, gcp-dialogflow, gcp-dialogflow-cx, gcp-dialogflow-insights, gcp-document-ai, gcp-early-access-center, gcp-error-reporting, gcp-eventarc
+gcp-filestore, gcp-financial-services-marketplace, gcp-firestore, gcp-fleet-engine, gcp-free-trial, gcp-game-servers, gcp-gce-systems-management, gcp-genomics
+gcp-gke-on-prem, gcp-google-cloud-marketplace, gcp-google-kubernetes-engine, gcp-google-maps-platform, gcp-healthcare-nlp-api, gcp-home, gcp-identity-and-access-management, gcp-identity-aware-proxy
+gcp-identity-platform, gcp-iot-core, gcp-iot-edge, gcp-key-access-justifications, gcp-key-management-service, gcp-kms, gcp-kuberun, gcp-launcher
+gcp-local-ssd, gcp-looker, gcp-managed-service-for-microsoft-active-directory, gcp-media-translation-api, gcp-memorystore, gcp-migrate-for-anthos, gcp-migrate-for-compute-engine, gcp-my-cloud
+gcp-network-connectivity-center, gcp-network-intelligence-center, gcp-network-security, gcp-network-tiers, gcp-network-topology, gcp-onboarding, gcp-os-configuration-management, gcp-os-inventory-management
+gcp-os-patch-management, gcp-partner-interconnect, gcp-partner-portal, gcp-performance-dashboard, gcp-permissions, gcp-persistent-disk, gcp-phishing-protection, gcp-policy-analyzer
+gcp-premium-network-tier, gcp-private-connectivity, gcp-private-service-connect, gcp-producer-portal, gcp-profiler, gcp-project, gcp-pubsub, gcp-quantum-engine
+gcp-quotas, gcp-real-world-insights, gcp-recommendations-ai, gcp-release-notes, gcp-repos, gcp-retail-api, gcp-risk-manager, gcp-runtime-config
+gcp-secret-manager, gcp-security, gcp-security-command-center, gcp-security-health-advisor, gcp-security-key-enforcement, gcp-service-discovery, gcp-speech-to-text, gcp-stackdriver
+gcp-standard-network-tier, gcp-stream-suite, gcp-support, gcp-tensorflow-enterprise, gcp-text-to-speech, gcp-tools-for-powershell, gcp-trace, gcp-traffic-director
+gcp-transfer, gcp-transfer-appliance, gcp-user-preferences, gcp-vertex-ai, gcp-video-intelligence-api, gcp-virtual-private-cloud, gcp-visual-inspection, gcp-vmware-engine
+gcp-web-risk, gcp-web-security-scanner, gcp-workflows, gcp-workload-identity-pool, gcsBucket, gear, gemini, gif
+git, git-compare, git-merge-queue, git-pr, gitea, github, gitlab, gke
+globe1, go, goal, google, google-chat, google-cloud, gradle, grafana
+graphql, group, grpc, grpc2, gz, haproxy, harbor, haskell
+hazelcast, health, health2, heart, heart-checkmark, heart-monitor, heart-o, heart-pulse
+heart-question, helm, help, hibernate, hide, history, history-o, hourglass
+html, http, https, ibm, ibm-cloud, ibm-mq, icmp, id-not-verified
+id-verified, idea, ifttt, import, in-progress, incidents, increase, increase2
+infinity, influxdb, info, info-circle, info2, infoblox, ini, insights
+ip, istio, jaeger, jar, java, jenkins, jira, jmeter
+js, json, junit, jwt, k3s, k6, k8s, k8s-clusterrole
+k8s-clusterrolebinding, k8s-configmap, k8s-cronjob, k8s-customresourcedefinition, k8s-daemonset, k8s-deployment, k8s-endpoint, k8s-ep
+k8s-group, k8s-hpa, k8s-ingress, k8s-job, k8s-limits, k8s-namespace, k8s-netpol, k8s-networkpolicy
+k8s-node, k8s-persistentvolume, k8s-persistentvolumeclaim, k8s-pod, k8s-podsecuritypolicy, k8s-quota, k8s-replicaset, k8s-role
+k8s-rolebinding, k8s-secret, k8s-service, k8s-serviceaccount, k8s-statefulset, k8s-storageclass, k8s-user, k8s-vol
+kafka, karpenter, kasten, keda, keda-logo, keycloak, knative, kong
+kotlin, kubescape, kustomize, kyverno, lab, ldap, learning, letsencrypt
+library, lifebuoy, link, linkerd, linux, list, loadbalancer, loading-bar
+lock, log, logic-apps, login, logout, logs, logs2, loki
+longhorn, lua, makefile-icon, mariadb, markdown, matrix, mattermost, maven
+maximize, mcp, mem, memchache, memory-error, metallb, metrics, mfa
+microsoft, microsoft-copilot, minimize, minio, minus, mission-control, mission-control-logo, mission-control-logo-white
+mission-control-playbook, mission-control-white, mongo, mongodb, mqtt, msplanner, multiple, mysql
+namespace, nats, network, network-card, newrelic, next.js, nginx, nic
+nodejs, not-found, npm, ntfy, o365, ods, off, ok
+okta, ollama, on, opa, openai, opengitops, openid, opensearch
+openshift, opentelemetry, openvpn, operatorframework, opsgenie, oracle, oracle_icon, ory
+ory-hydra, ory-kratos, ory-logo, package-install, package-rollback, package-uninstall, package-upgrade, pagerduty
+pages, pass, pause, pause-button, pdf, pem, perl, php
+ping, playbook, playwright, plugin, plugin-o, plus, png, pod
+pom, portainer, postgres, postgres-white, postgrest, postman, power-off, powerbi
+powershell, ppt, pptx, priority-low, prisma, prometheus, properties-script, protobuf
+pushbullet, pushover, py, python, question, questions, r, rabbitmq
+radar, rancher, ratio, rb, react, realtime, recycle, redhat
+redis, region, relationship, reload, remove, remove-alarm, remove-archive, remove-badge
+remove-certificate, remove-clock, remove-cloud, remove-comment, remove-cost, remove-database, remove-email, remove-filter
+remove-firewall, remove-folder, remove-group, remove-heart, remove-key, remove-link, remove-list, remove-network-card
+remove-node, remove-page, remove-shield, remove-silence, remove-tag, remove-ticket, remove-trash, remove-user
+replace, report-card, restart, restart-button, restic, restore, restrict, resume
+rocket, rocket-chat, rollback, rook, router, rub, ruby, rust
+samba, save, scala, scale-down, scale-in, scale-out, scale-up, schedule
+scorecard-fail, scylladb, seal, search, search-bar, search-box, search-in-list, security-pass
+send, sentry, server, servers, servers-outline, servers2, servicenow, servicenow-logo
+settings, sftp, shell, shield, shield-check, shield-help, shield-lock, shield-time
+shield-user, shield-warn, show, shutdown, silence, silenced, skip, slack
+sleep-mode, smb, sms, snail, snooze, snowflake, snyk, sonarqube
+source, speak, speed, split, split-o, splunk, spring, sql
+sql-server, sqlserver, ssl, ssl2, stackdriver, stackdriver-monitoring, stackdriver-trace, star
+start, start-cog, stop, stopwatch, structure, submit-for-approval, supabase, svelte
+swagger, swift, switch, sync, sys, system, system-report, tag
+tag2, tailscale, talk, target, target2, teams, telegram, temporal
+terraform, test, thanos, thousandeyes, timeout, timer, timescaledb, timezone
+today, toggle-off, toggle-on, tomcat, toml, topology, topology-white, traces
+traefik, trafficlight, training, training2, transfer, trash, tree, trivy
+troubleshoot, ts, txt, ubuntu, unhealthy, unlock, up, up-bordered
+up-database, up-shield, upload, user, vagrant, valkey, variable, variable2
+variable3, vault, vault2, vcluster, velero, victoriametrics, view-details, vip
+vpn, vscode, vsd, vsphere, vue, wait-for-approval, warning-circle, warning-circle2
+webhook, website, wireguard, workflow, workflow-o, world, www, xls
+xlsx, xml, yaml, zip, zulip
+
+## @flanksource/icons-ui Components (450)
+
+UiAdd, UiAddFilled, UiArchive, UiArchiveFilled, UiArray, UiArrowDown
+UiArrowDownFilled, UiArrowLeft, UiArrowLeftFilled, UiArrowRight, UiArrowRightFilled, UiArrowUp
+UiArrowUpFilled, UiAsyncFn, UiAt, UiAtFilled, UiBeaker, UiBeakerFilled
+UiBell, UiBellFilled, UiBellSlash, UiBellSlashFilled, UiBinary, UiBinaryFilled
+UiBox, UiBoxes, UiBoxesFilled, UiBoxFilled, UiBraces, UiBrain
+UiBrainFilled, UiBroadcast, UiBroadcastFilled, UiBug, UiBugFilled, UiCalendar
+UiCalendarBlank, UiCalendarBlankFilled, UiCalendarFilled, UiCamera, UiCameraFilled, UiCancel
+UiCancelFilled, UiChartBar, UiChartBarFilled, UiChartPie, UiChartPieFilled, UiCheck
+UiCheckFilled, UiChevronDown, UiChevronDownFilled, UiChevronRight, UiChevronRightFilled, UiChevronsDown
+UiChevronsDownFilled, UiChevronsUp, UiChevronsUpFilled, UiChevronUp, UiChevronUpFilled, UiChip
+UiChipFilled, UiCircleFilled, UiCircleFilledFilled, UiCircleOutline, UiCircleOutlineFilled, UiCircleX
+UiCircleXFilled, UiClass, UiClock, UiClockFilled, UiClose, UiCloseFilled
+UiCloud, UiCloudDownload, UiCloudDownloadFilled, UiCloudFilled, UiCode2, UiCode2Filled
+UiCog, UiCogFilled, UiCollapseAll, UiColumns, UiColumnsFilled, UiCommand
+UiCommandFilled, UiComment, UiConfig, UiConfigFilled, UiConstant, UiConstructor
+UiCopy, UiCopyFilled, UiDatabase, UiDatabaseCheck, UiDatabaseCheckFilled, UiDatabaseCross
+UiDatabaseCrossFilled, UiDatabaseDown, UiDatabaseDownFilled, UiDatabaseError, UiDatabaseErrorFilled, UiDatabaseFilled
+UiDatabaseInfo, UiDatabaseInfoFilled, UiDatabaseMinus, UiDatabaseMinusFilled, UiDatabasePending, UiDatabasePendingFilled
+UiDatabasePlus, UiDatabasePlusFilled, UiDatabaseTrash, UiDatabaseTrashFilled, UiDatabaseUp, UiDatabaseUpFilled
+UiDatabaseWarning, UiDatabaseWarningFilled, UiDebug, UiDebugFilled, UiDecorator, UiDiff
+UiDotsVertical, UiDotsVerticalFilled, UiDownload, UiDownloadFilled, UiEdit, UiEditFilled
+UiEllipsis, UiEllipsisFilled, UiEndpoint, UiEnum, UiEnumMember, UiEnvelope
+UiEnvelopeFilled, UiError, UiEvent, UiExpandAll, UiExport, UiExternalLink
+UiEye, UiEyeClosed, UiEyeClosedFilled, UiEyeFilled, UiField, UiFile
+UiFileCode, UiFileCodeFilled, UiFileFilled, UiFileJson, UiFileSpreadsheet, UiFileText
+UiFileTextFilled, UiFilter, UiFilterFilled, UiFingerprint, UiFingerprintFilled, UiFolder
+UiFolderFilled, UiFolderGit, UiFolderGit2, UiFolderGit2Filled, UiFolderGitFilled, UiForm
+UiFormFilled, UiFunction, UiFunctionSquare, UiFunctionSquareFilled, UiFunnelData, UiFunnelDataFilled
+UiGitBranch, UiGitBranchFilled, UiGitGraph, UiGitGraphFilled, UiGitMerge, UiGitMergeFilled
+UiGitPr, UiGitPrFilled, UiGlobe, UiGraph, UiGraphFilled, UiGrid
+UiGridFilled, UiHistory, UiHistoryFilled, UiHome, UiHomeFilled, UiHourglass
+UiHourglassFilled, UiHubot, UiHubotFilled, UiImage, UiImageFilled, UiImport
+UiInbox, UiInboxFilled, UiInfo, UiInfoFilled, UiInsightAvailability, UiInsightAvailabilityFilled
+UiInsightCompliance, UiInsightCost, UiInsightCostFilled, UiInsightIntegration, UiInsightPerformance, UiInsightPerformanceFilled
+UiInsightRecommendation, UiInsightRecommendationFilled, UiInsightReliability, UiInsightReliabilityFilled, UiInsightSecurity, UiInsightSecurityFilled
+UiInsightTechnicalDebt, UiInsightTechnicalDebtFilled, UiInterface, UiJson, UiKanban, UiKanbanFilled
+UiKey, UiKeyFilled, UiKeyword, UiLambda, UiLayoutDashboard, UiLayoutDashboardFilled
+UiLightbulb, UiLightbulbFilled, UiLink, UiLinkExternal, UiLinkExternalFilled, UiLinkFilled
+UiListFlat, UiListFlatFilled, UiListTree, UiListTreeFilled, UiLoader, UiLoaderFilled
+UiLocation, UiLocationFilled, UiLock, UiLockFilled, UiLockOpen, UiLockOpenFilled
+UiMagicWand, UiMagicWandFilled, UiMarkdown, UiMenu, UiMenuFilled, UiMethod
+UiModule, UiNamespace, UiNetwork, UiNetworkFilled, UiNull, UiNumeric
+UiObject, UiOperator, UiOrganization, UiOrganizationCheck, UiOrganizationCheckFilled, UiOrganizationCross
+UiOrganizationCrossFilled, UiOrganizationFilled, UiOrganizationMinus, UiOrganizationMinusFilled, UiOrganizationPlus, UiOrganizationPlusFilled
+UiPackage, UiPackageFilled, UiParameter, UiPass, UiPassFilled, UiPause
+UiPhone, UiPhoneFilled, UiPlay, UiPlaybook, UiProperty, UiPulse
+UiPulseFilled, UiPuzzle, UiPuzzleFilled, UiQuestion, UiQuestionFilled, UiQueue
+UiQueueFilled, UiRecord, UiRefresh, UiRefreshFilled, UiRemove, UiRemoveFilled
+UiRobotAi, UiRobotAiFilled, UiRocket, UiRocketFilled, UiRoute, UiRouteFilled
+UiRows, UiRowsFilled, UiSave, UiSaveFilled, UiSealCheck, UiSealCheckFilled
+UiSearch, UiSelect, UiSelectFilled, UiServer, UiServerProcess, UiServerProcessFilled
+UiSeverityBlocker, UiSeverityBlockerFilled, UiSeverityCritical, UiSeverityCriticalFilled, UiSeverityHigh, UiSeverityHighFilled
+UiSeverityInfo, UiSeverityInfoFilled, UiSeverityLow, UiSeverityLowFilled, UiSeverityMedium, UiSeverityMediumFilled
+UiSeverityWarning, UiSeverityWarningFilled, UiShare, UiShareFilled, UiShield, UiShieldCheck
+UiShieldCheckFilled, UiShieldCross, UiShieldCrossFilled, UiShieldFilled, UiShieldInfo, UiShieldInfoFilled
+UiShieldMinus, UiShieldMinusFilled, UiShieldPending, UiShieldPendingFilled, UiShieldPlus, UiShieldPlusFilled
+UiShieldWarning, UiShieldWarningFilled, UiShipWheel, UiSidebar, UiSidebarFilled, UiSignIn
+UiSignInFilled, UiSignOut, UiSignOutFilled, UiSiren, UiSirenFilled, UiSkipForward
+UiSkipForwardFilled, UiSkull, UiSkullFilled, UiSliders, UiSlidersFilled, UiSparkles
+UiSparklesFilled, UiSpeaker, UiSpeakerFilled, UiSqlArray, UiSqlColumn, UiSqlConstraint
+UiSqlDatabase, UiSqlForeignKey, UiSqlFunction, UiSqlIndex, UiSqlPrimaryKey, UiSqlQuery
+UiSqlSchema, UiSqlSequence, UiSqlStoredProc, UiSqlTable, UiSqlTableFilled, UiSqlTrigger
+UiSqlView, UiSquare, UiSquareFilled, UiStar, UiStarFilled, UiStop
+UiString, UiStruct, UiSwap, UiTable, UiTableFilled, UiTableProperties
+UiTablePropertiesFilled, UiTag, UiTagFilled, UiTerminal, UiTerminalFilled, UiTest
+UiThumbsDown, UiThumbsDownFilled, UiThumbsUp, UiThumbsUpFilled, UiToggleOff, UiToggleOffFilled
+UiToggleOn, UiToggleOnFilled, UiTrait, UiTrash, UiTrashFilled, UiTrendDown
+UiTrendDownFilled, UiTrendUp, UiTrendUpFilled, UiTypeAlias, UiTypeParameter, UiUnknown
+UiUpload, UiUploadFilled, UiUser, UiUserCheck, UiUserCheckFilled, UiUserCircle
+UiUserCircleCheck, UiUserCircleCheckFilled, UiUserCircleFilled, UiUserCircleMinus, UiUserCircleMinusFilled, UiUserCirclePlus
+UiUserCirclePlusFilled, UiUserFilled, UiUserMinus, UiUserMinusFilled, UiUserPlus, UiUserPlusFilled
+UiUsersThree, UiUsersThreeCheck, UiUsersThreeCheckFilled, UiUsersThreeCross, UiUsersThreeCrossFilled, UiUsersThreeFilled
+UiUsersThreeMinus, UiUsersThreeMinusFilled, UiUsersThreePlus, UiUsersThreePlusFilled, UiVariable, UiVideo
+UiVideoFilled, UiWarningCircle, UiWarningCircleFilled, UiWarningTriangle, UiWarningTriangleFilled, UiWatch
+UiWatchFilled, UiWorkflow, UiWrench, UiWrenchFilled, UiZap, UiZapFilled

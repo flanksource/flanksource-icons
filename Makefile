@@ -27,6 +27,7 @@ dist: demo
 	mkdir -p dist
 	cp demo.html dist/index.html
 	cp react-icons/packages/_react-icons_all/demo-bundle.js dist/
+	cp llm.txt dist/
 	cp -r svg dist/
 
 # Build the demo and open it in the default browser.
