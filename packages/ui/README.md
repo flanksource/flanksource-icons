@@ -1,12 +1,12 @@
-# @flanksource/icons-ui
+# @flanksource/icons/ui
 
 Curated UI icon set for Flanksource projects. Each icon is shipped as a tiny
 React component with a stable name across the Flanksource UI surfaces
 (`flanksource-ui`, `clicky-ui`, `facet`, `gavel`, scraper UI, `arch-unit`,
-`oipa-cli`).
+internal CLI tooling).
 
 ```tsx
-import { UiUpload, UiCheck, UiCheckFilled, UiSearch } from "@flanksource/icons-ui";
+import { UiUpload, UiCheck, UiCheckFilled, UiSearch } from "@flanksource/icons/ui";
 
 <UiUpload />                    // outline variant (1em, currentColor)
 <UiCheck size={20} />           // override size

@@ -43,12 +43,12 @@ Use exact icon names from the listings below when generating code.
 
 Demo: https://flanksource.github.io/flanksource-icons/
 Repository: https://github.com/flanksource/flanksource-icons
-NPM packages: @flanksource/icons, @flanksource/icons-ui
+NPM package: @flanksource/icons
 
 ## Install
 
 \`\`\`sh
-pnpm add @flanksource/icons @flanksource/icons-ui
+pnpm add @flanksource/icons
 \`\`\`
 
 Both packages require React as a peer dependency.
@@ -58,7 +58,7 @@ Both packages require React as a peer dependency.
 - Use @flanksource/icons/icon Icon when you know a curated SVG icon name.
 - Use ResourceIcon when the icon name comes from runtime data such as resource type, cloud provider, service, or config class.
 - Use FileTypeIcon when rendering file names or file extensions.
-- Use @flanksource/icons-ui components for UI actions, status, navigation, and product interface symbols.
+- Use @flanksource/icons/ui components for UI actions, status, navigation, and product interface symbols.
 
 ## Usage Examples
 
@@ -79,7 +79,7 @@ export function Examples() {
 \`\`\`
 
 \`\`\`tsx
-import { UiCheck, UiUpload, UiSearch, UiWarningCircleFilled } from "@flanksource/icons-ui";
+import { UiCheck, UiUpload, UiSearch, UiWarningCircleFilled } from "@flanksource/icons/ui";
 
 export function Toolbar() {
   return (
@@ -98,13 +98,13 @@ export function Toolbar() {
 Icon accepts exact names from the @flanksource/icons listing and also supports the aliases and prefix matching built into the package.
 ResourceIcon first checks bundled icons, then falls back to allowed Iconify logo/devicon matches when enabled.
 FileTypeIcon maps common filenames and extensions to bundled icons.
-Most @flanksource/icons-ui outline icons use currentColor, so CSS color utilities such as className="text-blue-500" work.
+Most @flanksource/icons/ui outline icons use currentColor, so CSS color utilities such as className="text-blue-500" work.
 
 ## @flanksource/icons Names (${iconNames.length})
 
 ${wrapList(iconNames)}
 
-## @flanksource/icons-ui Components (${iconsUiNames.length})
+## @flanksource/icons/ui Components (${iconsUiNames.length})
 
 ${wrapList(iconsUiNames, 6)}
 `;
