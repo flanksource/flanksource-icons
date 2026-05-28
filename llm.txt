@@ -206,8 +206,6 @@ vpn, vscode, vsd, vsphere, vue, wait-for-approval, warning-circle, warning-circl
 webhook, website, wireguard, workflow, workflow-o, world, www, xls
 xlsx, xml, yaml, zip, zulip
 
-## @flanksource/icons-ui Components (477)
-
 UiAdd, UiAddFilled, UiArchive, UiArchiveFilled, UiArray, UiArrowDown
 UiArrowDownFilled, UiArrowDownRight, UiArrowLeft, UiArrowLeftFilled, UiArrowRight, UiArrowRightFilled
 UiArrowUp, UiArrowUpFilled, UiArrowUpRight, UiAsyncFn, UiAt, UiAtFilled
@@ -229,6 +227,26 @@ UiDatabaseError, UiDatabaseErrorFilled, UiDatabaseFilled, UiDatabaseInfo, UiData
 UiDatabaseMinusFilled, UiDatabasePending, UiDatabasePendingFilled, UiDatabasePlus, UiDatabasePlusFilled, UiDatabaseTrash
 UiDatabaseTrashFilled, UiDatabaseUp, UiDatabaseUpFilled, UiDatabaseWarning, UiDatabaseWarningFilled, UiDatabaseZap
 UiDebug, UiDebugFilled, UiDecorator, UiDesktop, UiDesktopFilled, UiDiff
+UiAdd, UiAddFilled, UiArchive, UiArchiveFilled, UiArray, UiArrowDown
+UiArrowDownFilled, UiArrowLeft, UiArrowLeftFilled, UiArrowRight, UiArrowRightFilled, UiArrowUp
+UiArrowUpFilled, UiAsyncFn, UiAt, UiAtFilled, UiBeaker, UiBeakerFilled
+UiBell, UiBellFilled, UiBellSlash, UiBellSlashFilled, UiBinary, UiBinaryFilled
+UiBox, UiBoxes, UiBoxesFilled, UiBoxFilled, UiBraces, UiBrain
+UiBrainFilled, UiBroadcast, UiBroadcastFilled, UiBug, UiBugFilled, UiCalendar
+UiCalendarBlank, UiCalendarBlankFilled, UiCalendarFilled, UiCamera, UiCameraFilled, UiCancel
+UiCancelFilled, UiChartBar, UiChartBarFilled, UiChartPie, UiChartPieFilled, UiCheck
+UiCheckFilled, UiChevronDown, UiChevronDownFilled, UiChevronRight, UiChevronRightFilled, UiChevronsDown
+UiChevronsDownFilled, UiChevronsUp, UiChevronsUpFilled, UiChevronUp, UiChevronUpFilled, UiChip
+UiChipFilled, UiCircleFilled, UiCircleFilledFilled, UiCircleOutline, UiCircleOutlineFilled, UiCircleX
+UiCircleXFilled, UiClass, UiClock, UiClockFilled, UiClose, UiCloseFilled
+UiCloud, UiCloudDownload, UiCloudDownloadFilled, UiCloudFilled, UiCode2, UiCode2Filled
+UiCog, UiCogFilled, UiCollapseAll, UiColumns, UiColumnsFilled, UiCommand
+UiCommandFilled, UiComment, UiConfig, UiConfigFilled, UiConstant, UiConstructor
+UiCopy, UiCopyFilled, UiDatabase, UiDatabaseCheck, UiDatabaseCheckFilled, UiDatabaseCross
+UiDatabaseCrossFilled, UiDatabaseDown, UiDatabaseDownFilled, UiDatabaseError, UiDatabaseErrorFilled, UiDatabaseFilled
+UiDatabaseInfo, UiDatabaseInfoFilled, UiDatabaseMinus, UiDatabaseMinusFilled, UiDatabasePending, UiDatabasePendingFilled
+UiDatabasePlus, UiDatabasePlusFilled, UiDatabaseTrash, UiDatabaseTrashFilled, UiDatabaseUp, UiDatabaseUpFilled
+UiDatabaseWarning, UiDatabaseWarningFilled, UiDebug, UiDebugFilled, UiDecorator, UiDiff
 UiDotsVertical, UiDotsVerticalFilled, UiDownload, UiDownloadFilled, UiEdit, UiEditFilled
 UiEllipsis, UiEllipsisFilled, UiEndpoint, UiEnum, UiEnumMember, UiEnvelope
 UiEnvelopeFilled, UiError, UiEvent, UiExpandAll, UiExport, UiExternalLink
