@@ -1,8 +1,8 @@
 {
   "savedAt": "2026-04-26T12:00:33.336Z",
-  "total": 274,
-  "bothChosen": 271,
-  "anyChosen": 272,
+  "total": 295,
+  "bothChosen": 277,
+  "anyChosen": 293,
   "rows": [
     {
       "consumerName": "chevron-down",
@@ -106,6 +106,174 @@
       "status": "NEW",
       "outline": "ph:eye-slash-light",
       "filled": "ph:eye-slash-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "zoom-in",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:magnifying-glass-plus-light",
+      "filled": "ph:magnifying-glass-plus-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "zoom-out",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:magnifying-glass-minus-light",
+      "filled": "ph:magnifying-glass-minus-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "fullscreen",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:corners-out-light",
+      "filled": "ph:corners-out-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "desktop",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:desktop-light",
+      "filled": "ph:desktop-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "moon",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:moon-light",
+      "filled": "ph:moon-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "sun",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:sun-light",
+      "filled": "ph:sun-fill",
+      "note": ""
+    },
+    {
+      "consumerName": "arrow-down-right",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:arrow-down-right",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "arrow-up-right",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:arrow-up-right",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "calculator",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:calculator",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "database-zap",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:database-zap",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "file-cog",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:file-cog",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "file-search",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:file-search",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "file-type",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:file-type",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "hard-drive",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:hard-drive",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "layers",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:layers",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "list-ordered",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:list-ordered",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "memory-stick",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:memory-stick",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "plug",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:plug",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "scale",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:scale",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "sigma",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:sigma",
+      "filled": "skip",
+      "note": ""
+    },
+    {
+      "consumerName": "user-cog",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:user-cog",
+      "filled": "skip",
       "note": ""
     },
     {
