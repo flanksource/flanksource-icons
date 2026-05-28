@@ -5,12 +5,12 @@ Use exact icon names from the listings below when generating code.
 
 Demo: https://flanksource.github.io/flanksource-icons/
 Repository: https://github.com/flanksource/flanksource-icons
-NPM packages: @flanksource/icons, @flanksource/icons-ui
+NPM package: @flanksource/icons
 
 ## Install
 
 ```sh
-pnpm add @flanksource/icons @flanksource/icons-ui
+pnpm add @flanksource/icons
 ```
 
 Both packages require React as a peer dependency.
@@ -20,7 +20,7 @@ Both packages require React as a peer dependency.
 - Use @flanksource/icons/icon Icon when you know a curated SVG icon name.
 - Use ResourceIcon when the icon name comes from runtime data such as resource type, cloud provider, service, or config class.
 - Use FileTypeIcon when rendering file names or file extensions.
-- Use @flanksource/icons-ui components for UI actions, status, navigation, and product interface symbols.
+- Use @flanksource/icons/ui components for UI actions, status, navigation, and product interface symbols.
 
 ## Usage Examples
 
@@ -41,7 +41,7 @@ export function Examples() {
 ```
 
 ```tsx
-import { UiCheck, UiUpload, UiSearch, UiWarningCircleFilled } from "@flanksource/icons-ui";
+import { UiCheck, UiUpload, UiSearch, UiWarningCircleFilled } from "@flanksource/icons/ui";
 
 export function Toolbar() {
   return (
@@ -60,7 +60,7 @@ export function Toolbar() {
 Icon accepts exact names from the @flanksource/icons listing and also supports the aliases and prefix matching built into the package.
 ResourceIcon first checks bundled icons, then falls back to allowed Iconify logo/devicon matches when enabled.
 FileTypeIcon maps common filenames and extensions to bundled icons.
-Most @flanksource/icons-ui outline icons use currentColor, so CSS color utilities such as className="text-blue-500" work.
+Most @flanksource/icons/ui outline icons use currentColor, so CSS color utilities such as className="text-blue-500" work.
 
 ## @flanksource/icons Names (1125)
 
@@ -206,94 +206,78 @@ vpn, vscode, vsd, vsphere, vue, wait-for-approval, warning-circle, warning-circl
 webhook, website, wireguard, workflow, workflow-o, world, www, xls
 xlsx, xml, yaml, zip, zulip
 
-UiAdd, UiAddFilled, UiArchive, UiArchiveFilled, UiArray, UiArrowDown
-UiArrowDownFilled, UiArrowDownRight, UiArrowLeft, UiArrowLeftFilled, UiArrowRight, UiArrowRightFilled
-UiArrowUp, UiArrowUpFilled, UiArrowUpRight, UiAsyncFn, UiAt, UiAtFilled
-UiBeaker, UiBeakerFilled, UiBell, UiBellFilled, UiBellSlash, UiBellSlashFilled
-UiBinary, UiBinaryFilled, UiBox, UiBoxes, UiBoxesFilled, UiBoxFilled
-UiBraces, UiBrain, UiBrainFilled, UiBroadcast, UiBroadcastFilled, UiBug
-UiBugFilled, UiCalculator, UiCalendar, UiCalendarBlank, UiCalendarBlankFilled, UiCalendarFilled
-UiCamera, UiCameraFilled, UiCancel, UiCancelFilled, UiChartBar, UiChartBarFilled
-UiChartPie, UiChartPieFilled, UiCheck, UiCheckFilled, UiChevronDown, UiChevronDownFilled
-UiChevronRight, UiChevronRightFilled, UiChevronsDown, UiChevronsDownFilled, UiChevronsUp, UiChevronsUpFilled
-UiChevronUp, UiChevronUpFilled, UiChip, UiChipFilled, UiCircleFilled, UiCircleFilledFilled
-UiCircleOutline, UiCircleOutlineFilled, UiCircleX, UiCircleXFilled, UiClass, UiClock
-UiClockFilled, UiClose, UiCloseFilled, UiCloud, UiCloudDownload, UiCloudDownloadFilled
-UiCloudFilled, UiCode2, UiCode2Filled, UiCog, UiCogFilled, UiCollapseAll
-UiColumns, UiColumnsFilled, UiCommand, UiCommandFilled, UiComment, UiConfig
-UiConfigFilled, UiConstant, UiConstructor, UiCopy, UiCopyFilled, UiDatabase
-UiDatabaseCheck, UiDatabaseCheckFilled, UiDatabaseCross, UiDatabaseCrossFilled, UiDatabaseDown, UiDatabaseDownFilled
-UiDatabaseError, UiDatabaseErrorFilled, UiDatabaseFilled, UiDatabaseInfo, UiDatabaseInfoFilled, UiDatabaseMinus
-UiDatabaseMinusFilled, UiDatabasePending, UiDatabasePendingFilled, UiDatabasePlus, UiDatabasePlusFilled, UiDatabaseTrash
-UiDatabaseTrashFilled, UiDatabaseUp, UiDatabaseUpFilled, UiDatabaseWarning, UiDatabaseWarningFilled, UiDatabaseZap
-UiDebug, UiDebugFilled, UiDecorator, UiDesktop, UiDesktopFilled, UiDiff
-UiAdd, UiAddFilled, UiArchive, UiArchiveFilled, UiArray, UiArrowDown
-UiArrowDownFilled, UiArrowLeft, UiArrowLeftFilled, UiArrowRight, UiArrowRightFilled, UiArrowUp
-UiArrowUpFilled, UiAsyncFn, UiAt, UiAtFilled, UiBeaker, UiBeakerFilled
-UiBell, UiBellFilled, UiBellSlash, UiBellSlashFilled, UiBinary, UiBinaryFilled
-UiBox, UiBoxes, UiBoxesFilled, UiBoxFilled, UiBraces, UiBrain
-UiBrainFilled, UiBroadcast, UiBroadcastFilled, UiBug, UiBugFilled, UiCalendar
-UiCalendarBlank, UiCalendarBlankFilled, UiCalendarFilled, UiCamera, UiCameraFilled, UiCancel
-UiCancelFilled, UiChartBar, UiChartBarFilled, UiChartPie, UiChartPieFilled, UiCheck
-UiCheckFilled, UiChevronDown, UiChevronDownFilled, UiChevronRight, UiChevronRightFilled, UiChevronsDown
-UiChevronsDownFilled, UiChevronsUp, UiChevronsUpFilled, UiChevronUp, UiChevronUpFilled, UiChip
-UiChipFilled, UiCircleFilled, UiCircleFilledFilled, UiCircleOutline, UiCircleOutlineFilled, UiCircleX
-UiCircleXFilled, UiClass, UiClock, UiClockFilled, UiClose, UiCloseFilled
-UiCloud, UiCloudDownload, UiCloudDownloadFilled, UiCloudFilled, UiCode2, UiCode2Filled
-UiCog, UiCogFilled, UiCollapseAll, UiColumns, UiColumnsFilled, UiCommand
-UiCommandFilled, UiComment, UiConfig, UiConfigFilled, UiConstant, UiConstructor
-UiCopy, UiCopyFilled, UiDatabase, UiDatabaseCheck, UiDatabaseCheckFilled, UiDatabaseCross
-UiDatabaseCrossFilled, UiDatabaseDown, UiDatabaseDownFilled, UiDatabaseError, UiDatabaseErrorFilled, UiDatabaseFilled
-UiDatabaseInfo, UiDatabaseInfoFilled, UiDatabaseMinus, UiDatabaseMinusFilled, UiDatabasePending, UiDatabasePendingFilled
-UiDatabasePlus, UiDatabasePlusFilled, UiDatabaseTrash, UiDatabaseTrashFilled, UiDatabaseUp, UiDatabaseUpFilled
-UiDatabaseWarning, UiDatabaseWarningFilled, UiDebug, UiDebugFilled, UiDecorator, UiDiff
-UiDotsVertical, UiDotsVerticalFilled, UiDownload, UiDownloadFilled, UiEdit, UiEditFilled
-UiEllipsis, UiEllipsisFilled, UiEndpoint, UiEnum, UiEnumMember, UiEnvelope
-UiEnvelopeFilled, UiError, UiEvent, UiExpandAll, UiExport, UiExternalLink
-UiEye, UiEyeClosed, UiEyeClosedFilled, UiEyeFilled, UiField, UiFile
-UiFileCode, UiFileCodeFilled, UiFileCog, UiFileFilled, UiFileJson, UiFileSearch
-UiFileSpreadsheet, UiFileText, UiFileTextFilled, UiFileType, UiFilter, UiFilterFilled
-UiFingerprint, UiFingerprintFilled, UiFolder, UiFolderFilled, UiFolderGit, UiFolderGit2
-UiFolderGit2Filled, UiFolderGitFilled, UiForm, UiFormFilled, UiFullscreen, UiFullscreenFilled
-UiFunction, UiFunctionSquare, UiFunctionSquareFilled, UiFunnelData, UiFunnelDataFilled, UiGitBranch
-UiGitBranchFilled, UiGitGraph, UiGitGraphFilled, UiGitMerge, UiGitMergeFilled, UiGitPr
-UiGitPrFilled, UiGlobe, UiGraph, UiGraphFilled, UiGrid, UiGridFilled
-UiHardDrive, UiHistory, UiHistoryFilled, UiHome, UiHomeFilled, UiHourglass
-UiHourglassFilled, UiHubot, UiHubotFilled, UiImage, UiImageFilled, UiImport
-UiInbox, UiInboxFilled, UiInfo, UiInfoFilled, UiInsightAvailability, UiInsightAvailabilityFilled
-UiInsightCompliance, UiInsightCost, UiInsightCostFilled, UiInsightIntegration, UiInsightPerformance, UiInsightPerformanceFilled
-UiInsightRecommendation, UiInsightRecommendationFilled, UiInsightReliability, UiInsightReliabilityFilled, UiInsightSecurity, UiInsightSecurityFilled
-UiInsightTechnicalDebt, UiInsightTechnicalDebtFilled, UiInterface, UiJson, UiKanban, UiKanbanFilled
-UiKey, UiKeyFilled, UiKeyword, UiLambda, UiLayers, UiLayoutDashboard
-UiLayoutDashboardFilled, UiLightbulb, UiLightbulbFilled, UiLink, UiLinkExternal, UiLinkExternalFilled
-UiLinkFilled, UiListFlat, UiListFlatFilled, UiListOrdered, UiListTree, UiListTreeFilled
-UiLoader, UiLoaderFilled, UiLocation, UiLocationFilled, UiLock, UiLockFilled
-UiLockOpen, UiLockOpenFilled, UiMagicWand, UiMagicWandFilled, UiMarkdown, UiMemoryStick
-UiMenu, UiMenuFilled, UiMethod, UiModule, UiMoon, UiMoonFilled
-UiNamespace, UiNetwork, UiNetworkFilled, UiNull, UiNumeric, UiObject
-UiOperator, UiOrganization, UiOrganizationCheck, UiOrganizationCheckFilled, UiOrganizationCross, UiOrganizationCrossFilled
-UiOrganizationFilled, UiOrganizationMinus, UiOrganizationMinusFilled, UiOrganizationPlus, UiOrganizationPlusFilled, UiPackage
-UiPackageFilled, UiParameter, UiPass, UiPassFilled, UiPause, UiPhone
-UiPhoneFilled, UiPlay, UiPlaybook, UiPlug, UiProperty, UiPulse
-UiPulseFilled, UiPuzzle, UiPuzzleFilled, UiQuestion, UiQuestionFilled, UiQueue
-UiQueueFilled, UiRecord, UiRefresh, UiRefreshFilled, UiRemove, UiRemoveFilled
-UiRobotAi, UiRobotAiFilled, UiRocket, UiRocketFilled, UiRoute, UiRouteFilled
-UiRows, UiRowsFilled, UiSave, UiSaveFilled, UiScale, UiSealCheck
-UiSealCheckFilled, UiSearch, UiSelect, UiSelectFilled, UiServer, UiServerProcess
-UiServerProcessFilled, UiSeverityBlocker, UiSeverityBlockerFilled, UiSeverityCritical, UiSeverityCriticalFilled, UiSeverityHigh
-UiSeverityHighFilled, UiSeverityInfo, UiSeverityInfoFilled, UiSeverityLow, UiSeverityLowFilled, UiSeverityMedium
-UiSeverityMediumFilled, UiSeverityWarning, UiSeverityWarningFilled, UiShare, UiShareFilled, UiShield
-UiShieldCheck, UiShieldCheckFilled, UiShieldCross, UiShieldCrossFilled, UiShieldFilled, UiShieldInfo
-UiShieldInfoFilled, UiShieldMinus, UiShieldMinusFilled, UiShieldPending, UiShieldPendingFilled, UiShieldPlus
-UiShieldPlusFilled, UiShieldWarning, UiShieldWarningFilled, UiShipWheel, UiSidebar, UiSidebarFilled
-UiSigma, UiSignIn, UiSignInFilled, UiSignOut, UiSignOutFilled, UiSiren
-UiSirenFilled, UiSkipForward, UiSkipForwardFilled, UiSkull, UiSkullFilled, UiSliders
-UiSlidersFilled, UiSparkles, UiSparklesFilled, UiSpeaker, UiSpeakerFilled, UiSqlArray
-UiSqlColumn, UiSqlConstraint, UiSqlDatabase, UiSqlForeignKey, UiSqlFunction, UiSqlIndex
-UiSqlPrimaryKey, UiSqlQuery, UiSqlSchema, UiSqlSequence, UiSqlStoredProc, UiSqlTable
-UiSqlTableFilled, UiSqlTrigger, UiSqlView, UiSquare, UiSquareFilled, UiStar
-UiStarFilled, UiStop, UiString, UiStruct, UiSun, UiSunFilled
-UiSwap, UiTable, UiTableFilled, UiTableProperties, UiTablePropertiesFilled, UiTag
+## @flanksource/icons/ui Components (489)
+
+UiActivity, UiAdd, UiAddFilled, UiArchive, UiArchiveFilled, UiArray
+UiArrowDown, UiArrowDownFilled, UiArrowDownRight, UiArrowLeft, UiArrowLeftFilled, UiArrowRight
+UiArrowRightFilled, UiArrowUp, UiArrowUpFilled, UiArrowUpRight, UiAsyncFn, UiAt
+UiAtFilled, UiBeaker, UiBeakerFilled, UiBell, UiBellFilled, UiBellSlash
+UiBellSlashFilled, UiBinary, UiBinaryFilled, UiBox, UiBoxes, UiBoxesFilled
+UiBoxFilled, UiBraces, UiBrain, UiBrainFilled, UiBroadcast, UiBroadcastFilled
+UiBug, UiBugFilled, UiCalculator, UiCalendar, UiCalendarBlank, UiCalendarBlankFilled
+UiCalendarFilled, UiCamera, UiCameraFilled, UiCancel, UiCancelFilled, UiChartBar
+UiChartBarFilled, UiChartPie, UiChartPieFilled, UiCheck, UiCheckFilled, UiChevronDown
+UiChevronDownFilled, UiChevronRight, UiChevronRightFilled, UiChevronsDown, UiChevronsDownFilled, UiChevronsUp
+UiChevronsUpFilled, UiChevronUp, UiChevronUpFilled, UiChip, UiChipFilled, UiCircleFilled
+UiCircleFilledFilled, UiCircleOutline, UiCircleOutlineFilled, UiCircleX, UiCircleXFilled, UiClass
+UiClock, UiClockFilled, UiClose, UiCloseFilled, UiCloud, UiCloudDownload
+UiCloudDownloadFilled, UiCloudFilled, UiCode2, UiCode2Filled, UiCog, UiCogFilled
+UiCollapseAll, UiColumns, UiColumnsFilled, UiCommand, UiCommandFilled, UiComment
+UiConfig, UiConfigFilled, UiConstant, UiConstructor, UiCopy, UiCopyFilled
+UiDatabase, UiDatabaseCheck, UiDatabaseCheckFilled, UiDatabaseCross, UiDatabaseCrossFilled, UiDatabaseDown
+UiDatabaseDownFilled, UiDatabaseError, UiDatabaseErrorFilled, UiDatabaseFilled, UiDatabaseInfo, UiDatabaseInfoFilled
+UiDatabaseMinus, UiDatabaseMinusFilled, UiDatabasePending, UiDatabasePendingFilled, UiDatabasePlus, UiDatabasePlusFilled
+UiDatabaseTrash, UiDatabaseTrashFilled, UiDatabaseUp, UiDatabaseUpFilled, UiDatabaseWarning, UiDatabaseWarningFilled
+UiDatabaseZap, UiDebug, UiDebugFilled, UiDebugSmall, UiDebugStepOver, UiDecorator
+UiDesktop, UiDesktopFilled, UiDiff, UiDotsVertical, UiDotsVerticalFilled, UiDownload
+UiDownloadFilled, UiEdit, UiEditFilled, UiEllipsis, UiEllipsisFilled, UiEndpoint
+UiEnum, UiEnumMember, UiEnvelope, UiEnvelopeFilled, UiError, UiEvent
+UiExpandAll, UiExport, UiExternalLink, UiEye, UiEyeClosed, UiEyeClosedFilled
+UiEyeFilled, UiField, UiFile, UiFileCode, UiFileCodeFilled, UiFileCog
+UiFileFilled, UiFileJson, UiFileSearch, UiFileSpreadsheet, UiFileText, UiFileTextFilled
+UiFileType, UiFilter, UiFilterFilled, UiFingerprint, UiFingerprintFilled, UiFolder
+UiFolderFilled, UiFolderGit, UiFolderGit2, UiFolderGit2Filled, UiFolderGitFilled, UiForm
+UiFormFilled, UiFullscreen, UiFullscreenFilled, UiFunction, UiFunctionSquare, UiFunctionSquareFilled
+UiFunnelData, UiFunnelDataFilled, UiGitBranch, UiGitBranchFilled, UiGitGraph, UiGitGraphFilled
+UiGitMerge, UiGitMergeFilled, UiGitPr, UiGitPrFilled, UiGlobe, UiGraph
+UiGraphFilled, UiGrid, UiGridFilled, UiHardDrive, UiHistory, UiHistoryFilled
+UiHome, UiHomeFilled, UiHourglass, UiHourglassFilled, UiHubot, UiHubotFilled
+UiImage, UiImageFilled, UiImport, UiInbox, UiInboxFilled, UiInfo
+UiInfoFilled, UiInsightAvailability, UiInsightAvailabilityFilled, UiInsightCompliance, UiInsightCost, UiInsightCostFilled
+UiInsightIntegration, UiInsightPerformance, UiInsightPerformanceFilled, UiInsightRecommendation, UiInsightRecommendationFilled, UiInsightReliability
+UiInsightReliabilityFilled, UiInsightSecurity, UiInsightSecurityFilled, UiInsightTechnicalDebt, UiInsightTechnicalDebtFilled, UiInterface
+UiJson, UiKanban, UiKanbanFilled, UiKey, UiKeyFilled, UiKeyword
+UiLambda, UiLayers, UiLayoutDashboard, UiLayoutDashboardFilled, UiLightbulb, UiLightbulbFilled
+UiLink, UiLinkExternal, UiLinkExternalFilled, UiLinkFilled, UiListDashes, UiListDashesFilled
+UiListFlat, UiListFlatFilled, UiListOrdered, UiListTree, UiListTreeFilled, UiLoader
+UiLoaderFilled, UiLocation, UiLocationFilled, UiLock, UiLockFilled, UiLockOpen
+UiLockOpenFilled, UiMagicWand, UiMagicWandFilled, UiMarkdown, UiMemoryStick, UiMenu
+UiMenuFilled, UiMethod, UiModule, UiMoon, UiMoonFilled, UiNamespace
+UiNetwork, UiNetworkFilled, UiNull, UiNumeric, UiObject, UiOperator
+UiOrganization, UiOrganizationCheck, UiOrganizationCheckFilled, UiOrganizationCross, UiOrganizationCrossFilled, UiOrganizationFilled
+UiOrganizationMinus, UiOrganizationMinusFilled, UiOrganizationPlus, UiOrganizationPlusFilled, UiPackage, UiPackageFilled
+UiParameter, UiPass, UiPassFilled, UiPause, UiPhone, UiPhoneFilled
+UiPlay, UiPlaybook, UiPlayCircle, UiPlayCircleFilled, UiPlug, UiProperty
+UiPulse, UiPulseFilled, UiPuzzle, UiPuzzleFilled, UiQuestion, UiQuestionFilled
+UiQueue, UiQueueFilled, UiRecord, UiRefresh, UiRefreshFilled, UiRemove
+UiRemoveFilled, UiResizeVertical, UiResizeVerticalFilled, UiRestart, UiRobotAi, UiRobotAiFilled
+UiRocket, UiRocketFilled, UiRoute, UiRouteFilled, UiRows, UiRowsFilled
+UiSave, UiSaveFilled, UiScale, UiSealCheck, UiSealCheckFilled, UiSearch
+UiSelect, UiSelectFilled, UiServer, UiServerProcess, UiServerProcessFilled, UiSeverityBlocker
+UiSeverityBlockerFilled, UiSeverityCritical, UiSeverityCriticalFilled, UiSeverityHigh, UiSeverityHighFilled, UiSeverityInfo
+UiSeverityInfoFilled, UiSeverityLow, UiSeverityLowFilled, UiSeverityMedium, UiSeverityMediumFilled, UiSeverityWarning
+UiSeverityWarningFilled, UiShare, UiShareFilled, UiShield, UiShieldCheck, UiShieldCheckFilled
+UiShieldCross, UiShieldCrossFilled, UiShieldFilled, UiShieldInfo, UiShieldInfoFilled, UiShieldMinus
+UiShieldMinusFilled, UiShieldPending, UiShieldPendingFilled, UiShieldPlus, UiShieldPlusFilled, UiShieldWarning
+UiShieldWarningFilled, UiShipWheel, UiSidebar, UiSidebarFilled, UiSigma, UiSignIn
+UiSignInFilled, UiSignOut, UiSignOutFilled, UiSiren, UiSirenFilled, UiSkipForward
+UiSkipForwardFilled, UiSkull, UiSkullFilled, UiSliders, UiSlidersFilled, UiSparkles
+UiSparklesFilled, UiSpeaker, UiSpeakerFilled, UiSqlArray, UiSqlColumn, UiSqlConstraint
+UiSqlDatabase, UiSqlForeignKey, UiSqlFunction, UiSqlIndex, UiSqlPrimaryKey, UiSqlQuery
+UiSqlSchema, UiSqlSequence, UiSqlStoredProc, UiSqlTable, UiSqlTableFilled, UiSqlTrigger
+UiSqlView, UiSquare, UiSquareFilled, UiStackFrameDot, UiStar, UiStarFilled
+UiStop, UiString, UiStruct, UiSun, UiSunFilled, UiSwap
+UiSync, UiTable, UiTableFilled, UiTableProperties, UiTablePropertiesFilled, UiTag
 UiTagFilled, UiTerminal, UiTerminalFilled, UiTest, UiThumbsDown, UiThumbsDownFilled
 UiThumbsUp, UiThumbsUpFilled, UiToggleOff, UiToggleOffFilled, UiToggleOn, UiToggleOnFilled
 UiTrait, UiTrash, UiTrashFilled, UiTrendDown, UiTrendDownFilled, UiTrendUp

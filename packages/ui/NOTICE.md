@@ -1,4 +1,4 @@
-# NOTICE — @flanksource/icons-ui
+# NOTICE — @flanksource/icons/ui
 
 Icons in this package are derived from third-party open-source icon sets.
 The package itself is licensed Apache 2.0; each icon carries the license
@@ -54,6 +54,18 @@ of its upstream source.
 | UiMoonFilled | ph:moon-fill |
 | UiSun | ph:sun-light |
 | UiSunFilled | ph:sun-fill |
+| UiDebugSmall | codicon:debug-alt-small |
+| UiRestart | codicon:debug-restart |
+| UiStackFrameDot | codicon:debug-stackframe-dot |
+| UiDebugStepOver | codicon:debug-step-over |
+| UiPlayCircle | ph:play-circle-light |
+| UiPlayCircleFilled | ph:play-circle-fill |
+| UiResizeVertical | ph:arrows-in-line-vertical-light |
+| UiResizeVerticalFilled | ph:arrows-in-line-vertical-fill |
+| UiListDashes | ph:list-dashes-light |
+| UiListDashesFilled | ph:list-dashes-fill |
+| UiActivity | lucide:activity |
+| UiSync | codicon:sync |
 | UiArrowDownRight | lucide:arrow-down-right |
 | UiArrowUpRight | lucide:arrow-up-right |
 | UiCalculator | lucide:calculator |

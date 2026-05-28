@@ -1,5 +1,5 @@
 /**
- * Codegen for @flanksource/icons-ui.
+ * Codegen for @flanksource/icons/ui.
  *
  * Reads hack/icon-selections.json from the repo root, resolves each pick
  * (Phosphor / JetBrains expui / Iconify alternate / local incumbent SVG),
@@ -679,7 +679,7 @@ async function main() {
         if (defaultColor) {
           parts.push(
             `// source: ${v.spec} (default color: ${defaultColor})`,
-            `export const ${compName}: React.FC<IconProps> & { __source: string; __viewBox: string; __defaultColor: string } = Object.assign(`,
+            `export const ${compName}: React.FC<IconProps> & { __source: string; __viewBox: string; __group: string; __consumerName: string; __defaultColor: string } = Object.assign(`,
             `  ({ size = "1em", className, title, style, ...props }: IconProps) => {`,
             `    const hasOverride = (typeof className === "string" && /\\btext-/.test(className)) || (style && (style as React.CSSProperties).color != null);`,
             `    const finalStyle: React.CSSProperties | undefined = hasOverride ? style : { color: ${JSON.stringify(defaultColor)}, ...(style as React.CSSProperties) };`,
@@ -689,20 +689,20 @@ async function main() {
             `      </svg>`,
             `    );`,
             `  },`,
-            `  { __source: ${JSON.stringify(v.spec)}, __viewBox: ${JSON.stringify(viewBox)}, __defaultColor: ${JSON.stringify(defaultColor)}, displayName: ${JSON.stringify(compName)} },`,
+            `  { __source: ${JSON.stringify(v.spec)}, __viewBox: ${JSON.stringify(viewBox)}, __group: ${JSON.stringify(row.group)}, __consumerName: ${JSON.stringify(cleanConsumer)}, __defaultColor: ${JSON.stringify(defaultColor)}, displayName: ${JSON.stringify(compName)} },`,
             `);`,
             "",
           );
         } else {
           parts.push(
             `// source: ${v.spec}`,
-            `export const ${compName}: React.FC<IconProps> & { __source: string; __viewBox: string } = Object.assign(`,
+            `export const ${compName}: React.FC<IconProps> & { __source: string; __viewBox: string; __group: string; __consumerName: string } = Object.assign(`,
             `  ({ size = "1em", className, title, ...props }: IconProps) => (`,
             `    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="${viewBox}" role={title ? "img" : "presentation"} aria-label={title} aria-hidden={title ? undefined : true} className={className} {...props}>`,
             `      ${inner}`,
             `    </svg>`,
             `  ),`,
-            `  { __source: ${JSON.stringify(v.spec)}, __viewBox: ${JSON.stringify(viewBox)}, displayName: ${JSON.stringify(compName)} },`,
+            `  { __source: ${JSON.stringify(v.spec)}, __viewBox: ${JSON.stringify(viewBox)}, __group: ${JSON.stringify(row.group)}, __consumerName: ${JSON.stringify(cleanConsumer)}, displayName: ${JSON.stringify(compName)} },`,
             `);`,
             "",
           );
@@ -743,13 +743,13 @@ async function main() {
           const composedInner = composeWithSubIcon(base.inner, base.viewBox, recipe, { tintBase });
           parts.push(
             `// composed: ${base.spec} + ${recipe.marker} (${recipe.position}, ${recipe.color})`,
-            `export const ${subCompName}: React.FC<IconProps> & { __source: string; __viewBox: string } = Object.assign(`,
+            `export const ${subCompName}: React.FC<IconProps> & { __source: string; __viewBox: string; __group: string; __consumerName: string } = Object.assign(`,
             `  ({ size = "1em", className, title, ...props }: IconProps) => (`,
             `    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="${base.viewBox}" role={title ? "img" : "presentation"} aria-label={title} aria-hidden={title ? undefined : true} className={className} {...props}>`,
             `      ${composedInner}`,
             `    </svg>`,
             `  ),`,
-            `  { __source: ${JSON.stringify(base.spec + " + " + recipe.marker + " marker")}, __viewBox: ${JSON.stringify(base.viewBox)}, displayName: ${JSON.stringify(subCompName)} },`,
+            `  { __source: ${JSON.stringify(base.spec + " + " + recipe.marker + " marker")}, __viewBox: ${JSON.stringify(base.viewBox)}, __group: ${JSON.stringify(row.group)}, __consumerName: ${JSON.stringify(cleanConsumer)}, displayName: ${JSON.stringify(subCompName)} },`,
             `);`,
             "",
           );
@@ -781,8 +781,9 @@ export type IconProps = Omit<SVGProps<SVGSVGElement>, "color"> & {
  * demo / comparison page can show attribution. \`__source\` is the original
  * spec ("ph:upload-simple-light", "jb-expui-nodes:class", "incumbent", …);
  * \`__viewBox\` is the original viewBox preserved from the source SVG.
+ * \`__group\` is the category from hack/icon-selections.json.
  */
-export type IconComponent = FC<IconProps> & { __source: string; __viewBox: string };
+export type IconComponent = FC<IconProps> & { __source: string; __viewBox: string; __group: string; __consumerName: string };
 `,
   );
 
@@ -860,7 +861,7 @@ export function getChangeIcon(
 
   // NOTICE.md — per-icon attribution, generated from selections.
   const noticeLines: string[] = [
-    "# NOTICE — @flanksource/icons-ui",
+    "# NOTICE — @flanksource/icons/ui",
     "",
     "Icons in this package are derived from third-party open-source icon sets.",
     "The package itself is licensed Apache 2.0; each icon carries the license",

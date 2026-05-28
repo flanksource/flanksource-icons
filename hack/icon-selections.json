@@ -157,6 +157,78 @@
       "note": ""
     },
     {
+      "consumerName": "debug-small",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "codicon:debug-alt-small",
+      "filled": "skip",
+      "note": "Clicky UI compatibility: compact debug action icon"
+    },
+    {
+      "consumerName": "restart",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "codicon:debug-restart",
+      "filled": "skip",
+      "note": "Clicky UI compatibility: restart/debug restart"
+    },
+    {
+      "consumerName": "stack-frame-dot",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "codicon:debug-stackframe-dot",
+      "filled": "skip",
+      "note": "Clicky UI compatibility: active stack frame marker"
+    },
+    {
+      "consumerName": "debug-step-over",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "codicon:debug-step-over",
+      "filled": "skip",
+      "note": "Clicky UI compatibility: step-over/debug frame state"
+    },
+    {
+      "consumerName": "play-circle",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:play-circle-light",
+      "filled": "ph:play-circle-fill",
+      "note": "Clicky UI compatibility: running/process state"
+    },
+    {
+      "consumerName": "resize-vertical",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:arrows-in-line-vertical-light",
+      "filled": "ph:arrows-in-line-vertical-fill",
+      "note": "Clicky UI compatibility: row density/resize control"
+    },
+    {
+      "consumerName": "list-dashes",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "ph:list-dashes-light",
+      "filled": "ph:list-dashes-fill",
+      "note": "Clicky UI compatibility: spacious list density"
+    },
+    {
+      "consumerName": "activity",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "lucide:activity",
+      "filled": "skip",
+      "note": "Clicky UI compatibility: metric/activity badge"
+    },
+    {
+      "consumerName": "sync",
+      "group": "ui-controls",
+      "status": "NEW",
+      "outline": "codicon:sync",
+      "filled": "skip",
+      "note": "Clicky UI compatibility: sync/wait frame state"
+    },
+    {
       "consumerName": "arrow-down-right",
       "group": "ui-controls",
       "status": "NEW",

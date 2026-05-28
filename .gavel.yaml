@@ -3,9 +3,14 @@ commit:
   - comparison.html
   compatibility: {}
   linkedDeps: {}
+  lint: {}
   precommit: {}
+  tidy: {}
 fixtures: {}
-lint: {}
+lint:
+  ignore:
+  - rule: omar-oracle-mention
+    source: betterleaks
 secrets: {}
 ssh: {}
 verify:

@@ -10,7 +10,7 @@ import { isWideViewBox } from "./iconBase";
 // inlines every component into the demo bundle. Falls back to an empty
 // namespace if the package wasn't built (rare: only when running the demo
 // outside the standard build).
-import * as IconsUi from "@flanksource/icons-ui";
+import * as IconsUi from "@flanksource/icons/ui";
 
 function isWideName(name: string | undefined, secondary?: string): boolean {
   const lookup = (n?: string) => (n ? findByName(n, IconMap) : undefined);
@@ -443,32 +443,73 @@ function Browse({ onSelect }: { onSelect: (name: string) => void }) {
 // Build a stable list of base names (outline variants without the "Filled"
 // suffix). For each base we record whether a Filled twin exists so the
 // browser can offer the variant toggle per icon.
-type IconsUiEntry = { name: string; outline?: React.FC<any>; filled?: React.FC<any> };
+type IconsUiComponent = React.FC<any> & {
+  __group?: string;
+  __source?: string;
+  __consumerName?: string;
+};
+type IconsUiEntry = {
+  name: string;
+  category: string;
+  outline?: IconsUiComponent;
+  filled?: IconsUiComponent;
+};
+
+function componentCategory(fn: unknown): string {
+  if (typeof fn !== "function") return "uncategorized";
+  return (fn as IconsUiComponent).__group || "uncategorized";
+}
+
+function humanizeCategory(category: string): string {
+  return category
+    .split("-")
+    .map((part) => part ? part[0].toUpperCase() + part.slice(1) : part)
+    .join(" ");
+}
+
 const iconsUiEntries: IconsUiEntry[] = (() => {
   const map = new Map<string, IconsUiEntry>();
   for (const [exportName, fn] of Object.entries(IconsUi)) {
     if (typeof fn !== "function") continue; // skip type-only re-exports
     if (exportName.endsWith("Filled")) {
       const base = exportName.slice(0, -"Filled".length);
-      const e = map.get(base) ?? { name: base };
-      e.filled = fn as React.FC<any>;
+      const e = map.get(base) ?? { name: base, category: componentCategory(fn) };
+      e.filled = fn as IconsUiComponent;
+      e.category = e.category || componentCategory(fn);
       map.set(base, e);
     } else {
-      const e = map.get(exportName) ?? { name: exportName };
-      e.outline = fn as React.FC<any>;
+      const e = map.get(exportName) ?? { name: exportName, category: componentCategory(fn) };
+      e.outline = fn as IconsUiComponent;
+      e.category = componentCategory(fn);
       map.set(exportName, e);
     }
   }
   return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
 })();
 
+const iconsUiCategories = (() => {
+  const counts = new Map<string, number>();
+  for (const entry of iconsUiEntries) counts.set(entry.category, (counts.get(entry.category) ?? 0) + 1);
+  return [...counts.entries()]
+    .map(([category, count]) => ({ category, count }))
+    .sort((a, b) => humanizeCategory(a.category).localeCompare(humanizeCategory(b.category)));
+})();
+
 function IconsUiBrowse({ onSelect }: { onSelect: (name: string) => void }) {
   const [search, setSearch] = useState("");
   const [variant, setVariant] = useState<"outline" | "filled">("outline");
+  const [category, setCategory] = useState("all");
   const filtered = useMemo(
     () =>
-      iconsUiEntries.filter((e) => e.name.toLowerCase().includes(search.toLowerCase())),
-    [search],
+      iconsUiEntries.filter((e) => {
+        const q = search.toLowerCase();
+        const matchesCategory = category === "all" || e.category === category;
+        const matchesSearch =
+          e.name.toLowerCase().includes(q) ||
+          e.category.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      }),
+    [category, search],
   );
   return (
     <div className="card">
@@ -477,7 +518,7 @@ function IconsUiBrowse({ onSelect }: { onSelect: (name: string) => void }) {
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search icons-ui (UiCheck, UiUpload, UiClass, …)"
+          placeholder="Search UI icons (UiCheck, UiUpload, UiClass, …)"
         />
         <span id="iconCount">
           {filtered.length} / {iconsUiEntries.length}
@@ -495,6 +536,27 @@ function IconsUiBrowse({ onSelect }: { onSelect: (name: string) => void }) {
             </button>
           ))}
         </div>
+      </div>
+      <div className="color-swatches" style={{ marginBottom: 12, alignItems: "center" }}>
+        <button
+          type="button"
+          className={`tab ${category === "all" ? "active" : ""}`}
+          style={{ padding: "4px 10px", fontSize: 12 }}
+          onClick={() => setCategory("all")}
+        >
+          All ({iconsUiEntries.length})
+        </button>
+        {iconsUiCategories.map((c) => (
+          <button
+            key={c.category}
+            type="button"
+            className={`tab ${category === c.category ? "active" : ""}`}
+            style={{ padding: "4px 10px", fontSize: 12 }}
+            onClick={() => setCategory(c.category)}
+          >
+            {humanizeCategory(c.category)} ({c.count})
+          </button>
+        ))}
       </div>
       <div style={{ fontSize: 12, color: "#666", marginBottom: 12, lineHeight: 1.5 }}>
         Generated from <code>hack/icon-selections.json</code>. Click any icon to open the
@@ -519,6 +581,9 @@ function IconsUiBrowse({ onSelect }: { onSelect: (name: string) => void }) {
               <Comp width={40} height={40} />
               <div className="icon-name" style={{ fontFamily: "'SF Mono', Monaco, monospace" }}>
                 {entry.name}
+              </div>
+              <div style={{ fontSize: 10, color: "#777", marginTop: 4 }}>
+                {humanizeCategory(entry.category)}
               </div>
             </div>
           );
@@ -589,7 +654,7 @@ function IconsUiDetail({ name, onBack, onOpen }: { name: string; onBack: () => v
   const importedNames = [entry.outline ? entry.name : null, entry.filled ? `${entry.name}Filled` : null]
     .filter(Boolean)
     .join(", ");
-  const importLine = `import { ${importedNames} } from "@flanksource/icons-ui";`;
+  const importLine = `import { ${importedNames} } from "@flanksource/icons/ui";`;
 
   const colorPreset = COLOR_PRESETS[colorIdx];
   const colorSpec = customColor.trim() || colorPreset.css || "currentColor";
@@ -616,6 +681,7 @@ function IconsUiDetail({ name, onBack, onOpen }: { name: string; onBack: () => v
   // Source attribution metadata is attached by the codegen on the underlying
   // function. `Object.assign` preserves the static field.
   const sourceMeta = (Comp as any).__source ?? "(unknown)";
+  const categoryMeta = entry.category;
 
   return (
     <div className="card">
@@ -634,6 +700,18 @@ function IconsUiDetail({ name, onBack, onOpen }: { name: string; onBack: () => v
           title={`Upstream: ${sourceMeta}`}
         >
           {sourceMeta}
+        </span>
+        <span
+          style={{
+            fontSize: 11,
+            padding: "2px 8px",
+            background: "#eef2ff",
+            color: "#4338ca",
+            borderRadius: 999,
+          }}
+          title={`Category: ${categoryMeta}`}
+        >
+          {humanizeCategory(categoryMeta)}
         </span>
       </div>
 
@@ -844,6 +922,41 @@ function IconsUiDetail({ name, onBack, onOpen }: { name: string; onBack: () => v
             );
           })()}
 
+          {(() => {
+            const related = iconsUiEntries
+              .filter((e) => e.name !== entry.name && e.category === entry.category)
+              .slice(0, 12);
+            if (related.length === 0) return null;
+            return (
+              <div style={{ marginTop: 16 }}>
+                <div style={{ fontSize: 12, color: "#666", marginBottom: 8, fontWeight: 600 }}>
+                  More in {humanizeCategory(entry.category)}
+                </div>
+                <div style={{ display: "flex", gap: 12, alignItems: "flex-end", padding: 16, background: "#fafafa", borderRadius: 6, flexWrap: "wrap" }}>
+                  {related.map((v) => {
+                    const VComp = v.outline ?? v.filled;
+                    if (!VComp) return null;
+                    return (
+                      <div
+                        key={v.name}
+                        style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, cursor: "pointer", padding: 6, borderRadius: 4 }}
+                        onClick={() => onOpen(v.name)}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "#eef2ff")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                        title={`Click to open ${v.name}`}
+                      >
+                        <VComp width={28} height={28} />
+                        <span style={{ fontSize: 10, color: "#374151", fontFamily: "'SF Mono', Monaco, monospace" }}>
+                          {v.name.replace(/^Ui/, "")}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
           <div style={{ marginTop: 16 }}>
             <div style={{ fontSize: 12, color: "#666", marginBottom: 8, fontWeight: 600, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span>Raw SVG ({svgString.length} bytes)</span>
@@ -896,7 +1009,7 @@ function LlmUsage() {
       <p style={{ color: "#555", lineHeight: 1.6 }}>
         Use <a href="llm.txt" target="_blank" rel="noopener noreferrer">llm.txt</a>{" "}
         for copy-ready examples and complete generated listings of{" "}
-        <code>@flanksource/icons</code> names and <code>@flanksource/icons-ui</code>{" "}
+        <code>@flanksource/icons</code> names and <code>@flanksource/icons/ui</code>{" "}
         components.
       </p>
 
@@ -938,7 +1051,7 @@ function LlmUsage() {
             Use the {iconsUiEntries.length} generated React components for interface controls and states.
           </div>
           <div className="code-snippet" style={{ fontSize: 12 }}>
-            {'import { UiCheck, UiSearch, UiUpload } from "@flanksource/icons-ui";\n\n<UiSearch size={16} className="text-slate-700" />\n<UiCheck size={16} className="text-emerald-600" />\n<UiUpload size={16} />'}
+            {'import { UiCheck, UiSearch, UiUpload } from "@flanksource/icons/ui";\n\n<UiSearch size={16} className="text-slate-700" />\n<UiCheck size={16} className="text-emerald-600" />\n<UiUpload size={16} />'}
           </div>
         </div>
       </div>
@@ -968,7 +1081,7 @@ function App() {
       <p className="subtitle">
         ~{allIconNames.length} curated icons in <code>@flanksource/icons</code>{" "}
         + {iconsUiEntries.length} curated React components in{" "}
-        <code>@flanksource/icons-ui</code> &mdash;{" "}
+        <code>@flanksource/icons/ui</code> &mdash;{" "}
         <a href="https://github.com/flanksource/flanksource-icons">GitHub</a>{" "}
         &middot; <a href="llm.txt">llm.txt</a>
       </p>

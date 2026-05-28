@@ -123,6 +123,20 @@ DTS
 # Add ./icon export to package.json
 cat <<< $(jq '.exports["./icon"] = { "types": "./icon/index.d.ts", "require": "./icon/index.js", "import": "./icon/index.mjs", "default": "./icon/index.mjs" }' $reactIconsAll/package.json) > $reactIconsAll/package.json
 
+# Build and copy the generated UI icon package into the main package so
+# consumers can import it as @flanksource/icons/ui.
+icons_ui_dir=$base/packages/ui
+icons_ui_alias=""
+if [ -d "$icons_ui_dir" ]; then
+  echo "Building @flanksource/icons/ui…"
+  (cd "$icons_ui_dir" && pnpm install --silent && pnpm run build >/dev/null)
+  rm -rf $reactIconsAll/ui
+  mkdir -p $reactIconsAll/ui
+  cp -R $icons_ui_dir/dist/. $reactIconsAll/ui/
+  cat <<< $(jq '.exports["./ui"] = { "types": "./ui/index.d.ts", "require": "./ui/index.js", "import": "./ui/index.mjs", "default": "./ui/index.mjs" }' $reactIconsAll/package.json) > $reactIconsAll/package.json
+  icons_ui_alias="--alias:@flanksource/icons/ui=$icons_ui_dir/src/index.ts"
+fi
+
 # Bundle demo app (React + all icons inlined, self-contained for GH Pages).
 # Force every import of `react` and `react/jsx-runtime` to the same physical
 # path so the bundle has a single React instance — otherwise nested deps
@@ -130,15 +144,6 @@ cat <<< $(jq '.exports["./icon"] = { "types": "./icon/index.d.ts", "require": ".
 # "Cannot read properties of null".
 react_root=$(node -e 'console.log(require.resolve("react/package.json"))' | xargs dirname)
 cp DemoApp.tsx $reactIconsAll/
-# Build the new @flanksource/icons-ui package first so the demo can browse it
-# via a side-by-side tab. Skipped silently if the package directory is absent.
-icons_ui_dir=$base/packages/ui
-icons_ui_alias=""
-if [ -d "$icons_ui_dir" ]; then
-  echo "Building @flanksource/icons-ui for the demo…"
-  (cd "$icons_ui_dir" && pnpm install --silent && pnpm run build:codegen >/dev/null)
-  icons_ui_alias="--alias:@flanksource/icons-ui=$icons_ui_dir/src/index.ts"
-fi
 node scripts/generate-llm-txt.mjs
 pnpm exec esbuild $reactIconsAll/DemoApp.tsx \
   --bundle --format=esm --jsx=automatic \
