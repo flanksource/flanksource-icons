@@ -31,8 +31,11 @@ const server = createServer(async (req, res) => {
       res.end(JSON.stringify({ ok: true, path: selectionsPath }));
       console.log(`[save] ${parsed.chosen ?? "?"} / ${parsed.total ?? "?"} → ${selectionsPath}`);
     } catch (err) {
+      // Log the real error server-side; return a generic message so we don't
+      // leak internal details (stack traces, paths) to the client.
+      console.error("[save] failed to persist selections:", err);
       res.writeHead(400, { "content-type": "application/json" });
-      res.end(JSON.stringify({ ok: false, error: String(err) }));
+      res.end(JSON.stringify({ ok: false, error: "invalid request" }));
     }
     return;
   }
