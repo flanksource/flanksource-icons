@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { readFile, writeFile } from "node:fs/promises";
-import { join, dirname, extname } from "node:path";
+import { join, dirname, extname, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -59,7 +59,15 @@ const server = createServer(async (req, res) => {
   // Static fallthrough for /svg/* (so existing on-disk SVGs render the incumbent column even if needed).
   if (req.method === "GET" && url.pathname.startsWith("/svg/")) {
     try {
+      const svgRoot = join(repoRoot, "svg");
+      // `join` normalises the request path (collapsing any `..` segments); the
+      // prefix check then guarantees the resolved file stays inside svg/, so a
+      // crafted pathname cannot escape the directory (path traversal).
       const filePath = join(repoRoot, url.pathname);
+      if (filePath !== svgRoot && !filePath.startsWith(svgRoot + sep)) {
+        res.writeHead(403).end("forbidden");
+        return;
+      }
       const buf = await readFile(filePath);
       res.writeHead(200, { "content-type": MIME[extname(filePath)] ?? "application/octet-stream" });
       res.end(buf);
