@@ -182,7 +182,11 @@ function normalizeSvg(raw: string, opts: { recolor: boolean }): { inner: string;
     const wrapperGAttrs = (trimmed.match(/^<g([^>]*)>/i) || [])[1] || "";
     const wrapperHasFillOrStroke = /\bfill=|\bstroke=/i.test(wrapperGAttrs);
     if (!wrapperHasFillOrStroke) {
-      const shapeRe = /<(path|rect|circle|ellipse|polygon|polyline|line)\b((?:[^>]|"[^"]*")*?)(\/?)>/gi;
+      // `[^>"]` (rather than `[^>]`) keeps this branch disjoint from the
+      // quoted-string branch, so the attribute matcher cannot backtrack
+      // exponentially on malformed input (ReDoS) while still matching the same
+      // well-formed SVG element attributes.
+      const shapeRe = /<(path|rect|circle|ellipse|polygon|polyline|line)\b((?:[^>"]|"[^"]*")*?)(\/?)>/gi;
       out = out.replace(shapeRe, (_match, tag, attrs, slash) => {
         const hasFill = /\bfill=/i.test(attrs);
         const hasStroke = /\bstroke=/i.test(attrs);
