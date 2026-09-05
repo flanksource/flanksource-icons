@@ -62,7 +62,7 @@ ResourceIcon first checks bundled icons, then falls back to allowed Iconify logo
 FileTypeIcon maps common filenames and extensions to bundled icons.
 Most @flanksource/icons/ui outline icons use currentColor, so CSS color utilities such as className="text-blue-500" work.
 
-## @flanksource/icons Names (1141)
+## @flanksource/icons Names (1142)
 
 access-denied, activemq, activity, activity-feed, activity-feed-o, add, add-alarm, add-alarm-clock
 add-alert, add-certificate, add-clock, add-cloud, add-cost, add-database, add-disk, add-email
@@ -197,16 +197,16 @@ split, split-o, splunk, spring, sql, sql-server, sqlserver, ssl
 ssl2, stackdriver, stackdriver-monitoring, stackdriver-trace, stackit, star, start, start-cog
 stop, stopwatch, structure, subfinder, submit-for-approval, supabase, svelte, swagger
 swift, switch, sync, sys, system, system-report, tag, tag2
-tailscale, talk, target, target2, teams, telegram, temporal, terraform
-test, thanos, thousandeyes, timeout, timer, timescaledb, timezone, today
-toggle-off, toggle-on, tomcat, toml, topology, topology-white, traces, traefik
-trafficlight, training, training2, transfer, trash, tree, trivy, troubleshoot
-ts, txt, ubuntu, unhealthy, unlock, up, up-bordered, up-database
-up-shield, upload, user, vagrant, valkey, variable, variable2, variable3
-vault, vault2, vcluster, velero, vercel, victoriametrics, view-details, vip
-vpn, vscode, vsd, vsphere, vue, wait-for-approval, warning-circle, warning-circle2
-webhook, website, wireguard, workflow, workflow-o, world, www, xls
-xlsx, xml, yaml, zip, zulip
+tailscale, tailscale-inverted, talk, target, target2, teams, telegram, temporal
+terraform, test, thanos, thousandeyes, timeout, timer, timescaledb, timezone
+today, toggle-off, toggle-on, tomcat, toml, topology, topology-white, traces
+traefik, trafficlight, training, training2, transfer, trash, tree, trivy
+troubleshoot, ts, txt, ubuntu, unhealthy, unlock, up, up-bordered
+up-database, up-shield, upload, user, vagrant, valkey, variable, variable2
+variable3, vault, vault2, vcluster, velero, vercel, victoriametrics, view-details
+vip, vpn, vscode, vsd, vsphere, vue, wait-for-approval, warning-circle
+warning-circle2, webhook, website, wireguard, workflow, workflow-o, world, www
+xls, xlsx, xml, yaml, zip, zulip
 
 ## @flanksource/icons/ui Components (489)
 
