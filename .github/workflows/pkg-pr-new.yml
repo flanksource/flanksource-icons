@@ -1,0 +1,47 @@
+name: Preview Packages
+
+# Publishes every pull request and main commit to https://pkg.pr.new, e.g.
+#   npm i https://pkg.pr.new/@flanksource/icons@<pr-number-or-sha>
+# Requires the pkg.pr.new GitHub App: https://github.com/apps/pkg-pr-new
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: pkg-pr-new-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # make.sh assembles @flanksource/icons in the react-icons submodule, the
+      # same directory the npm release publishes.
+      - name: Build icons
+        run: pnpm run svg
+
+      # --previewVersion keeps preview tarballs from colliding with npm releases
+      # of the same version.
+      - name: Publish preview
+        run: pnpm exec pkg-pr-new publish --previewVersion './react-icons/packages/_react-icons_all'

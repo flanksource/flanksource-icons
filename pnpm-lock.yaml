@@ -24,6 +24,9 @@ importers:
       esbuild:
         specifier: ^0.27.0
         version: 0.27.7
+      pkg-pr-new:
+        specifier: ^0.0.94
+        version: 0.0.94
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -323,6 +326,10 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
+  pkg-pr-new@0.0.94:
+    resolution: {integrity: sha512-+s3ZZl1Vt3wHfsIRH+chHG6/3wsu1N+Z5jitNYAPc0GGCYR8xmju34UShzTAMosi4WAYFCXvp80LZZc/fXSdpQ==}
+    hasBin: true
+
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -562,6 +569,8 @@ snapshots:
       boolbase: 1.0.0
 
   picocolors@1.1.1: {}
+
+  pkg-pr-new@0.0.94: {}
 
   react-dom@18.3.1(react@18.3.1):
     dependencies:
